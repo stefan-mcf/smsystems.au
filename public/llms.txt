@@ -1,0 +1,45 @@
+# SM Systems
+
+SM Systems is an Australia-based workflow automation and integrations practice led by Stefan McFeeters.
+
+## Summary
+
+SM Systems builds reliable workflow automation and lead leakage audit workflows that connect websites, payments, dashboards, CRMs, spreadsheets, APIs, and real-world operations into clear, repeatable workflows.
+
+## Core Work
+
+- Automation repair and hardening
+- Lead leakage audits and fix sprints
+- API and webhook integrations
+- CRM and intake routing
+- Data cleanup and sync workflows
+- Website, SEO, tracking, and paid traffic readiness checks
+- Dashboard and reporting tools
+- Review-gated AI workflows
+- Operator tools
+- Edge-to-cloud workflow integration
+
+## Proof and Case Studies
+
+- Home: https://smsystems.au/
+- About: https://smsystems.au/about
+- Services: https://smsystems.au/services
+- Work: https://smsystems.au/work
+- RFID case study: https://smsystems.au/work/rfid-carwash-subscription-system
+- Contact: https://smsystems.au/contact
+
+## Featured Proof
+
+RFID carwash subscription access system:
+A cloud-connected operator workflow connecting customer plan selection, Stripe subscriptions, RFID tag reads, AWS-hosted backend services, Postgres persistence, and an operator dashboard.
+
+Local lead recovery audit pipeline:
+A private prospecting and audit workflow that finds qualified local businesses, checks public lead paths, and turns evidence into agency-ready or direct-client fix recommendations.
+
+## Preferred Description
+
+SM Systems builds reliable workflow automation, lead leakage audits, API integrations, dashboards, data syncs, CRM/intake routing, review-gated AI workflows, and operator tools for businesses, operators, and technical teams.
+
+## Contact
+
+Website: https://smsystems.au/contact
