@@ -3452,7 +3452,7 @@ body::after {
 }
 
 .hero-copy-block::before {
-  background: radial-gradient(ellipse at center, rgba(216, 220, 221, 0.98) 0%, rgba(216, 220, 221, 0.97) 54%, rgba(216, 220, 221, 0.84) 70%, rgba(216, 220, 221, 0) 90%);
+  background: radial-gradient(ellipse at center, rgba(216, 220, 221, 0.95) 0%, rgba(216, 220, 221, 0.84) 42%, rgba(216, 220, 221, 0.46) 62%, rgba(216, 220, 221, 0.12) 80%, rgba(216, 220, 221, 0.035) 90%, rgba(216, 220, 221, 0) 100%);
 }
 
 .hero-copy-block::after {
@@ -3773,14 +3773,18 @@ body::after {
 
 @media (max-width: 560px) {
   .hero {
-    padding-top: clamp(1.45rem, 5vw, 2.2rem);
-    padding-bottom: clamp(2.6rem, 9vw, 3.6rem);
+    padding-top: clamp(0.35rem, 2.2vw, 0.8rem);
+    padding-bottom: clamp(2.45rem, 8vw, 3.35rem);
+  }
+
+  .hero-copy-block::before {
+    background: radial-gradient(ellipse at center, rgba(216, 220, 221, 0.94) 0%, rgba(216, 220, 221, 0.78) 40%, rgba(216, 220, 221, 0.36) 62%, rgba(216, 220, 221, 0.095) 80%, rgba(216, 220, 221, 0.025) 91%, rgba(216, 220, 221, 0) 100%);
   }
 
   .hero h1 {
-    max-width: min(100%, 9.6ch);
+    max-width: min(100%, 10.4ch);
     margin-inline: auto;
-    font-size: clamp(2.05rem, 11vw, 2.9rem);
+    font-size: clamp(2.65rem, 14.1vw, 3.68rem);
     text-align: center;
   }
 
@@ -3791,9 +3795,29 @@ body::after {
 
   .hero h1 span + span {
     display: block;
-    width: fit-content;
+    width: min(100%, 22rem);
     max-width: 100%;
     margin-inline: auto;
+    font-size: 0.74em;
+  }
+
+  .hero .cta-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
+    gap: 0.58rem;
+    width: min(100%, 22rem);
+    margin-inline: auto;
+    margin-top: 1.38rem;
+  }
+
+  .hero .button {
+    width: 100%;
+    min-width: 0;
+    min-height: 2.85rem;
+    padding: 0.62rem 0.58rem;
+    font-size: 0.71rem;
+    white-space: nowrap;
   }
 
   .home-proof-shell .section-intro h2 {
@@ -3834,7 +3858,11 @@ body::after {
   }
 
   .about-card {
-    grid-template-columns: minmax(5.4rem, 0.28fr) minmax(0, 1fr);
+    grid-template-columns: minmax(8.15rem, 0.38fr) minmax(0, 1fr);
+  }
+
+  .about-portrait-frame {
+    max-width: 9.4rem;
   }
 
   .footer-kicker {
@@ -3865,5 +3893,22 @@ body::after {
 
   .home-proof-shell .section-intro h2 {
     font-size: 1.34rem;
+  }
+
+  .hero h1 {
+    max-width: min(100%, 10.1ch);
+    font-size: 2.46rem;
+  }
+
+  .hero .button {
+    font-size: 0.65rem;
+  }
+
+  .about-card {
+    grid-template-columns: minmax(7.35rem, 0.36fr) minmax(0, 1fr);
+  }
+
+  .about-portrait-frame {
+    max-width: 8.25rem;
   }
 }
