@@ -6,7 +6,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="container site-header-inner">
         <div className="brand-block">
-          <Link className="brand" href="/">
+          <Link className="brand" href="/#top">
             Stefan McFeeters
           </Link>
           <p className="brand-subtitle">automation systems</p>

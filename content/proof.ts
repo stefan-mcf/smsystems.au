@@ -31,44 +31,13 @@ export type ProofItem = {
 
 export const proofItems: ProofItem[] = [
   {
-    slug: 'local-lead-recovery-pipeline',
-    title: 'Local lead recovery audit pipeline',
-    lane: 'Lead leakage audits',
-    problemShape:
-      'A private prospecting and audit workflow that finds qualified local businesses, checks their public lead paths, and turns the evidence into agency-ready or direct-client fix recommendations.',
-    whatItProves: 'A practical bridge from local-business discovery to website, SEO, tracking, and conversion fixes that can be sold as reports or delivered as implementation sprints.',
-    boundary: 'Private operator tooling and productized-service proof; agencies and clients receive outputs, not CLI access or raw evidence internals.',
-    primaryLink: '/services#lead-leakage-audit-fix-sprint',
-    primaryLinkLabel: 'View service lane',
-    caseStudy: {
-      proofStrip: [
-        {
-          label: 'Find',
-          title: 'Evidence-backed prospect queue',
-          body: 'Local Business Locator produces deduped, scored, scanner-ready businesses by niche and location with source evidence and review flags.',
-        },
-        {
-          label: 'Audit',
-          title: 'Lead leakage reports',
-          body: 'Lead Leakage Auditor checks lead path quality, SEO readiness, ads opportunity, and client-mode report output from public website evidence.',
-        },
-        {
-          label: 'Fix',
-          title: 'Implementation sprint path',
-          body: 'Findings become prioritized website, SEO, tracking, form, CTA, trust-signal, or handoff fixes for direct clients or agency referrals.',
-        },
-      ],
-    },
-    featured: true,
-  },
-  {
     slug: 'automation-debugger',
-    title: 'Automation repair debugger',
-    lane: 'Automation Rescue',
+    title: 'Automation debugger',
+    lane: 'Workflow diagnostics',
     problemShape:
       'A local debugger that normalizes event data, assigns trace IDs, classifies failure types, and produces reviewable diagnosis and replay reports.',
-    whatItProves: 'A repeatable way to reproduce the fault, explain it, and leave a repair plan someone else can review.',
-    boundary: 'Portfolio entry for debugging and repair workflow shape; not a blanket claim about every platform or production context.',
+    whatItProves: 'A repeatable way to reproduce the fault, explain it, and leave a diagnosis packet someone else can review.',
+    boundary: 'Portfolio entry for debugging workflow shape; not a blanket claim about every platform or production context.',
     primaryLink: 'https://github.com/stefan-mcf/automation-debugger',
     primaryLinkLabel: 'View GitHub README',
     caseStudy: {
@@ -86,7 +55,7 @@ export const proofItems: ProofItem[] = [
         {
           label: 'Output',
           title: 'Reviewable artifacts',
-          body: 'Diagnosis JSON, replay success/refusal records, dead-letter traces, fix reports, and screenshot evidence.',
+          body: 'Diagnosis JSON, replay success/refusal records, dead-letter traces, implementation notes, and screenshot evidence.',
         },
       ],
     },
@@ -98,7 +67,7 @@ export const proofItems: ProofItem[] = [
     lane: 'Integrations',
     problemShape:
       'A FastAPI bridge that receives synthetic webhook events, validates fields, maps them through explicit JSON configs, and records audit trails with dead-letter handling.',
-    whatItProves: 'Readable payload mapping, retry-aware handoffs, and evidence that the expected data made the trip.',
+    whatItProves: 'Readable payload mapping, retry-aware data paths, and evidence that the expected data made the trip.',
     boundary: 'Presented as evidence of workflow shape and implementation quality rather than universal integration coverage.',
     primaryLink: 'https://github.com/stefan-mcf/api-webhook-bridge',
     primaryLinkLabel: 'View GitHub README',
@@ -192,7 +161,7 @@ export const proofItems: ProofItem[] = [
     problemShape: 'A hands-free carwash access workflow: the customer chooses a wash plan, Stripe handles subscription checkout, an RFID tag identifies the vehicle at the bay, and the backend returns the approved package decision to operators.',
     whatItProves: 'Comfort across edge devices, backend flows, and the boring constraints that decide whether a system survives contact with the floor.',
     boundary: 'Framed as a deployed anchor-client system, not a generic packaged SaaS or broad-market claim.',
-    primaryLink: '/work/rfid-carwash-subscription-system',
+    primaryLink: '/#rfid-subscription-access-system',
     primaryLinkLabel: 'View case study',
     caseStudy: {
       proofStrip: [

@@ -21,7 +21,6 @@ export function AboutSection() {
         </div>
         <div className="about-card-copy">
           <p className="about-name">Stefan McFeeters</p>
-          <p className="brand-subtitle">SM Systems</p>
           <ul>
             {about.facts.map((fact) => (
               <li key={fact}>{fact}</li>

@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       name: 'SM Systems',
       url: canonicalSiteUrl,
       description:
-        'SM Systems builds reliable workflow automation, lead leakage audits, API integrations, dashboards, data syncs, CRM/intake routing, review-gated AI workflows, and operator tools for businesses, operators, and technical teams.',
+        'SM Systems builds workflow automation, API integrations, dashboards, data syncs, CRM/intake routing, review-gated AI workflows, and operator tools for businesses, operators, and technical teams.',
       areaServed: 'Australia',
       founder: {
         '@type': 'Person',
@@ -42,15 +42,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         url: canonicalSiteUrl,
       },
       serviceType: [
-        'Lead leakage audit and fix sprint',
-        'Automation repair',
+        'Workflow automation build',
         'API and webhook integration',
         'Dashboard development',
         'Data cleanup and sync',
         'CRM and intake routing',
         'Review-gated AI workflow setup',
-        'Website and SEO fix sprint',
-        'Paid traffic readiness review',
         'Operator tools',
         'Edge-to-cloud workflow integration',
       ],

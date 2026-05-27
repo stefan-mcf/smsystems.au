@@ -7,10 +7,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: `${canonicalSiteUrl}/`, lastModified },
-    { url: `${canonicalSiteUrl}/about`, lastModified },
-    { url: `${canonicalSiteUrl}/services`, lastModified },
-    { url: `${canonicalSiteUrl}/work`, lastModified },
-    { url: `${canonicalSiteUrl}/work/rfid-carwash-subscription-system`, lastModified },
-    { url: `${canonicalSiteUrl}/contact`, lastModified },
   ];
 }

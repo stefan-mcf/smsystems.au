@@ -8,10 +8,6 @@ export function SiteFooter() {
           <p className="footer-kicker">
             © 2026 STEFAN MCFEETERS | SM SYSTEMS
           </p>
-
-          <p className="footer-line">
-            Automation systems, lead leakage audits, API workflows, dashboards, and operator tools.
-          </p>
         </div>
         <nav className="footer-contact-links" aria-label="Contact links">
           {siteMeta.contact.routes.map((route) => (

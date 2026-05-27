@@ -841,9 +841,53 @@ strong {
   margin-bottom: 1.65rem;
 }
 
+.home-proof-shell .section-intro h2,
+.home-proof-shell .section-body {
+  max-width: none;
+}
+
+.home-proof-shell .section-intro h2 {
+  white-space: nowrap;
+}
+
+.home-proof-shell .section-body {
+  max-width: 48rem;
+}
+
 .home-proof-section {
   display: grid;
   gap: 1.2rem;
+}
+
+.home-anchor-work,
+.home-tool-work {
+  display: grid;
+  gap: clamp(0.72rem, 1.5vw, 1rem);
+}
+
+.work-group-heading {
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) auto minmax(2rem, 1fr);
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  margin: 0;
+  color: #5d6668;
+  font-size: 0.84rem;
+  font-weight: 820;
+  letter-spacing: 0.09em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.work-group-heading::before,
+.work-group-heading::after {
+  content: "";
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(93, 102, 104, 0.34));
+}
+
+.work-group-heading::after {
+  background: linear-gradient(90deg, rgba(93, 102, 104, 0.34), transparent);
 }
 
 .service-section,
@@ -2229,6 +2273,18 @@ strong {
 
 .page-divider {
   display: none;
+}
+
+.site-main > .final-contact-section {
+  margin-top: clamp(3rem, 7vw, 6rem);
+}
+
+.site-main:has(.final-contact-section) {
+  padding-bottom: clamp(1.1rem, 2.2vw, 2.2rem);
+}
+
+.site-main:has(.final-contact-section) + .site-footer {
+  margin-top: clamp(0.8rem, 1.6vw, 1.5rem);
 }
 
 .cta-panel {
@@ -3662,4 +3718,152 @@ body::after {
 .eyebrow,
 .rfid-callout-label {
   display: none !important;
+}
+
+/* Mobile readiness pass for the single-page publish build. */
+@media (max-width: 760px) {
+  body {
+    --site-header-height: 6.25rem;
+  }
+
+  .site-header-inner {
+    gap: 0.55rem;
+    padding: 0.56rem 0 0.62rem;
+  }
+
+  .brand-block {
+    gap: 0.05rem;
+  }
+
+  .brand {
+    font-size: clamp(1.18rem, 6.3vw, 1.62rem);
+    line-height: 0.98;
+  }
+
+  .brand-subtitle {
+    font-size: clamp(0.62rem, 2.7vw, 0.76rem);
+    line-height: 1.05;
+  }
+
+  .site-nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .site-nav a {
+    min-width: 0;
+    padding: 0.5rem 0.2rem;
+    font-size: clamp(0.62rem, 2.45vw, 0.72rem);
+    line-height: 1;
+  }
+
+  .home-proof-shell .section-body {
+    max-width: none;
+  }
+
+  .site-footer-inner {
+    gap: 0.7rem;
+  }
+
+  .footer-contact-links {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding-top: clamp(1.45rem, 5vw, 2.2rem);
+    padding-bottom: clamp(2.6rem, 9vw, 3.6rem);
+  }
+
+  .hero h1 {
+    max-width: min(100%, 9.6ch);
+    margin-inline: auto;
+    font-size: clamp(2.05rem, 11vw, 2.9rem);
+    text-align: center;
+  }
+
+  .hero-line {
+    max-width: 100%;
+    overflow-wrap: normal;
+  }
+
+  .hero h1 span + span {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .home-proof-shell .section-intro h2 {
+    font-size: clamp(1.45rem, 7.5vw, 1.95rem);
+    letter-spacing: -0.065em;
+  }
+
+  .home-proof-shell .section-body {
+    max-width: none;
+    font-size: clamp(0.98rem, 4.4vw, 1.08rem);
+  }
+
+  .work-group-heading {
+    grid-template-columns: minmax(1rem, 1fr) auto minmax(1rem, 1fr);
+    gap: 0.6rem;
+    font-size: 0.74rem;
+    letter-spacing: 0.075em;
+  }
+
+  .proof-card-summary {
+    grid-template-columns: minmax(0, 1fr) 1.7rem;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .proof-card-title {
+    font-size: clamp(1.12rem, 6.4vw, 1.42rem);
+    line-height: 1.02;
+  }
+
+  .proof-card-toggle {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .proof-card-detail {
+    padding: 0 1rem 1rem;
+  }
+
+  .about-card {
+    grid-template-columns: minmax(5.4rem, 0.28fr) minmax(0, 1fr);
+  }
+
+  .footer-kicker {
+    font-size: 0.78rem;
+    line-height: 1.25;
+  }
+}
+
+@media (max-width: 380px) {
+  body {
+    --site-header-height: 6rem;
+  }
+
+  .brand {
+    font-size: 1.08rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+  }
+
+  .site-nav a {
+    padding-inline: 0.1rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.055em;
+  }
+
+  .home-proof-shell .section-intro h2 {
+    font-size: 1.34rem;
+  }
 }
