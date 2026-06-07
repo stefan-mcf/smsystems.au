@@ -184,9 +184,9 @@ export const proofItems: ProofItem[] = [
       screenshots: [
         {
           src: '/rfid/operator-dashboard.png',
-          alt: 'RFID operator dashboard showing an approved tag scan with customer, vehicle, Premium tier, and timestamp. Also shows Postgres health, total events, approved/denied counts, registered tags, and recent wash events.',
+          alt: 'Sanitized RFID operator dashboard showing the approval workflow, tier decision, runtime health, and recent event structure without live customer or tag identifiers.',
           caption:
-            'Operator dashboard proving a live approved tag read with customer, vehicle, Premium tier, and Postgres-backed event tracking.',
+            'Sanitized operator dashboard view showing the approval workflow, tier decision, and event tracking without live identifiers.',
         },
         {
           src: '/rfid/subscription-website.png',
