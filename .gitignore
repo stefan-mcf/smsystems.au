@@ -4,3 +4,7 @@ node_modules/
 tsconfig.tsbuildinfo
 .DS_Store
 .env*.local
+
+# Local-only Codex guardrails; do not publish repo-private instructions.
+AGENTS.md
+agents.md
