@@ -496,11 +496,22 @@ footer{
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:760px){
+  :root{
+    --mobile-header-control:clamp(48px,7vw,56px);
+    --mobile-header-pad-bottom:16px;
+    --mobile-header-height:calc(var(--mobile-header-control) + 32px);
+  }
   section{padding:50px 0}
   .section-head{margin-bottom:24px}
   .section-title{margin-bottom:10px}
-  .nav{height:80px;gap:8px}
-  .nav-cta{gap:8px;align-items:center}
+  .nav{
+    height:var(--mobile-header-height);
+    gap:8px;
+    align-items:flex-end;
+    padding-bottom:var(--mobile-header-pad-bottom);
+  }
+  .brand{align-items:flex-end;line-height:0}
+  .nav-cta{gap:8px;align-items:flex-end}
   .nav-links{
     display:none;
     position:absolute;
@@ -513,25 +524,31 @@ footer{
     padding:8px 0;
   }
   .nav-links.open{display:flex}
+  .nav-links.open{
+    max-height:calc(100dvh - var(--mobile-header-height));
+    overflow:auto;
+  }
   .nav-links a{width:100%;padding:14px 24px}
   .nav-quote{
-    height:48px;
+    height:var(--mobile-header-control);
     display:inline-flex;
     align-items:center;
     justify-content:center;
     padding:0 14px;
+    font-size:clamp(13px,2vw,15px);
   }
   .menu-toggle{
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    width:48px;
-    height:48px;
+    width:var(--mobile-header-control);
+    height:var(--mobile-header-control);
     padding:0;
+    font-size:clamp(17px,2.4vw,20px);
   }
   .nav-phone{display:none}
-  .brand img{height:48px;max-width:45vw;object-fit:contain}
-  .hero{padding-top:100px;padding-bottom:56px}
+  .brand img{height:var(--mobile-header-control);max-width:45vw;object-fit:contain}
+  .hero{padding-top:calc(var(--mobile-header-height) + 20px);padding-bottom:56px}
   .bento{grid-template-columns:1fr;grid-auto-rows:auto}
   .cell.span2{grid-column:span 1}
   .cell-img{min-height:260px}
@@ -544,7 +561,32 @@ footer{
   .g-item img{min-height:240px}
   .form-grid{grid-template-columns:1fr}
   form.quote-form{padding:26px 20px}
-  .footer-grid{grid-template-columns:1fr}
+  footer{padding:34px 0 0}
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:24px;
+    padding-bottom:28px;
+  }
+  .footer-grid > div:first-child{display:none}
+  .footer-grid h4{margin-bottom:10px;font-size:13px}
+  .footer-grid ul{gap:8px}
+  .footer-grid > div:nth-child(2) ul{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 14px;
+  }
+  .footer-grid ul a,
+  .footer-grid ul li{font-size:14px}
+  .footer-bottom{
+    padding:16px 0;
+    gap:6px;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+@media(max-width:380px){
+  .nav-quote{padding:0 10px;font-size:12.5px}
+  .brand img{max-width:38vw}
 }
 </style>
 </head>
@@ -768,9 +810,6 @@ footer{
           <a class="contact-row" href="mailto:precisionrc01@gmail.com">
             <span>Email</span><strong>precisionrc01@gmail.com</strong>
           </a>
-          <div class="contact-row">
-            <span>Service Area</span><strong>[Service area to be confirmed]</strong>
-          </div>
         </div>
         <p class="contact-note">Prefer to talk it through? Call directly and we can discuss your project on the phone.</p>
       </div>
@@ -867,8 +906,6 @@ footer{
         <ul>
           <li><a href="tel:0493102169">0493 102 169</a></li>
           <li><a href="mailto:precisionrc01@gmail.com">precisionrc01@gmail.com</a></li>
-          <li>[ABN to be confirmed]</li>
-          <li>[Service area to be confirmed]</li>
         </ul>
       </div>
     </div>
