@@ -335,43 +335,10 @@ header{
 #quote .section-lead{max-width:780px}
 .quote-layout{
   display:grid;
-  gap:12px;
+  gap:0;
 }
-.contact-info{
-  display:grid;
-  grid-template-columns:auto minmax(0,1fr);
-  gap:16px;
-  align-items:center;
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:18px 20px;
-}
-.contact-info h3{font-size:18px;font-weight:800;margin:0}
-.contact-copy p{
-  color:var(--muted);
-  font-size:13.5px;
-  margin-top:4px;
-}
-.contact-rows{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-.contact-row{
-  display:flex;
-  flex-direction:column;
-  gap:2px;
-  padding:12px 14px;
-  background:#0e0e10;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  text-decoration:none;
-  transition:border-color .2s;
-}
-a.contact-row:hover{border-color:var(--orange)}
-.contact-row span{font-size:12px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;font-weight:600}
-.contact-row strong{font-size:17px;font-weight:600}
+#process .section-head{margin-bottom:0}
+#process .process-line{margin-top:18px}
 
 form.quote-form{
   background:var(--panel);
@@ -579,12 +546,6 @@ footer{
   .g-item img{min-height:240px}
   .form-grid{grid-template-columns:1fr}
   form.quote-form{padding:22px 16px}
-  .contact-info{
-    grid-template-columns:1fr;
-    gap:12px;
-    padding:16px;
-  }
-  .contact-rows{grid-template-columns:1fr;gap:8px}
   footer{padding:34px 0 0}
   .footer-grid{
     grid-template-columns:1fr;
@@ -629,7 +590,7 @@ footer{
       <a href="#about">Why Us</a>
     </nav>
     <div class="nav-cta">
-      <a class="nav-phone" href="tel:0493102169">0493102169</a>
+      <a class="nav-phone" href="tel:0493102169">0493 102 169</a>
       <a class="nav-quote" href="#quote">Get a Quote</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
     </div>
@@ -643,7 +604,7 @@ footer{
       <h1>Quality focused workmanship. <span class="accent">Built to last.</span></h1>
       <p>Decking, cladding, pergolas and renovations, delivered with attention to detail and clean finishes.</p>
       <div class="hero-buttons">
-        <a href="tel:0493102169" class="btn btn-orange">Call 0493102169</a>
+        <a href="tel:0493102169" class="btn btn-orange">Call 0493 102 169</a>
         <a href="#quote" class="btn btn-ghost">Get a Quote</a>
       </div>
     </div>
@@ -718,7 +679,7 @@ footer{
   <div class="container">
     <div class="section-head reveal">
       <h2 class="section-title">Recent projects</h2>
-      <p class="section-lead">Completed decking, cladding and outdoor structure work.</p>
+      <p class="section-lead">Selected residential carpentry work with clean finishes, durable materials and practical detailing.</p>
     </div>
     <div class="gallery-grid">
       <figure class="g-item tall reveal">
@@ -741,7 +702,6 @@ footer{
   <div class="container">
     <div class="section-head reveal">
       <h2 class="section-title">A straightforward process</h2>
-      <p class="section-lead">Clear steps from first contact to handover, so you always know where your project stands.</p>
     </div>
     <div class="process-line">
       <div class="pstep reveal">
@@ -783,7 +743,7 @@ footer{
           <div class="tick">&#10003;</div>
           <div>
             <h4>Detail first</h4>
-            <p>Straight lines, tight joins and clean finishes are the standard on every job, not the exception.</p>
+            <p>Straight lines, tight joins and clean finishes are the standard on every job.</p>
           </div>
         </div>
         <div class="trust-point">
@@ -796,8 +756,8 @@ footer{
         <div class="trust-point">
           <div class="tick">&#10003;</div>
           <div>
-            <h4>Our own work, on every page</h4>
-            <p>Everything shown on this page is completed project work by Precision Residential Construction.</p>
+            <h4>Proven residential workmanship</h4>
+            <p>Decking, cladding and renovation work delivered with care across real residential projects.</p>
           </div>
         </div>
         <div class="trust-point">
@@ -890,20 +850,6 @@ footer{
         <button type="submit">Send Enquiry</button>
         <p class="form-disclaimer">Design preview: this form is not yet connected. CRM and auto-reply wiring is planned for the next build stage.</p>
       </form>
-      <div class="contact-info">
-        <div class="contact-copy">
-          <h3>Contact</h3>
-          <p>Prefer to talk it through? Call or email directly.</p>
-        </div>
-        <div class="contact-rows">
-          <a class="contact-row" href="tel:0493102169">
-            <span>Phone</span><strong>0493102169</strong>
-          </a>
-          <a class="contact-row" href="mailto:precisionrc01@gmail.com">
-            <span>Email</span><strong>precisionrc01@gmail.com</strong>
-          </a>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -929,7 +875,7 @@ footer{
       <div>
         <h4>Contact</h4>
         <ul>
-          <li><a href="tel:0493102169">0493102169</a></li>
+          <li><a href="tel:0493102169">0493 102 169</a></li>
           <li><a href="mailto:precisionrc01@gmail.com">precisionrc01@gmail.com</a></li>
         </ul>
       </div>
