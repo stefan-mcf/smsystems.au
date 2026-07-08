@@ -470,18 +470,20 @@ footer{
   .pstep{
     padding:0;
     display:grid;
-    grid-template-columns:30px minmax(0,1fr);
-    column-gap:8px;
+    grid-template-columns:26px minmax(0,1fr);
+    column-gap:16px;
     align-items:start;
   }
   .pstep .dot{
     grid-row:1 / span 2;
     width:26px;
     height:26px;
-    border:1px solid var(--line);
-    background:var(--bg);
-    font-size:11.5px;
-    justify-self:center;
+    border:0;
+    background:var(--orange-dim);
+    font-size:13px;
+    font-weight:700;
+    justify-self:start;
+    margin-top:3px;
     margin-bottom:0;
   }
   .pstep h3{
