@@ -337,6 +337,34 @@ header{
   display:grid;
   gap:0;
 }
+.contact-direct{
+  padding-top:0;
+}
+.contact-direct .section-head{
+  margin-bottom:18px;
+}
+.contact-direct .section-lead{
+  max-width:620px;
+}
+.direct-contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.direct-contact-card{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  padding:18px 20px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  text-decoration:none;
+  transition:border-color .2s;
+}
+.direct-contact-card:hover{border-color:var(--orange)}
+.direct-contact-card span{font-size:12px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;font-weight:600}
+.direct-contact-card strong{font-size:18px;font-weight:700}
 #process .section-head{margin-bottom:0}
 #process .process-line{margin-top:18px}
 
@@ -417,7 +445,7 @@ footer{
   font-weight:700;
   letter-spacing:1.5px;
   text-transform:uppercase;
-  margin-bottom:18px;
+  margin-bottom:8px;
   color:#e6e6ea;
 }
 .footer-grid ul{list-style:none;display:grid;gap:10px}
@@ -546,6 +574,8 @@ footer{
   .g-item img{min-height:240px}
   .form-grid{grid-template-columns:1fr}
   form.quote-form{padding:22px 16px}
+  .direct-contact-grid{grid-template-columns:1fr;gap:8px}
+  .direct-contact-card{padding:16px}
   footer{padding:34px 0 0}
   .footer-grid{
     grid-template-columns:1fr;
@@ -553,7 +583,7 @@ footer{
     padding-bottom:28px;
   }
   .footer-grid > div:first-child{display:none}
-  .footer-grid h4{margin-bottom:10px;font-size:13px}
+  .footer-grid h4{margin-bottom:6px;font-size:13px}
   .footer-grid ul{gap:8px}
   .footer-grid > div:nth-child(2) ul{
     display:grid;
@@ -757,7 +787,7 @@ footer{
           <div class="tick">&#10003;</div>
           <div>
             <h4>Proven residential workmanship</h4>
-            <p>Decking, cladding and renovation work delivered with care across real residential projects.</p>
+            <p>Decking, cladding and renovation work completed with practical detailing and clean finishes.</p>
           </div>
         </div>
         <div class="trust-point">
@@ -850,6 +880,25 @@ footer{
         <button type="submit">Send Enquiry</button>
         <p class="form-disclaimer">Design preview: this form is not yet connected. CRM and auto-reply wiring is planned for the next build stage.</p>
       </form>
+    </div>
+  </div>
+</section>
+
+<section class="contact-direct" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2 class="section-title">Get in contact</h2>
+      <p class="section-lead">Prefer to talk it through? Call or email directly and we can discuss your project.</p>
+    </div>
+    <div class="direct-contact-grid reveal">
+      <a class="direct-contact-card" href="tel:0493102169">
+        <span>Phone</span>
+        <strong>0493 102 169</strong>
+      </a>
+      <a class="direct-contact-card" href="mailto:precisionrc01@gmail.com">
+        <span>Email</span>
+        <strong>precisionrc01@gmail.com</strong>
+      </a>
     </div>
   </div>
 </section>
