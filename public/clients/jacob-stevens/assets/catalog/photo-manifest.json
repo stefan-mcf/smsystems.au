@@ -1,0 +1,75 @@
+{
+  "client": "Precision Residential Construction",
+  "notes": "Public-safe catalog of supplied client project photos. Existing live asset filenames are preserved separately; catalog files are copied and renamed for planning/use in the website gallery.",
+  "categories": [
+    {
+      "id": "facade-eaves-cladding",
+      "label": "Facade & Eaves Cladding",
+      "summary": "Brick facade re-clad in dark vertical timber with timber-lined eaves.",
+      "primary": "facade-after.jpg",
+      "files": [
+        {
+          "file": "facade-before.jpg",
+          "source": "../before.jpg",
+          "role": "before"
+        },
+        {
+          "file": "facade-after.jpg",
+          "source": "../after.jpg",
+          "role": "after"
+        },
+        {
+          "file": "facade-eaves-detail.jpg",
+          "source": "../img_1561.jpg",
+          "role": "detail"
+        },
+        {
+          "file": "cladding-side-detail.jpg",
+          "source": "../img_1724.jpg",
+          "role": "detail"
+        },
+        {
+          "file": "cladding-side-eaves.jpg",
+          "source": "../img_1790.jpg",
+          "role": "detail"
+        }
+      ]
+    },
+    {
+      "id": "decking",
+      "label": "Decking",
+      "summary": "Hardwood and elevated deck work, including boundary seating and glass balustrade details.",
+      "primary": "hardwood-yard-deck.jpg",
+      "files": [
+        {
+          "file": "hardwood-yard-deck.jpg",
+          "source": "../img_1114.jpg",
+          "role": "primary"
+        },
+        {
+          "file": "elevated-glass-balustrade-deck.jpg",
+          "source": "../img_1791.jpg",
+          "role": "detail"
+        },
+        {
+          "file": "hardwood-boundary-bench-deck.jpg",
+          "source": "../img_1898.jpg",
+          "role": "detail"
+        }
+      ]
+    },
+    {
+      "id": "pergolas-outdoor-structures",
+      "label": "Pergolas & Outdoor Structures",
+      "summary": "Covered outdoor structure work paired with low-maintenance decking.",
+      "primary": "composite-deck-pergola.jpg",
+      "files": [
+        {
+          "file": "composite-deck-pergola.jpg",
+          "source": "../img_1894.jpg",
+          "role": "primary"
+        }
+      ]
+    }
+  ]
+}
