@@ -5,6 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Precision Residential Construction | Decking, Cladding &amp; Carpentry</title>
 <meta name="description" content="Precision Residential Construction provides quality focused residential carpentry across Geelong and surrounds, including decking, cladding, pergolas, framing, renovations and exterior carpentry.">
+<meta property="og:title" content="Precision Residential Construction | Decking, Cladding &amp; Carpentry">
+<meta property="og:description" content="Quality focused residential carpentry across Geelong and surrounds, including decking, cladding, pergolas, framing, renovations and exterior carpentry.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://smsystems.au/clients/jacob-stevens/">
+<meta property="og:image" content="https://smsystems.au/clients/jacob-stevens/assets/after.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Precision Residential Construction | Decking, Cladding &amp; Carpentry">
+<meta name="twitter:description" content="Quality focused residential carpentry across Geelong and surrounds, including decking, cladding, pergolas, framing, renovations and exterior carpentry.">
+<meta name="twitter:image" content="https://smsystems.au/clients/jacob-stevens/assets/after.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Precision Residential Construction",
+  "telephone": "+61 493 102 169",
+  "email": "precisionrc01@gmail.com",
+  "areaServed": "Geelong and surrounds",
+  "url": "https://smsystems.au/clients/jacob-stevens/",
+  "image": "https://smsystems.au/clients/jacob-stevens/assets/after.jpg"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -237,11 +258,12 @@ header{
 .gallery-grid{
   display:grid;
   grid-template-columns:1.25fr 1fr;
-  grid-template-rows:auto auto;
+  grid-template-rows:repeat(4, auto);
   gap:18px 22px;
 }
 .g-item{display:flex;flex-direction:column;gap:12px}
 .g-item.tall{grid-row:span 2}
+.g-item.tall-right{grid-column:2;grid-row:3 / span 2}
 .g-item .frame{
   border-radius:var(--radius);
   overflow:hidden;
@@ -249,7 +271,8 @@ header{
   flex:1;
 }
 .g-item img{width:100%;height:100%;object-fit:cover;min-height:280px}
-.g-item.tall img{min-height:620px}
+.g-item.tall img,
+.g-item.tall-right img{min-height:620px}
 .g-caption{
   font-size:14px;
   color:var(--muted);
@@ -569,8 +592,10 @@ footer{
   .ba-wrap{grid-template-columns:1fr}
   .ba-item img{height:300px}
   .gallery-grid{grid-template-columns:1fr;gap:18px}
-  .g-item.tall{grid-row:span 1}
-  .g-item.tall img{min-height:320px}
+  .g-item.tall,
+  .g-item.tall-right{grid-column:1 / -1;grid-row:auto}
+  .g-item.tall img,
+  .g-item.tall-right img{min-height:320px}
   .g-item img{min-height:240px}
   .form-grid{grid-template-columns:1fr}
   form.quote-form{padding:22px 16px}
@@ -679,7 +704,7 @@ footer{
       </div>
       <div class="cell cell-text reveal">
         <h3>Exterior Carpentry</h3>
-        <p>Exterior carpentry across the home, from repairs to complete facade updates.</p>
+        <p>Exterior carpentry across the home, from fencing, gates and privacy screens to complete facade updates.</p>
       </div>
     </div>
   </div>
@@ -723,6 +748,18 @@ footer{
       <figure class="g-item reveal">
         <div class="frame"><img src="./assets/img_1894.jpg" alt="Composite decking with timber pergola posts" loading="lazy"></div>
         <figcaption class="g-caption"><strong>Composite deck &amp; pergola</strong>Low-maintenance composite boards under a timber pergola.</figcaption>
+      </figure>
+      <figure class="g-item tall-right reveal">
+        <div class="frame"><img src="./assets/pool-deck-screen.jpg" alt="Composite poolside deck with black batten privacy screening and outdoor shower" loading="lazy"></div>
+        <figcaption class="g-caption"><strong>Poolside deck &amp; screening</strong>Composite poolside deck with black batten privacy screening and outdoor shower.</figcaption>
+      </figure>
+      <figure class="g-item reveal">
+        <div class="frame"><img src="./assets/picket-fence-gate.jpg" alt="Painted picket fence and matching gate for a period weatherboard home" loading="lazy"></div>
+        <figcaption class="g-caption"><strong>Fencing &amp; gates</strong>Painted picket fence and matching gate for a period weatherboard home.</figcaption>
+      </figure>
+      <figure class="g-item reveal">
+        <div class="frame"><img src="./assets/merbau-platform-deck.jpg" alt="Ground-level merbau platform deck built as a backyard entertaining zone" loading="lazy"></div>
+        <figcaption class="g-caption"><strong>Freestanding merbau deck</strong>Ground-level merbau platform deck built as a backyard entertaining zone.</figcaption>
       </figure>
     </div>
   </div>
