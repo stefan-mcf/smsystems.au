@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Precision Residential Construction | Decking, Cladding &amp; Carpentry</title>
+<link rel="icon" type="image/png" href="./assets/favicon-prc.png">
+<link rel="apple-touch-icon" href="./assets/favicon-prc.png">
 <meta name="description" content="Precision Residential Construction provides quality focused residential carpentry across Geelong and surrounds, including decking, cladding, pergolas, framing, renovations and exterior carpentry.">
 <meta property="og:title" content="Precision Residential Construction | Decking, Cladding &amp; Carpentry">
 <meta property="og:description" content="Quality focused residential carpentry across Geelong and surrounds, including decking, cladding, pergolas, framing, renovations and exterior carpentry.">
@@ -20,7 +22,7 @@
   "@type": "LocalBusiness",
   "name": "Precision Residential Construction",
   "telephone": "+61 493 102 169",
-  "email": "precisionrc01@gmail.com",
+  "email": "jacob@prconstruction.au",
   "areaServed": "Geelong and surrounds",
   "url": "https://prconstruction.au/",
   "image": "https://prconstruction.au/assets/after.jpg"
@@ -322,7 +324,7 @@ header{
   display:grid;
   grid-template-columns:1.05fr 1fr;
   gap:44px;
-  align-items:center;
+  align-items:start;
 }
 .trust-points{margin-top:28px;display:grid;gap:18px}
 .trust-point{display:flex;gap:16px;align-items:flex-start}
@@ -445,8 +447,8 @@ form.quote-form button{
 form.quote-form button:hover{background:#ff9433}
 form.quote-form button:active{transform:translateY(1px)}
 form.quote-form button:disabled{cursor:wait;opacity:.72}
-.form-disclaimer{margin-top:10px;font-size:12.5px;color:#8b8b93;text-align:center}
-.form-status{min-height:19px;margin-top:10px;font-size:13px;text-align:center}
+.form-status{margin:10px 0 0;font-size:13px;text-align:center}
+.form-status:empty{display:none}
 .form-status.success{color:#87d49a}
 .form-status.error{color:#ff9a8c}
 
@@ -898,7 +900,6 @@ footer{
         <input type="hidden" name="page_variant" data-crm-field="page_variant" value="production_dark_orange">
         <input type="hidden" name="form_version" data-crm-field="form_version" value="1.2.0">
         <button type="submit">Send Enquiry</button>
-        <p class="form-disclaimer">We will use these details to respond to your enquiry.</p>
         <p class="form-status" id="quoteFormStatus" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -916,9 +917,9 @@ footer{
         <span>Phone</span>
         <strong>0493 102 169</strong>
       </a>
-      <a class="direct-contact-card" href="mailto:precisionrc01@gmail.com">
+      <a class="direct-contact-card" href="mailto:jacob@prconstruction.au">
         <span>Email</span>
-        <strong>precisionrc01@gmail.com</strong>
+        <strong>jacob@prconstruction.au</strong>
       </a>
     </div>
   </div>
@@ -946,7 +947,7 @@ footer{
         <h4>Contact</h4>
         <ul>
           <li><a href="tel:0493102169">0493 102 169</a></li>
-          <li><a href="mailto:precisionrc01@gmail.com">precisionrc01@gmail.com</a></li>
+          <li><a href="mailto:jacob@prconstruction.au">jacob@prconstruction.au</a></li>
         </ul>
       </div>
     </div>
@@ -1036,7 +1037,7 @@ footer{
       quoteFormStatus.textContent = result.message || 'Thanks for your enquiry. We will be in touch shortly.';
       quoteFormStatus.classList.add('success');
     } catch(error) {
-      quoteFormStatus.textContent = 'Unable to send your enquiry right now. Please call 0493 102 169 or email precisionrc01@gmail.com.';
+      quoteFormStatus.textContent = 'Unable to send your enquiry right now. Please call 0493 102 169 or email jacob@prconstruction.au.';
       quoteFormStatus.classList.add('error');
     } finally {
       quoteSubmit.disabled = false;
