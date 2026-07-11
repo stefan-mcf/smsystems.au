@@ -444,7 +444,11 @@ form.quote-form button{
 }
 form.quote-form button:hover{background:#ff9433}
 form.quote-form button:active{transform:translateY(1px)}
+form.quote-form button:disabled{cursor:wait;opacity:.72}
 .form-disclaimer{margin-top:10px;font-size:12.5px;color:#8b8b93;text-align:center}
+.form-status{min-height:19px;margin-top:10px;font-size:13px;text-align:center}
+.form-status.success{color:#87d49a}
+.form-status.error{color:#ff9a8c}
 
 /* ---------- Footer ---------- */
 footer{
@@ -836,20 +840,15 @@ footer{
       <p class="section-lead">Send through the details and we will get back to you to arrange an inspection and quote.</p>
     </div>
     <div class="quote-layout">
-      <!--
-        Static preview form: intentionally inert.
-        Structured for CRM integration in the next build pass.
-        See #automation-config script block for planned hooks.
-      -->
       <form class="quote-form reveal" id="quoteForm" action="#" method="post" data-crm-form="quote_request" novalidate>
         <div class="form-grid">
           <div class="form-field">
             <label for="full_name">Full name</label>
-            <input type="text" id="full_name" name="full_name" data-crm-field="full_name" placeholder="Your name" autocomplete="name">
+            <input type="text" id="full_name" name="full_name" data-crm-field="full_name" placeholder="Your name" autocomplete="name" required>
           </div>
           <div class="form-field">
             <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" data-crm-field="phone" placeholder="Your phone number" autocomplete="tel">
+            <input type="tel" id="phone" name="phone" data-crm-field="phone" placeholder="Your phone number" autocomplete="tel" required>
           </div>
           <div class="form-field">
             <label for="email">Email</label>
@@ -896,10 +895,11 @@ footer{
           </div>
         </div>
         <input type="hidden" name="lead_source" data-crm-field="lead_source" value="website_quote_form">
-        <input type="hidden" name="page_variant" data-crm-field="page_variant" value="preview_v2_dark_orange">
-        <input type="hidden" name="form_version" data-crm-field="form_version" value="1.1.0">
+        <input type="hidden" name="page_variant" data-crm-field="page_variant" value="production_dark_orange">
+        <input type="hidden" name="form_version" data-crm-field="form_version" value="1.2.0">
         <button type="submit">Send Enquiry</button>
-        <p class="form-disclaimer">Design preview: this form is not yet connected. CRM and auto-reply wiring is planned for the next build stage.</p>
+        <p class="form-disclaimer">We will use these details to respond to your enquiry.</p>
+        <p class="form-status" id="quoteFormStatus" role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
@@ -957,15 +957,11 @@ footer{
   </div>
 </footer>
 
-<!--
-  Automation readiness config (documentation only, nothing executes or sends).
-  Next build pass will wire these hooks to the live CRM stack.
--->
 <script type="application/json" id="automation-config">
 {
   "form_id": "quoteForm",
-  "form_version": "1.1.0",
-  "page_variant": "preview_v2_dark_orange",
+  "form_version": "1.2.0",
+  "page_variant": "production_dark_orange",
   "lead_source": "website_quote_form",
   "crm_fields": [
     "full_name", "phone", "email", "suburb",
@@ -974,16 +970,16 @@ footer{
   ],
   "planned_hooks": {
     "crm_lead_creation": {
-      "description": "On submit, create a lead in the CRM with all data-crm-field values.",
-      "status": "not_wired"
+      "description": "On submit, create a lead record with all data-crm-field values.",
+      "status": "wired"
     },
     "instant_auto_reply": {
       "description": "Send instant email and/or SMS confirmation to the enquirer based on preferred_contact_method.",
       "status": "not_wired"
     },
     "internal_notification": {
-      "description": "Notify Jacob (SMS/email/push) with lead summary immediately after submission.",
-      "status": "not_wired"
+      "description": "Send an internal email notification with the lead summary immediately after submission.",
+      "status": "wired"
     },
     "follow_up_sequence": {
       "description": "Enrol lead in a timed follow-up sequence if no response within a set window.",
@@ -1009,8 +1005,43 @@ footer{
     if(e.target.tagName === 'A'){ links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
   });
 
-  document.getElementById('quoteForm').addEventListener('submit', function(e){
+  var quoteForm = document.getElementById('quoteForm');
+  var quoteFormStatus = document.getElementById('quoteFormStatus');
+  var quoteSubmit = quoteForm.querySelector('button[type="submit"]');
+
+  quoteForm.addEventListener('submit', async function(e){
     e.preventDefault();
+    quoteFormStatus.textContent = '';
+    quoteFormStatus.className = 'form-status';
+
+    if(!quoteForm.checkValidity()){
+      quoteForm.reportValidity();
+      return;
+    }
+
+    var data = Object.fromEntries(new FormData(quoteForm).entries());
+    quoteSubmit.disabled = true;
+    quoteSubmit.textContent = 'Sending...';
+
+    try {
+      var response = await fetch('https://smsystems.app.n8n.cloud/webhook/precision-quote-request', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+      });
+      var result = await response.json().catch(function(){ return {}; });
+      if(!response.ok || !result.ok) throw new Error(result.message || 'Unable to send enquiry.');
+
+      quoteForm.reset();
+      quoteFormStatus.textContent = result.message || 'Thanks for your enquiry. We will be in touch shortly.';
+      quoteFormStatus.classList.add('success');
+    } catch(error) {
+      quoteFormStatus.textContent = 'Unable to send your enquiry right now. Please call 0493 102 169 or email precisionrc01@gmail.com.';
+      quoteFormStatus.classList.add('error');
+    } finally {
+      quoteSubmit.disabled = false;
+      quoteSubmit.textContent = 'Send Enquiry';
+    }
   });
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
