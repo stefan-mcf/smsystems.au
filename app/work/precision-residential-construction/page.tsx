@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     'The Precision Residential Construction website project: services, project photography, direct contact options, and a structured quote enquiry flow.',
   alternates: {
-    canonical: '/work/precision-residential-construction',
+    canonical: '/work/precision-residential-construction/',
   },
 };
 

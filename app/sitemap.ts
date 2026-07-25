@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${canonicalSiteUrl}/`, lastModified },
     {
-      url: `${canonicalSiteUrl}/work/precision-residential-construction`,
+      url: `${canonicalSiteUrl}/work/precision-residential-construction/`,
       lastModified,
     },
   ];
