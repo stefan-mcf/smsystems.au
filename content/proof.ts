@@ -195,6 +195,12 @@ export const proofItems: ProofItem[] = [
           caption:
             'Recent-project gallery presenting completed work with clear project descriptions.',
         },
+        {
+          src: '/precision/website-quote-crm.png',
+          alt: 'Precision Residential Construction quote enquiry form collecting contact details, project location, service type, timeframe, preferred contact method, and project details.',
+          caption:
+            'Structured quote intake captures the project details needed for CRM follow-up.',
+        },
       ],
     },
     featured: true,
