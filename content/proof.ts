@@ -145,6 +145,62 @@ export const proofItems: ProofItem[] = [
     featured: true,
   },
   {
+    slug: 'precision-residential-construction-website',
+    title: 'Precision Residential Construction website',
+    lane: 'Client project',
+    problemShape:
+      'A customer-facing residential construction website combining services, project photography, before-and-after work, direct contact options, and a structured quote enquiry form.',
+    primaryLink: 'https://prconstruction.au/',
+    primaryLinkLabel: 'Visit live website',
+    caseStudy: {
+      proofStrip: [
+        {
+          label: 'CUSTOMER WEBSITE',
+          title: 'Services and project proof',
+          body: 'A clear path through services, completed work, and before-and-after results.',
+        },
+        {
+          label: 'LEAD CAPTURE',
+          title: 'Quote enquiry form',
+          body: 'A structured enquiry flow for contact details, suburb, service type, timing, and preferred contact method.',
+        },
+        {
+          label: 'DIRECT CONTACT',
+          title: 'Call and email actions',
+          body: 'Prominent phone, quote, and email paths across desktop and mobile layouts.',
+        },
+      ],
+      screenshots: [
+        {
+          src: '/precision/website-homepage.png',
+          alt: 'Precision Residential Construction homepage with service navigation, contact actions, and residential project photography.',
+          caption:
+            'Customer-facing homepage with clear service navigation, phone contact, and quote actions.',
+        },
+        {
+          src: '/precision/website-services.png',
+          alt: 'Precision Residential Construction services section showing decking, framing, pergolas, renovations, cladding, and exterior carpentry.',
+          caption:
+            'Services section covering the company’s residential carpentry and construction work.',
+        },
+        {
+          src: '/precision/website-before-after.png',
+          alt: 'Precision Residential Construction before-and-after section comparing the original brick facade with the completed timber re-clad.',
+          caption:
+            'Before-and-after project presentation showing the completed exterior transformation.',
+        },
+        {
+          src: '/precision/website-projects.png',
+          alt: 'Precision Residential Construction recent projects gallery showing completed hardwood and glass-balustrade decking.',
+          caption:
+            'Recent-project gallery presenting completed work with clear project descriptions.',
+        },
+      ],
+    },
+    featured: true,
+    anchorClient: true,
+  },
+  {
     slug: 'rfid-subscription-access-system',
     title: 'RFID carwash subscription access system',
     lane: 'Client project',

@@ -8,7 +8,7 @@ import { siteMeta } from '@/content/site';
 
 export default function HomePage() {
   const featuredProof = proofItems.filter((item) => item.featured && !item.anchorClient);
-  const rfidProof = proofItems.find((item) => item.anchorClient);
+  const clientProof = proofItems.filter((item) => item.anchorClient);
 
   return (
     <>
@@ -22,10 +22,10 @@ export default function HomePage() {
             body="Examples of workflow automation, integrations, data syncs, operator tools, and review-gated systems showing the tool, the data path, and the result."
           />
         </div>
-        {rfidProof ? (
+        {clientProof.length ? (
           <div className="home-anchor-work" data-reveal>
-            <p className="work-group-heading">Client project</p>
-            <ProofGrid items={[rfidProof]} />
+            <p className="work-group-heading">Client projects</p>
+            <ProofGrid items={clientProof} />
           </div>
         ) : null}
         <div className="home-tool-work" data-reveal>

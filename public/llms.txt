@@ -23,6 +23,9 @@ SM Systems builds workflow automation and integration tools that connect website
 
 ## Featured Proof
 
+Precision Residential Construction website:
+A customer-facing residential construction website covering services, completed projects, before-and-after work, direct contact options, and a structured quote enquiry form.
+
 RFID carwash subscription access system:
 A client application covering customer plan selection, account and checkout flows, tag administration, backend decisions, PostgreSQL-backed records, and an operator dashboard.
 
