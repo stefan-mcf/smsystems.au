@@ -1833,6 +1833,178 @@ strong {
   transform: scale(0.92);
 }
 
+.case-study-page {
+  display: grid;
+  gap: clamp(2rem, 5vw, 5rem);
+  padding-top: clamp(1rem, 2.8vw, 2.4rem);
+}
+
+.case-study-hero {
+  display: grid;
+  justify-items: start;
+  max-width: 66rem;
+  padding: clamp(1.2rem, 3vw, 2.8rem) 0 clamp(1rem, 2vw, 2rem);
+}
+
+.case-study-back {
+  margin-bottom: clamp(2rem, 5vw, 4.5rem);
+}
+
+.case-study-hero h1,
+.case-study-section-heading h2,
+.case-study-content-grid h2,
+.case-study-final h2 {
+  color: var(--ink);
+  font-weight: 760;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+}
+
+.case-study-hero h1 {
+  max-width: 15ch;
+  margin: 0.8rem 0 1.15rem;
+  font-size: clamp(2.65rem, 6vw, 5.8rem);
+}
+
+.case-study-lede {
+  max-width: 49rem;
+  color: #41494a;
+  font-size: clamp(1.06rem, 1.55vw, 1.3rem);
+}
+
+.case-study-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.case-study-overview,
+.case-study-content-grid,
+.case-study-shot,
+.case-study-final {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  background: rgba(241, 243, 243, 0.9);
+}
+
+.case-study-section-heading {
+  display: grid;
+  gap: 0.75rem;
+  padding: clamp(1.25rem, 2.6vw, 2.2rem);
+}
+
+.case-study-section-heading h2,
+.case-study-final h2 {
+  max-width: 19ch;
+  font-size: clamp(1.9rem, 4vw, 3.8rem);
+}
+
+.case-study-section-heading > p:last-child,
+.case-study-final p,
+.case-study-content-grid p {
+  max-width: 50rem;
+  color: #596466;
+}
+
+.case-study-content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+}
+
+.case-study-content-grid article {
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+  padding: clamp(1.2rem, 2.4vw, 2rem);
+  background: rgba(241, 243, 243, 0.96);
+}
+
+.case-study-content-grid h2 {
+  font-size: clamp(1.35rem, 2.1vw, 2.05rem);
+}
+
+.case-study-gallery {
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 1.8rem);
+}
+
+.case-study-gallery > .case-study-section-heading {
+  padding-inline: 0;
+}
+
+.case-study-shot-list {
+  display: grid;
+  gap: clamp(1.2rem, 3.2vw, 2.8rem);
+}
+
+.case-study-shot {
+  margin: 0;
+}
+
+.case-study-shot-media {
+  background: #101417;
+}
+
+.case-study-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.case-study-shot figcaption {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: clamp(0.95rem, 1.8vw, 1.35rem);
+  border-top: 1px solid var(--line);
+}
+
+.case-study-shot figcaption > span:last-child {
+  display: grid;
+  gap: 0.32rem;
+}
+
+.case-study-shot figcaption strong {
+  color: var(--ink);
+  font-size: clamp(1rem, 1.4vw, 1.22rem);
+}
+
+.case-study-shot figcaption span span {
+  color: #596466;
+  font-size: 0.86rem;
+}
+
+.case-study-shot-index {
+  color: #405866;
+  font-family: "Geist Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 760;
+  letter-spacing: 0.1em;
+}
+
+.case-study-final {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: end;
+  padding: clamp(1.25rem, 3vw, 2.6rem);
+}
+
+.case-study-final > div:first-child {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.case-study-final .case-study-actions {
+  justify-content: flex-end;
+  margin-top: 0;
+}
+
 @media (max-width: 640px) {
   .screenshot-carousel-btn {
     width: 2.75rem;
@@ -1845,6 +2017,38 @@ strong {
 
   .screenshot-carousel-next {
     right: 0.28rem;
+  }
+
+  .case-study-page {
+    gap: 2.4rem;
+    padding-top: 0.5rem;
+  }
+
+  .case-study-back {
+    margin-bottom: 1.6rem;
+  }
+
+  .case-study-hero h1 {
+    font-size: clamp(2.25rem, 12vw, 3.25rem);
+  }
+
+  .case-study-actions,
+  .case-study-actions .button {
+    width: 100%;
+  }
+
+  .case-study-content-grid,
+  .case-study-final {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .case-study-shot figcaption {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.4rem;
+  }
+
+  .case-study-final .case-study-actions {
+    justify-content: stretch;
   }
 }
 
