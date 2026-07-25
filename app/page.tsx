@@ -24,7 +24,7 @@ export default function HomePage() {
         </div>
         {rfidProof ? (
           <div className="home-anchor-work" data-reveal>
-            <p className="work-group-heading">Deployed Systems</p>
+            <p className="work-group-heading">Client project</p>
             <ProofGrid items={[rfidProof]} />
           </div>
         ) : null}

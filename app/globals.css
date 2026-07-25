@@ -247,6 +247,9 @@ strong {
 }
 
 .brand {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
   width: max-content;
   font-size: clamp(1rem, 1.22vw, 1.14rem);
   font-weight: 780;
@@ -259,7 +262,6 @@ strong {
 .hero-ledger-label,
 .hero-status-mark,
 .service-mini-label,
-.proof-boundary-label,
 .footer-heading {
   font-family: "Geist Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   text-transform: uppercase;
@@ -552,6 +554,7 @@ strong {
 
 .button {
   display: inline-flex;
+  min-height: 2.75rem;
   min-width: 8.6rem;
   align-items: center;
   justify-content: center;
@@ -596,6 +599,8 @@ strong {
 
 .text-link {
   display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
   width: max-content;
   color: var(--accent-strong);
   font-weight: 720;
@@ -696,7 +701,6 @@ strong {
 
 .hero-status-mark,
 .service-mini-label,
-.proof-boundary-label,
 .hero-ledger-label,
 .footer-heading {
   color: var(--warm);
@@ -1492,7 +1496,6 @@ strong {
 .service-milestone,
 .service-proof-block,
 .service-card-cta,
-.proof-boundary-block,
 .proof-case-study,
 .fit-panel-heading,
 .fit-signal-list {
@@ -1511,12 +1514,6 @@ strong {
   font-weight: 680;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-}
-
-.proof-boundary-block {
-  margin-top: 0.2rem;
-  padding: 0.75rem 0 0;
-  border-top: 1px solid var(--line);
 }
 
 .proof-case-study {
@@ -1628,7 +1625,7 @@ strong {
 }
 
 .proof-technical-receipts[open] summary::after {
-  content: "–";
+  content: "-";
 }
 
 .proof-technical-receipts ul {
@@ -1733,8 +1730,8 @@ strong {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border: 1px solid rgba(18, 22, 23, 0.24);
   border-radius: 2px;
   background:
@@ -1799,22 +1796,35 @@ strong {
 }
 
 .screenshot-carousel-dot {
+  position: relative;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.screenshot-carousel-dot::before {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 50%;
   width: 0.52rem;
   height: 0.52rem;
   border: 1px solid rgba(18, 22, 23, 0.18);
   border-radius: 2px;
   background: rgba(18, 22, 23, 0.08);
-  cursor: pointer;
-  padding: 0;
-  transition: background 180ms cubic-bezier(0.16, 1, 0.3, 1), border-color 180ms cubic-bezier(0.16, 1, 0.3, 1), transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translate(-50%, -50%);
+  transition: background 180ms cubic-bezier(0.16, 1, 0.3, 1), border-color 180ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.screenshot-carousel-dot:hover {
+.screenshot-carousel-dot:hover::before {
   background: rgba(18, 22, 23, 0.14);
   border-color: rgba(18, 22, 23, 0.24);
 }
 
-.screenshot-carousel-dot.is-active {
+.screenshot-carousel-dot.is-active::before {
   background: var(--ink);
   border-color: var(--ink);
 }
@@ -1825,8 +1835,8 @@ strong {
 
 @media (max-width: 640px) {
   .screenshot-carousel-btn {
-    width: 1.9rem;
-    height: 1.9rem;
+    width: 2.75rem;
+    height: 2.75rem;
   }
 
   .screenshot-carousel-prev {
@@ -1889,20 +1899,6 @@ strong {
 .proof-case-limits span {
   color: #4f5e62;
   font-weight: 720;
-}
-
-.proof-limit-copy {
-  color: #596466;
-  font-size: 0.86rem;
-}
-
-.proof-boundary-label {
-  width: max-content;
-  max-width: 100%;
-  color: #405866 !important;
-  font-size: 0.72rem !important;
-  font-weight: 760;
-  letter-spacing: 0.105em;
 }
 
 .service-cell,
@@ -2506,6 +2502,10 @@ strong {
 }
 
 .footer-contact-links a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  align-items: center;
   padding: 0.18rem 0;
   color: #5d6668;
   font-size: 0.72rem;
@@ -3445,6 +3445,10 @@ body::after {
 }
 
 .site-nav a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
   min-width: 5.8rem;
   border-right: 1px solid rgba(18, 22, 23, 0.12);
   padding: 0.56rem 0.88rem;
@@ -3575,7 +3579,6 @@ body::after {
 .proof-lane,
 .hero-status-mark,
 .service-mini-label,
-.proof-boundary-label,
 .hero-ledger-label,
 .footer-heading,
 .process-step-heading p {
@@ -3781,6 +3784,7 @@ body::after {
   .footer-contact-links {
     justify-content: flex-start;
   }
+
 }
 
 @media (max-width: 560px) {
@@ -3833,8 +3837,11 @@ body::after {
   }
 
   .home-proof-shell .section-intro h2 {
+    max-width: 18ch;
     font-size: clamp(1.45rem, 7.5vw, 1.95rem);
     letter-spacing: -0.065em;
+    white-space: normal;
+    overflow-wrap: break-word;
   }
 
   .home-proof-shell .section-body {

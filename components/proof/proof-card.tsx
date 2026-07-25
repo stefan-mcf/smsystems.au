@@ -50,16 +50,13 @@ export function ProofCard({ item }: ProofCardProps) {
               </section>
             ) : null}
           </div>
-        ) : (
-          <div className="proof-boundary-block">
-            <p>{item.whatItProves}</p>
-            <p className="proof-limit-copy">{item.boundary}</p>
-          </div>
-        )}
+        ) : null}
 
-        <Link className="text-link" href={item.primaryLink}>
-          {item.primaryLinkLabel}
-        </Link>
+        {item.primaryLink && item.primaryLinkLabel ? (
+          <Link className="text-link" href={item.primaryLink}>
+            {item.primaryLinkLabel}
+          </Link>
+        ) : null}
       </div>
     </details>
   );

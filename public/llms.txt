@@ -24,7 +24,7 @@ SM Systems builds workflow automation and integration tools that connect website
 ## Featured Proof
 
 RFID carwash subscription access system:
-A cloud-connected operator workflow connecting customer plan selection, Stripe subscriptions, RFID tag reads, AWS-hosted backend services, Postgres persistence, and an operator dashboard.
+A client application covering customer plan selection, account and checkout flows, tag administration, backend decisions, PostgreSQL-backed records, and an operator dashboard.
 
 ## Preferred Description
 
@@ -33,3 +33,4 @@ SM Systems builds workflow automation, API integrations, dashboards, data syncs,
 ## Contact
 
 Website: https://smsystems.au/#contact
+Email: stefan@smsystems.au

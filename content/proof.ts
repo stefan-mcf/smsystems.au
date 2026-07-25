@@ -3,10 +3,8 @@ export type ProofItem = {
   title: string;
   lane: string;
   problemShape: string;
-  whatItProves: string;
-  boundary: string;
-  primaryLink: string;
-  primaryLinkLabel: string;
+  primaryLink?: string;
+  primaryLinkLabel?: string;
   caseStudy?: {
     outcome?: string;
     problem?: string;
@@ -36,8 +34,6 @@ export const proofItems: ProofItem[] = [
     lane: 'Workflow diagnostics',
     problemShape:
       'A local debugger that normalizes event data, assigns trace IDs, classifies failure types, and produces reviewable diagnosis and replay reports.',
-    whatItProves: 'A repeatable way to reproduce the fault, explain it, and leave a diagnosis packet someone else can review.',
-    boundary: 'Portfolio entry for debugging workflow shape; not a blanket claim about every platform or production context.',
     primaryLink: 'https://github.com/stefan-mcf/automation-debugger',
     primaryLinkLabel: 'View GitHub README',
     caseStudy: {
@@ -49,8 +45,8 @@ export const proofItems: ProofItem[] = [
         },
         {
           label: 'Tested',
-          title: '44 passing gates',
-          body: 'ruff, mypy, and pytest back the local walkthrough and synthetic request/response contracts.',
+          title: '44 passing tests',
+          body: 'The recorded local run has 44 passing pytest tests, plus passing Ruff and mypy checks over the fixture-safe implementation.',
         },
         {
           label: 'Output',
@@ -67,8 +63,6 @@ export const proofItems: ProofItem[] = [
     lane: 'Integrations',
     problemShape:
       'A FastAPI bridge that receives synthetic webhook events, validates fields, maps them through explicit JSON configs, and records audit trails with dead-letter handling.',
-    whatItProves: 'Readable payload mapping, retry-aware data paths, and evidence that the expected data made the trip.',
-    boundary: 'Presented as evidence of workflow shape and implementation quality rather than universal integration coverage.',
     primaryLink: 'https://github.com/stefan-mcf/api-webhook-bridge',
     primaryLinkLabel: 'View GitHub README',
     caseStudy: {
@@ -98,8 +92,6 @@ export const proofItems: ProofItem[] = [
     lane: 'Reporting',
     problemShape:
       'A reconciliation sync that loads synthetic source events, matches orders to payments, classifies exceptions, and emits Airtable-ready operations plus Sheets-ready CSV ledger rows.',
-    whatItProves: 'Configurable mapping, before-and-after checks, and reporting that makes cleanup decisions visible.',
-    boundary: 'Portfolio entry for sync and reporting work under controlled fixtures and explicit output boundaries.',
     primaryLink: 'https://github.com/stefan-mcf/sheets-airtable-sync',
     primaryLinkLabel: 'View GitHub README',
     caseStudy: {
@@ -129,8 +121,6 @@ export const proofItems: ProofItem[] = [
     lane: 'AI review checkpoints',
     problemShape:
       'A deterministic router that validates workflow contracts, attaches confidence metadata, auto-completes only when policy allows, and writes review packets when it should pause.',
-    whatItProves: 'Approval gates, operator controls, and a practical boundary between automation and judgment.',
-    boundary: 'Not a claim of autonomous magic; a portfolio lane for review-gated workflow design and implementation.',
     primaryLink: 'https://github.com/stefan-mcf/review-router',
     primaryLinkLabel: 'View GitHub README',
     caseStudy: {
@@ -157,42 +147,51 @@ export const proofItems: ProofItem[] = [
   {
     slug: 'rfid-subscription-access-system',
     title: 'RFID carwash subscription access system',
-    lane: 'Deployed client system',
-    problemShape: 'A hands-free carwash access workflow: the customer chooses a wash plan, Stripe handles subscription checkout, an RFID tag identifies the vehicle at the bay, and the backend returns the approved package decision to operators.',
-    whatItProves: 'Comfort across edge devices, backend flows, and the boring constraints that decide whether a system survives contact with the floor.',
-    boundary: 'Framed as a deployed anchor-client system, not a generic packaged SaaS or broad-market claim.',
-    primaryLink: '/#rfid-subscription-access-system',
-    primaryLinkLabel: 'View case study',
+    lane: 'Client project',
+    problemShape:
+      'A carwash subscription and access system linking customer plan selection, checkout, accounts, tag registration, backend decisions, database records, and operator dashboards.',
     caseStudy: {
       proofStrip: [
         {
-          label: 'BUILT',
-          title: 'Subscription-to-tag flow',
-          body: 'Customer plan selection, secure checkout, account/signup state, and operator RFID tag assignment.',
+          label: 'CUSTOMER FLOW',
+          title: 'Plans and checkout',
+          body: 'Customer plan selection, account and signup flows, and secure checkout-session handling.',
         },
         {
-          label: 'DEPLOYED',
-          title: 'Cloud runtime and database',
-          body: 'ASP.NET Core API on AWS with Postgres persistence for tags, events, subscriptions, and signup state.',
+          label: 'ACCOUNT TOOLS',
+          title: 'Account and tag management',
+          body: 'Customer accounts, subscription records, and operator-managed tag assignments.',
         },
         {
-          label: 'PROVED',
-          title: 'Hands-free access path',
-          body: 'Reader tag detection posts to the API, which approves or denies access and returns the selected wash tier.',
+          label: 'OPERATOR VIEW',
+          title: 'Dashboard and events',
+          body: 'Operator visibility into access decisions, wash tiers, runtime status, and event history.',
         },
       ],
       screenshots: [
         {
           src: '/rfid/operator-dashboard.png',
-          alt: 'Sanitized RFID operator dashboard showing the approval workflow, tier decision, runtime health, and recent event structure without live customer or tag identifiers.',
+          alt: 'RFID operator dashboard showing access decisions, wash tiers, system status, and recent event history.',
           caption:
-            'Sanitized operator dashboard view showing the approval workflow, tier decision, and event tracking without live identifiers.',
+            'Operator dashboard for reviewing access decisions, wash tiers, system status, and event history.',
+        },
+        {
+          src: '/rfid/operator-tag-setup.png',
+          alt: 'RFID operator dashboard Tag Setup workspace with tag selection, claim-code activation, and manual activation controls.',
+          caption:
+            'Tag Setup workspace for selecting tags, activating customer claim codes, and managing tag assignments.',
+        },
+        {
+          src: '/rfid/operator-wash-test.png',
+          alt: 'RFID operator dashboard Wash Test workspace with automation modes and wash-output signal indicators.',
+          caption:
+            'Wash Test workspace for selecting an automation mode and monitoring wash-output signals.',
         },
         {
           src: '/rfid/subscription-website.png',
-          alt: 'Modular National Cleaning subscription website showing Standard, Premium, and Ultimate monthly wash plan cards.',
+          alt: 'Subscription website showing Standard, Premium, and Ultimate monthly wash-plan cards.',
           caption:
-            'Customer plan-selection surface proving Standard, Premium, and Ultimate subscription setup before secure checkout.',
+            'Customer plan-selection screen showing Standard, Premium, and Ultimate options before checkout.',
         },
       ],
     },

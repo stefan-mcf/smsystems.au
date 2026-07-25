@@ -1,5 +1,5 @@
 export const contactLinks = {
-  email: 'mcfeeters.stefan@gmail.com',
+  email: 'stefan@smsystems.au',
   linkedin: 'https://www.linkedin.com/in/stefan-mcfeeters/',
   github: 'https://github.com/stefan-mcf',
   upwork: 'https://www.upwork.com/freelancers/~015484e7f9add4d6de?mp_source=share',
