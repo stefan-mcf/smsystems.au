@@ -6,6 +6,14 @@ const precisionWebsite = proofItems.find(
   (item) => item.slug === 'precision-residential-construction-website',
 );
 
+const detailScreenshotSources = [
+  { src: '/precision/website-homepage.png', width: 1280, height: 720 },
+  { src: '/precision/website-services-full.png', width: 1280, height: 864 },
+  { src: '/precision/website-before-after-full.png', width: 1280, height: 753 },
+  { src: '/precision/website-projects-full.png', width: 1280, height: 1219 },
+  { src: '/precision/website-quote-crm-full.png', width: 1280, height: 867 },
+];
+
 export const metadata: Metadata = {
   title: 'Precision Residential Construction website | SM Systems',
   description:
@@ -21,7 +29,12 @@ export default function PrecisionResidentialConstructionPage() {
   }
 
   const proofStrip = precisionWebsite.caseStudy.proofStrip ?? [];
-  const screenshots = precisionWebsite.caseStudy.screenshots ?? [];
+  const screenshots = (precisionWebsite.caseStudy.screenshots ?? []).map(
+    (screenshot, index) => ({
+      ...screenshot,
+      ...detailScreenshotSources[index],
+    }),
+  );
   const screenshotTitles = [
     'Homepage and contact actions',
     'Services at a glance',
@@ -55,6 +68,42 @@ export default function PrecisionResidentialConstructionPage() {
           </Link>
         </div>
       </header>
+
+      <section className="case-study-gallery" aria-labelledby="website-walkthrough">
+        <div className="case-study-section-heading">
+          <p className="proof-lane">Website walkthrough</p>
+          <h2 id="website-walkthrough">The published customer experience.</h2>
+          <p>
+            The core website sections are shown in sequence below, from first
+            impression through to quote enquiry.
+          </p>
+        </div>
+
+        <div className="case-study-shot-list">
+          {screenshots.map((screenshot, index) => (
+            <figure className="case-study-shot" key={screenshot.src}>
+              <div className="case-study-shot-media">
+                <img
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  width={screenshot.width}
+                  height={screenshot.height}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
+              </div>
+              <figcaption>
+                <span className="case-study-shot-index">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span>
+                  <strong>{screenshotTitles[index] ?? `Website view ${index + 1}`}</strong>
+                  <span>{screenshot.caption}</span>
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
 
       <section className="case-study-overview" aria-labelledby="project-overview">
         <div className="case-study-section-heading">
@@ -99,42 +148,6 @@ export default function PrecisionResidentialConstructionPage() {
             customer can choose the contact path that suits them.
           </p>
         </article>
-      </section>
-
-      <section className="case-study-gallery" aria-labelledby="website-walkthrough">
-        <div className="case-study-section-heading">
-          <p className="proof-lane">Website walkthrough</p>
-          <h2 id="website-walkthrough">The published customer experience.</h2>
-          <p>
-            The core website screens are laid out in sequence below, showing
-            the customer journey from first impression through to quote enquiry.
-          </p>
-        </div>
-
-        <div className="case-study-shot-list">
-          {screenshots.map((screenshot, index) => (
-            <figure className="case-study-shot" key={screenshot.src}>
-              <div className="case-study-shot-media">
-                <img
-                  src={screenshot.src}
-                  alt={screenshot.alt}
-                  width="1280"
-                  height="720"
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                />
-              </div>
-              <figcaption>
-                <span className="case-study-shot-index">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span>
-                  <strong>{screenshotTitles[index] ?? `Website view ${index + 1}`}</strong>
-                  <span>{screenshot.caption}</span>
-                </span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
       </section>
 
       <section className="case-study-final">
