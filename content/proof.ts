@@ -5,6 +5,7 @@ export type ProofItem = {
   problemShape: string;
   primaryLink?: string;
   primaryLinkLabel?: string;
+  caseStudyLink?: string;
   caseStudy?: {
     outcome?: string;
     problem?: string;
@@ -152,6 +153,7 @@ export const proofItems: ProofItem[] = [
       'A customer-facing residential construction website combining services, project photography, before-and-after work, direct contact options, and a structured quote enquiry form.',
     primaryLink: 'https://prconstruction.au/',
     primaryLinkLabel: 'Visit live website',
+    caseStudyLink: '/work/precision-residential-construction/',
     caseStudy: {
       proofStrip: [
         {
@@ -212,6 +214,7 @@ export const proofItems: ProofItem[] = [
     lane: 'Client project',
     problemShape:
       'A carwash subscription and access system linking customer plan selection, checkout, accounts, tag registration, backend decisions, database records, and operator dashboards.',
+    caseStudyLink: '/work/rfid-subscription-access-system/',
     caseStudy: {
       proofStrip: [
         {

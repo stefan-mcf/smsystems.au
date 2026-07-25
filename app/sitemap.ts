@@ -13,5 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${canonicalSiteUrl}/work/precision-residential-construction/`,
       lastModified,
     },
+    {
+      url: `${canonicalSiteUrl}/work/rfid-subscription-access-system/`,
+      lastModified,
+    },
   ];
 }

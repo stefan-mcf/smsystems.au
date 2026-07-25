@@ -1458,6 +1458,17 @@ strong {
   padding: 0 clamp(1.15rem, 2vw, 1.6rem) clamp(0.85rem, 1.35vw, 1.1rem);
 }
 
+.proof-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.72rem;
+  align-items: center;
+}
+
+.proof-card-actions .button {
+  min-width: 12rem;
+}
+
 .proof-card-toggle {
   position: relative;
   width: 2rem;
@@ -1864,6 +1875,10 @@ strong {
   max-width: 15ch;
   margin: 0.8rem 0 1.15rem;
   font-size: clamp(2.65rem, 6vw, 5.8rem);
+}
+
+.case-study-hero h1.case-study-title-wide {
+  max-width: 21ch;
 }
 
 .case-study-lede {
@@ -4078,6 +4093,11 @@ body::after {
 
   .proof-card-detail {
     padding: 0 1rem 1rem;
+  }
+
+  .proof-card-actions,
+  .proof-card-actions .button {
+    width: 100%;
   }
 
   .about-card {

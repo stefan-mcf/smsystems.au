@@ -52,7 +52,18 @@ export function ProofCard({ item }: ProofCardProps) {
           </div>
         ) : null}
 
-        {item.primaryLink && item.primaryLinkLabel ? (
+        {item.caseStudyLink ? (
+          <div className="proof-card-actions">
+            <Link className="button button-primary" href={item.caseStudyLink}>
+              View full case study
+            </Link>
+            {item.primaryLink && item.primaryLinkLabel ? (
+              <Link className="button button-secondary" href={item.primaryLink}>
+                {item.primaryLinkLabel}
+              </Link>
+            ) : null}
+          </div>
+        ) : item.primaryLink && item.primaryLinkLabel ? (
           <Link className="text-link" href={item.primaryLink}>
             {item.primaryLinkLabel}
           </Link>
