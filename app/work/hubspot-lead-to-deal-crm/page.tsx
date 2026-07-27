@@ -9,26 +9,23 @@ const hubspotLeadToDeal = proofItems.find(
 const screenshotLayout = [
   {
     src: '/hubspot-lead-to-deal/lead-to-deal-pipeline.png',
-    title: 'HubSpot lead-to-deal CRM implementation',
     width: 1280,
     height: 960,
   },
   {
     src: '/hubspot-lead-to-deal/connected-crm-records.png',
-    title: 'HubSpot company, contact, and deal associations',
     width: 1280,
     height: 960,
   },
   {
     src: '/hubspot-lead-to-deal/auditable-stage-history.png',
-    title: 'HubSpot deal stage history',
     width: 1280,
     height: 960,
   },
 ];
 
 export const metadata: Metadata = {
-  title: 'HubSpot lead-to-deal CRM implementation | SM Systems',
+  title: 'HubSpot CRM pipeline and record controls | SM Systems',
   description:
     'A private HubSpot CRM implementation with controlled pipeline stages, linked records, stable deduplication, provider readback, and exact cleanup.',
   alternates: {
@@ -61,7 +58,7 @@ export default function HubspotLeadToDealCrmPage() {
         </Link>
         <p className="eyebrow">Featured build</p>
         <h1 className="case-study-title-wide">
-          HubSpot lead-to-deal CRM implementation
+          HubSpot CRM pipeline and record controls
         </h1>
         <p className="case-study-lede">
           A private HubSpot CRM implementation with controlled pipeline stages,
@@ -106,7 +103,6 @@ export default function HubspotLeadToDealCrmPage() {
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <span>
-                  <strong>{screenshot.title}</strong>
                   <span>{screenshot.caption}</span>
                 </span>
               </figcaption>
