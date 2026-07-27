@@ -55,6 +55,7 @@ export function ScreenshotCarousel({ screenshots }: ScreenshotCarouselProps) {
   }, [count, goPrev, goNext]);
 
   const current = screenshots[index];
+  const frame = screenshots[0];
 
   return (
     <div className="screenshot-carousel">
@@ -74,8 +75,8 @@ export function ScreenshotCarousel({ screenshots }: ScreenshotCarouselProps) {
           <span
             className="proof-screenshot-frame screenshot-carousel-frame"
             style={
-              current.width && current.height
-                ? { aspectRatio: `${current.width} / ${current.height}` }
+              frame.width && frame.height
+                ? { aspectRatio: `${frame.width} / ${frame.height}` }
                 : undefined
             }
           >

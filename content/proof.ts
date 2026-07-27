@@ -179,30 +179,40 @@ export const proofItems: ProofItem[] = [
           alt: 'Pipeline overview showing sent outreach, source lists, opportunities, delivered work, outreach mix, and source coverage.',
           caption:
             'Operating view bringing outreach, source coverage, opportunities, and delivered work into one pipeline.',
+          width: 1504,
+          height: 705,
         },
         {
           src: '/airtable-make/outreach-analytics.png',
           alt: 'Outreach analytics showing source coverage and manual follow-up controls.',
           caption:
             'Ledger-backed outreach coverage with clear source visibility and manual follow-up controls.',
+          width: 1504,
+          height: 705,
         },
         {
           src: '/airtable-make/airtable-opportunities.png',
           alt: 'Airtable opportunities view showing owner-approved records routed into decision-required and review-hold states.',
           caption:
             'Airtable opportunities view showing owner-approved records routed into decision and review states.',
+          width: 1504,
+          height: 705,
         },
         {
           src: '/airtable-make/delivery-handoff.png',
           alt: 'Delivered Precision Residential Construction website beside its Airtable project record and accepted delivery path.',
           caption:
             'Delivered website shown beside its Airtable project record, with accepted scope and criteria retained.',
+          width: 1504,
+          height: 771,
         },
         {
           src: '/airtable-make/make-router.png',
           alt: 'Opportunity intake router in Make showing the connected Airtable workflow, successful route tests, and inactive final state.',
           caption:
             'Make scenario showing the connected router, successful route tests, and inactive final state.',
+          width: 1504,
+          height: 705,
         },
       ],
     },
@@ -240,18 +250,24 @@ export const proofItems: ProofItem[] = [
           alt: 'Complete 16-node n8n service lead workflow from enquiry intake through validation, exception handling, and prepared handoff.',
           caption:
             'Complete 16-node path from enquiry intake through validation, exception handling, and prepared handoff.',
+          width: 1496,
+          height: 758,
         },
         {
           src: '/n8n-service-lead/validation-logic.png',
           alt: 'Native n8n validation logic for incomplete enquiries, duplicate control, manual review, and system exceptions.',
           caption:
             'Required details, duplicate control, manual review, and system exceptions are checked before handoff.',
+          width: 1496,
+          height: 722,
         },
         {
           src: '/n8n-service-lead/invalid-lead-output.png',
           alt: 'Native n8n input and output showing an incomplete enquiry held before handoff with validation errors recorded.',
           caption:
             'An incomplete enquiry is held with the missing contact method and consent errors recorded.',
+          width: 1242,
+          height: 699,
         },
       ],
     },
@@ -289,24 +305,24 @@ export const proofItems: ProofItem[] = [
           alt: 'HubSpot deal board showing the private SM Systems lead-to-deal pipeline and its seven controlled operating stages.',
           caption:
             'Seven-stage HubSpot pipeline configured and verified with controlled company, contact, and deal records.',
-          width: 1280,
-          height: 960,
+          width: 1149,
+          height: 648,
         },
         {
           src: '/hubspot-lead-to-deal/connected-crm-records.png',
           alt: 'HubSpot deal view showing the associated company and contact records for a controlled commissioning deal.',
           caption:
             "Controlled company, contact, and deal records linked and read back through HubSpot's native association model.",
-          width: 1280,
-          height: 960,
+          width: 1149,
+          height: 648,
         },
         {
           src: '/hubspot-lead-to-deal/auditable-stage-history.png',
           alt: 'HubSpot deal activity showing controlled stage movement from Audit Booked to Proposal Prepared.',
           caption:
             'Native activity history showing controlled movement from Audit Booked to Proposal Prepared.',
-          width: 1280,
-          height: 960,
+          width: 1116,
+          height: 803,
         },
       ],
     },

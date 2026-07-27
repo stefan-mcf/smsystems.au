@@ -10,32 +10,32 @@ const screenshotLayout = [
   {
     src: '/airtable-make/pipeline-overview.png',
     title: 'Implemented outreach and opportunity pipeline',
-    width: 1600,
-    height: 900,
+    width: 1504,
+    height: 705,
   },
   {
     src: '/airtable-make/outreach-analytics.png',
     title: 'Outreach ledger and follow-up controls',
-    width: 1600,
-    height: 900,
+    width: 1504,
+    height: 705,
   },
   {
     src: '/airtable-make/airtable-opportunities.png',
     title: 'Airtable opportunity routing',
-    width: 1600,
-    height: 900,
+    width: 1504,
+    height: 705,
   },
   {
     src: '/airtable-make/delivery-handoff.png',
     title: 'Delivered project handoff',
-    width: 1600,
-    height: 900,
+    width: 1504,
+    height: 771,
   },
   {
     src: '/airtable-make/make-router.png',
     title: 'Make opportunity intake router',
-    width: 1600,
-    height: 900,
+    width: 1504,
+    height: 705,
   },
 ];
 

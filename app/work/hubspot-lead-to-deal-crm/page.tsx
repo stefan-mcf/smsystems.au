@@ -9,18 +9,18 @@ const hubspotLeadToDeal = proofItems.find(
 const screenshotLayout = [
   {
     src: '/hubspot-lead-to-deal/lead-to-deal-pipeline.png',
-    width: 1280,
-    height: 960,
+    width: 1149,
+    height: 648,
   },
   {
     src: '/hubspot-lead-to-deal/connected-crm-records.png',
-    width: 1280,
-    height: 960,
+    width: 1149,
+    height: 648,
   },
   {
     src: '/hubspot-lead-to-deal/auditable-stage-history.png',
-    width: 1280,
-    height: 960,
+    width: 1116,
+    height: 803,
   },
 ];
 

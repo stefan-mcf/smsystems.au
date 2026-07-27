@@ -10,20 +10,20 @@ const screenshotLayout = [
   {
     src: '/n8n-service-lead/workflow-overview.png',
     title: 'Service lead routing workflow',
-    width: 1600,
-    height: 900,
+    width: 1496,
+    height: 758,
   },
   {
     src: '/n8n-service-lead/validation-logic.png',
     title: 'Checks applied before handoff',
-    width: 1600,
-    height: 900,
+    width: 1496,
+    height: 722,
   },
   {
     src: '/n8n-service-lead/invalid-lead-output.png',
     title: 'Incomplete enquiry held safely',
-    width: 1600,
-    height: 900,
+    width: 1242,
+    height: 699,
   },
 ];
 
