@@ -22,6 +22,7 @@ export type ProofItem = {
       caption: string;
       width?: number;
       height?: number;
+      objectPosition?: string;
     }[];
     clientVersion?: string;
     limits?: string;
@@ -205,6 +206,7 @@ export const proofItems: ProofItem[] = [
             'Delivered website shown beside its Airtable project record, with accepted scope and criteria retained.',
           width: 1504,
           height: 771,
+          objectPosition: 'center top',
         },
         {
           src: '/airtable-make/make-router.png',
@@ -268,6 +270,7 @@ export const proofItems: ProofItem[] = [
             'An incomplete enquiry is held with the missing contact method and consent errors recorded.',
           width: 1242,
           height: 699,
+          objectPosition: 'center top',
         },
       ],
     },
@@ -323,6 +326,7 @@ export const proofItems: ProofItem[] = [
             'Native activity history showing controlled movement from Audit Booked to Proposal Prepared.',
           width: 1116,
           height: 803,
+          objectPosition: 'center top',
         },
       ],
     },
@@ -362,30 +366,40 @@ export const proofItems: ProofItem[] = [
           alt: 'Precision Residential Construction homepage with service navigation, contact actions, and residential project photography.',
           caption:
             'Customer-facing homepage with clear service navigation, phone contact, and quote actions.',
+          width: 1280,
+          height: 720,
         },
         {
           src: '/precision/website-services.png',
           alt: 'Precision Residential Construction services section showing decking, framing, pergolas, renovations, cladding, and exterior carpentry.',
           caption:
             'Services section covering the company’s residential carpentry and construction work.',
+          width: 1280,
+          height: 720,
         },
         {
           src: '/precision/website-before-after.png',
           alt: 'Precision Residential Construction before-and-after section comparing the original brick facade with the completed timber re-clad.',
           caption:
             'Before-and-after project presentation showing the completed exterior transformation.',
+          width: 1280,
+          height: 720,
         },
         {
           src: '/precision/website-projects.png',
           alt: 'Precision Residential Construction recent projects gallery showing completed hardwood and glass-balustrade decking.',
           caption:
             'Recent-project gallery presenting completed work with clear project descriptions.',
+          width: 1280,
+          height: 720,
         },
         {
           src: '/precision/website-quote-crm.png',
           alt: 'Precision Residential Construction quote enquiry form collecting contact details, project location, service type, timeframe, preferred contact method, and project details.',
           caption:
             'Structured quote intake captures the project details needed for CRM follow-up.',
+          width: 1280,
+          height: 720,
         },
       ],
     },
@@ -423,24 +437,32 @@ export const proofItems: ProofItem[] = [
           alt: 'RFID operator dashboard showing access decisions, wash tiers, system status, and recent event history.',
           caption:
             'Operator dashboard for reviewing access decisions, wash tiers, system status, and event history.',
+          width: 2048,
+          height: 1060,
         },
         {
           src: '/rfid/operator-tag-setup.png',
           alt: 'RFID operator dashboard Tag Setup workspace with tag selection, claim-code activation, and manual activation controls.',
           caption:
             'Tag Setup workspace for selecting tags, activating customer claim codes, and managing tag assignments.',
+          width: 1280,
+          height: 720,
         },
         {
           src: '/rfid/operator-wash-test.png',
           alt: 'RFID operator dashboard Wash Test workspace with automation modes and wash-output signal indicators.',
           caption:
             'Wash Test workspace for selecting an automation mode and monitoring wash-output signals.',
+          width: 1280,
+          height: 720,
         },
         {
           src: '/rfid/subscription-website.png',
           alt: 'Subscription website showing Standard, Premium, and Ultimate monthly wash-plan cards.',
           caption:
             'Customer plan-selection screen showing Standard, Premium, and Ultimate options before checkout.',
+          width: 2654,
+          height: 1502,
         },
       ],
     },
