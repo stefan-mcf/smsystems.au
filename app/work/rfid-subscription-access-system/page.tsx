@@ -50,7 +50,7 @@ export default function RfidSubscriptionAccessSystemPage() {
   const proofStrip = rfidSystem.caseStudy.proofStrip ?? [];
   const screenshotBySource = new Map(
     (rfidSystem.caseStudy.screenshots ?? []).map((screenshot) => [
-      screenshot.src.replace('-carousel.png', '.png'),
+      screenshot.src,
       screenshot,
     ]),
   );

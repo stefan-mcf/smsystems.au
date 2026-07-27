@@ -56,7 +56,7 @@ export default function AirtableMakeOpportunityPipelinePage() {
   const proofStrip = airtableMakePipeline.caseStudy.proofStrip ?? [];
   const screenshotBySource = new Map(
     (airtableMakePipeline.caseStudy.screenshots ?? []).map((screenshot) => [
-      screenshot.src.replace('-carousel.png', '.png'),
+      screenshot.src,
       screenshot,
     ]),
   );

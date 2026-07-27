@@ -175,44 +175,44 @@ export const proofItems: ProofItem[] = [
       ],
       screenshots: [
         {
-          src: '/airtable-make/pipeline-overview-carousel.png',
+          src: '/airtable-make/pipeline-overview.png',
           alt: 'Pipeline overview showing sent outreach, source lists, opportunities, delivered work, outreach mix, and source coverage.',
           caption:
             'Operating view bringing outreach, source coverage, opportunities, and delivered work into one pipeline.',
           width: 1504,
-          height: 717,
+          height: 705,
         },
         {
-          src: '/airtable-make/outreach-analytics-carousel.png',
+          src: '/airtable-make/outreach-analytics.png',
           alt: 'Outreach analytics showing source coverage and manual follow-up controls.',
           caption:
             'Ledger-backed outreach coverage with clear source visibility and manual follow-up controls.',
           width: 1504,
-          height: 717,
+          height: 705,
         },
         {
-          src: '/airtable-make/airtable-opportunities-carousel.png',
+          src: '/airtable-make/airtable-opportunities.png',
           alt: 'Airtable opportunities view showing owner-approved records routed into decision-required and review-hold states.',
           caption:
             'Airtable opportunities view showing owner-approved records routed into decision and review states.',
           width: 1504,
-          height: 717,
+          height: 705,
         },
         {
-          src: '/airtable-make/delivery-handoff-carousel.png',
+          src: '/airtable-make/delivery-handoff.png',
           alt: 'Delivered Precision Residential Construction website beside its Airtable project record and accepted delivery path.',
           caption:
             'Delivered website shown beside its Airtable project record, with accepted scope and criteria retained.',
           width: 1504,
-          height: 717,
+          height: 771,
         },
         {
-          src: '/airtable-make/make-router-carousel.png',
+          src: '/airtable-make/make-router.png',
           alt: 'Opportunity intake router in Make showing the connected Airtable workflow, successful route tests, and inactive final state.',
           caption:
             'Make scenario showing the connected router, successful route tests, and inactive final state.',
           width: 1504,
-          height: 717,
+          height: 705,
         },
       ],
     },
@@ -246,28 +246,28 @@ export const proofItems: ProofItem[] = [
       ],
       screenshots: [
         {
-          src: '/n8n-service-lead/workflow-overview-carousel.png',
+          src: '/n8n-service-lead/workflow-overview.png',
           alt: 'Complete 16-node n8n service lead workflow from enquiry intake through validation, exception handling, and prepared handoff.',
           caption:
             'Complete 16-node path from enquiry intake through validation, exception handling, and prepared handoff.',
           width: 1496,
-          height: 771,
+          height: 758,
         },
         {
-          src: '/n8n-service-lead/validation-logic-carousel.png',
+          src: '/n8n-service-lead/validation-logic.png',
           alt: 'Native n8n validation logic for incomplete enquiries, duplicate control, manual review, and system exceptions.',
           caption:
             'Required details, duplicate control, manual review, and system exceptions are checked before handoff.',
           width: 1496,
-          height: 771,
+          height: 722,
         },
         {
-          src: '/n8n-service-lead/invalid-lead-output-carousel.png',
+          src: '/n8n-service-lead/invalid-lead-output.png',
           alt: 'Native n8n input and output showing an incomplete enquiry held before handoff with validation errors recorded.',
           caption:
             'An incomplete enquiry is held with the missing contact method and consent errors recorded.',
-          width: 1496,
-          height: 771,
+          width: 1242,
+          height: 699,
         },
       ],
     },
@@ -301,28 +301,28 @@ export const proofItems: ProofItem[] = [
       ],
       screenshots: [
         {
-          src: '/hubspot-lead-to-deal/lead-to-deal-pipeline-carousel.png',
+          src: '/hubspot-lead-to-deal/lead-to-deal-pipeline.png',
           alt: 'HubSpot deal board showing the private SM Systems lead-to-deal pipeline and its seven controlled operating stages.',
           caption:
             'Seven-stage HubSpot pipeline configured and verified with controlled company, contact, and deal records.',
           width: 1149,
-          height: 698,
+          height: 648,
         },
         {
-          src: '/hubspot-lead-to-deal/connected-crm-records-carousel.png',
+          src: '/hubspot-lead-to-deal/connected-crm-records.png',
           alt: 'HubSpot deal view showing the associated company and contact records for a controlled commissioning deal.',
           caption:
             "Controlled company, contact, and deal records linked and read back through HubSpot's native association model.",
           width: 1149,
-          height: 698,
+          height: 648,
         },
         {
-          src: '/hubspot-lead-to-deal/auditable-stage-history-carousel.png',
+          src: '/hubspot-lead-to-deal/auditable-stage-history.png',
           alt: 'HubSpot deal activity showing controlled stage movement from Audit Booked to Proposal Prepared.',
           caption:
             'Native activity history showing controlled movement from Audit Booked to Proposal Prepared.',
-          width: 1149,
-          height: 698,
+          width: 1116,
+          height: 803,
         },
       ],
     },
@@ -429,36 +429,36 @@ export const proofItems: ProofItem[] = [
       ],
       screenshots: [
         {
-          src: '/rfid/operator-dashboard-carousel.png',
+          src: '/rfid/operator-dashboard.png',
           alt: 'RFID operator dashboard showing access decisions, wash tiers, system status, and recent event history.',
           caption:
             'Operator dashboard for reviewing access decisions, wash tiers, system status, and event history.',
-          width: 1280,
-          height: 704,
+          width: 2048,
+          height: 1060,
         },
         {
-          src: '/rfid/operator-tag-setup-carousel.png',
+          src: '/rfid/operator-tag-setup.png',
           alt: 'RFID operator dashboard Tag Setup workspace with tag selection, claim-code activation, and manual activation controls.',
           caption:
             'Tag Setup workspace for selecting tags, activating customer claim codes, and managing tag assignments.',
           width: 1280,
-          height: 704,
+          height: 720,
         },
         {
-          src: '/rfid/operator-wash-test-carousel.png',
+          src: '/rfid/operator-wash-test.png',
           alt: 'RFID operator dashboard Wash Test workspace with automation modes and wash-output signal indicators.',
           caption:
             'Wash Test workspace for selecting an automation mode and monitoring wash-output signals.',
           width: 1280,
-          height: 704,
+          height: 720,
         },
         {
-          src: '/rfid/subscription-website-carousel.png',
+          src: '/rfid/subscription-website.png',
           alt: 'Subscription website showing Standard, Premium, and Ultimate monthly wash-plan cards.',
           caption:
             'Customer plan-selection screen showing Standard, Premium, and Ultimate options before checkout.',
-          width: 1280,
-          height: 704,
+          width: 2654,
+          height: 1502,
         },
       ],
     },

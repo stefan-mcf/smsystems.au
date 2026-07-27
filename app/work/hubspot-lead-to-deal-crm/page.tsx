@@ -41,7 +41,7 @@ export default function HubspotLeadToDealCrmPage() {
   const proofStrip = hubspotLeadToDeal.caseStudy.proofStrip ?? [];
   const screenshotBySource = new Map(
     (hubspotLeadToDeal.caseStudy.screenshots ?? []).map((screenshot) => [
-      screenshot.src.replace('-carousel.png', '.png'),
+      screenshot.src,
       screenshot,
     ]),
   );
