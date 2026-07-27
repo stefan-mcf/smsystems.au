@@ -26,6 +26,7 @@ export type ProofItem = {
   };
   featured?: boolean;
   anchorClient?: boolean;
+  featuredBuild?: boolean;
 };
 
 export const proofItems: ProofItem[] = [
@@ -144,6 +145,67 @@ export const proofItems: ProofItem[] = [
       ],
     },
     featured: true,
+  },
+  {
+    slug: 'airtable-make-opportunity-pipeline',
+    title: 'Airtable & Make opportunity pipeline',
+    lane: 'Built',
+    problemShape:
+      'A private opportunity and delivery pipeline connecting owner-approved intake, Airtable records, Make routing, duplicate checks, review decisions, and project handoffs.',
+    caseStudyLink: '/work/airtable-make-opportunity-pipeline/',
+    caseStudy: {
+      proofStrip: [
+        {
+          label: 'OPERATING VIEW',
+          title: 'One Airtable pipeline',
+          body: 'Owner-approved intake, opportunities, activities, exceptions, and project handoffs remain visible in one operating view.',
+        },
+        {
+          label: 'ROUTING CONTROLS',
+          title: 'Four tested outcomes',
+          body: 'The Make router handles valid, duplicate, invalid, and owner-review paths without automating applications or messages.',
+        },
+        {
+          label: 'DELIVERY HANDOFF',
+          title: 'Scope and acceptance retained',
+          body: 'Won work becomes a project only after handoff approval, with the accepted scope, criteria, and next milestone saved.',
+        },
+      ],
+      screenshots: [
+        {
+          src: '/airtable-make/pipeline-overview.png',
+          alt: 'Pipeline overview showing 86 sent outreach records, five source lists, nine opportunities, one delivered project, outreach mix, and source coverage.',
+          caption:
+            'Verified operating summary of 86 sent outreach records, five source lists, nine opportunities, and one delivered project.',
+        },
+        {
+          src: '/airtable-make/outreach-analytics.png',
+          alt: 'Outreach analytics showing 86 sent records, source coverage, and manual follow-up controls.',
+          caption:
+            'Ledger-backed outreach coverage with 71 direct-client leads, 15 agencies, and manual follow-up controls.',
+        },
+        {
+          src: '/airtable-make/airtable-opportunities.png',
+          alt: 'Airtable opportunities view showing owner-approved records routed into decision-required and review-hold states.',
+          caption:
+            'Airtable opportunities view showing owner-approved records routed into decision and review states.',
+        },
+        {
+          src: '/airtable-make/delivery-handoff.png',
+          alt: 'Delivered Precision Residential Construction website beside its Airtable project record and accepted delivery path.',
+          caption:
+            'Delivered website shown beside its Airtable project record, with accepted scope and criteria retained.',
+        },
+        {
+          src: '/airtable-make/make-router.png',
+          alt: 'Opportunity intake router in Make showing the connected Airtable workflow, successful route tests, and inactive final state.',
+          caption:
+            'Make scenario showing the connected router, successful route tests, and inactive final state.',
+        },
+      ],
+    },
+    featured: true,
+    featuredBuild: true,
   },
   {
     slug: 'precision-residential-construction-website',

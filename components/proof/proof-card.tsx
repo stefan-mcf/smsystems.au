@@ -8,7 +8,9 @@ type ProofCardProps = {
 
 export function ProofCard({ item }: ProofCardProps) {
   const hasCaseStudy = Boolean(item.caseStudy);
-  const className = `panel proof-card${item.anchorClient ? ' proof-card-anchor' : ''}`;
+  const className = `panel proof-card${
+    item.anchorClient || item.featuredBuild ? ' proof-card-anchor' : ''
+  }`;
 
   return (
     <details className={className} id={item.slug} open={!hasCaseStudy}>

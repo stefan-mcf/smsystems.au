@@ -7,8 +7,11 @@ import { proofItems } from '@/content/proof';
 import { siteMeta } from '@/content/site';
 
 export default function HomePage() {
-  const featuredProof = proofItems.filter((item) => item.featured && !item.anchorClient);
+  const featuredProof = proofItems.filter(
+    (item) => item.featured && !item.anchorClient && !item.featuredBuild,
+  );
   const clientProof = proofItems.filter((item) => item.anchorClient);
+  const featuredBuild = proofItems.filter((item) => item.featuredBuild);
 
   return (
     <>
@@ -26,6 +29,12 @@ export default function HomePage() {
           <div className="home-anchor-work" data-reveal>
             <p className="work-group-heading">Client projects</p>
             <ProofGrid items={clientProof} />
+          </div>
+        ) : null}
+        {featuredBuild.length ? (
+          <div className="home-anchor-work" data-reveal>
+            <p className="work-group-heading">Featured build</p>
+            <ProofGrid items={featuredBuild} />
           </div>
         ) : null}
         <div className="home-tool-work" data-reveal>

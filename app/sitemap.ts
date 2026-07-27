@@ -17,5 +17,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${canonicalSiteUrl}/work/rfid-subscription-access-system/`,
       lastModified,
     },
+    {
+      url: `${canonicalSiteUrl}/work/airtable-make-opportunity-pipeline/`,
+      lastModified,
+    },
   ];
 }
