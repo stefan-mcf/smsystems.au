@@ -103,9 +103,6 @@ export default function RfidSubscriptionAccessSystemPage() {
                 />
               </div>
               <figcaption>
-                <span className="case-study-shot-index">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
                 <span>
                   <strong>{screenshot.title}</strong>
                   <span>{screenshot.caption}</span>

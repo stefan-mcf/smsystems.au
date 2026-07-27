@@ -1973,8 +1973,7 @@ strong {
 
 .case-study-shot figcaption {
   display: grid;
-  grid-template-columns: 4rem minmax(0, 1fr);
-  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr);
   padding: clamp(0.95rem, 1.8vw, 1.35rem);
   border-top: 1px solid var(--line);
 }
@@ -1992,14 +1991,6 @@ strong {
 .case-study-shot figcaption span span {
   color: #596466;
   font-size: 0.86rem;
-}
-
-.case-study-shot-index {
-  color: #405866;
-  font-family: "Geist Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  font-size: 0.78rem;
-  font-weight: 760;
-  letter-spacing: 0.1em;
 }
 
 .case-study-final {
@@ -2055,11 +2046,6 @@ strong {
   .case-study-content-grid,
   .case-study-final {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .case-study-shot figcaption {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.4rem;
   }
 
   .case-study-final .case-study-actions {

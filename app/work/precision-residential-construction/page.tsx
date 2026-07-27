@@ -92,11 +92,8 @@ export default function PrecisionResidentialConstructionPage() {
                 />
               </div>
               <figcaption>
-                <span className="case-study-shot-index">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
                 <span>
-                  <strong>{screenshotTitles[index] ?? `Website view ${index + 1}`}</strong>
+                  <strong>{screenshotTitles[index] ?? 'Website view'}</strong>
                   <span>{screenshot.caption}</span>
                 </span>
               </figcaption>

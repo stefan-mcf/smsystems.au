@@ -99,9 +99,6 @@ export default function HubspotLeadToDealCrmPage() {
                 />
               </div>
               <figcaption>
-                <span className="case-study-shot-index">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
                 <span>
                   <span>{screenshot.caption}</span>
                 </span>
