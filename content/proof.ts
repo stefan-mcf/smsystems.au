@@ -174,15 +174,15 @@ export const proofItems: ProofItem[] = [
       screenshots: [
         {
           src: '/airtable-make/pipeline-overview.png',
-          alt: 'Pipeline overview showing 86 sent outreach records, five source lists, nine opportunities, one delivered project, outreach mix, and source coverage.',
+          alt: 'Pipeline overview showing sent outreach, source lists, opportunities, delivered work, outreach mix, and source coverage.',
           caption:
-            'Verified operating summary of 86 sent outreach records, five source lists, nine opportunities, and one delivered project.',
+            'Operating view bringing outreach, source coverage, opportunities, and delivered work into one pipeline.',
         },
         {
           src: '/airtable-make/outreach-analytics.png',
-          alt: 'Outreach analytics showing 86 sent records, source coverage, and manual follow-up controls.',
+          alt: 'Outreach analytics showing source coverage and manual follow-up controls.',
           caption:
-            'Ledger-backed outreach coverage with 71 direct-client leads, 15 agencies, and manual follow-up controls.',
+            'Ledger-backed outreach coverage with clear source visibility and manual follow-up controls.',
         },
         {
           src: '/airtable-make/airtable-opportunities.png',
