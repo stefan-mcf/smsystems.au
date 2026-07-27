@@ -21,5 +21,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${canonicalSiteUrl}/work/airtable-make-opportunity-pipeline/`,
       lastModified,
     },
+    {
+      url: `${canonicalSiteUrl}/work/n8n-service-lead-routing/`,
+      lastModified,
+    },
+    {
+      url: `${canonicalSiteUrl}/work/hubspot-lead-to-deal-crm/`,
+      lastModified,
+    },
   ];
 }

@@ -20,6 +20,8 @@ export type ProofItem = {
       src: string;
       alt: string;
       caption: string;
+      width?: number;
+      height?: number;
     }[];
     clientVersion?: string;
     limits?: string;
@@ -201,6 +203,110 @@ export const proofItems: ProofItem[] = [
           alt: 'Opportunity intake router in Make showing the connected Airtable workflow, successful route tests, and inactive final state.',
           caption:
             'Make scenario showing the connected router, successful route tests, and inactive final state.',
+        },
+      ],
+    },
+    featured: true,
+    featuredBuild: true,
+  },
+  {
+    slug: 'n8n-service-lead-routing',
+    title: 'n8n lead routing workflow',
+    lane: 'Built',
+    problemShape:
+      'A 16-node workflow that checks service enquiries, separates invalid, duplicate, review, and exception outcomes, and prepares clean CRM and booking handoffs.',
+    caseStudyLink: '/work/n8n-service-lead-routing/',
+    caseStudy: {
+      proofStrip: [
+        {
+          label: 'INTAKE CONTROL',
+          title: 'Required details checked first',
+          body: 'Contact details, service information, and consent are validated before a record can move forward.',
+        },
+        {
+          label: 'ROUTING CONTROLS',
+          title: 'Five tested outcomes',
+          body: 'Accepted, duplicate, invalid, review, and system exception outcomes each move to an explicit path.',
+        },
+        {
+          label: 'HANDOFF PREPARATION',
+          title: 'CRM and booking data prepared',
+          body: 'Accepted records prepare CRM, booking, and acknowledgement data while failed records remain held for review.',
+        },
+      ],
+      screenshots: [
+        {
+          src: '/n8n-service-lead/workflow-overview.png',
+          alt: 'Complete 16-node n8n service lead workflow from enquiry intake through validation, exception handling, and prepared handoff.',
+          caption:
+            'Complete 16-node path from enquiry intake through validation, exception handling, and prepared handoff.',
+        },
+        {
+          src: '/n8n-service-lead/validation-logic.png',
+          alt: 'Native n8n validation logic for incomplete enquiries, duplicate control, manual review, and system exceptions.',
+          caption:
+            'Required details, duplicate control, manual review, and system exceptions are checked before handoff.',
+        },
+        {
+          src: '/n8n-service-lead/invalid-lead-output.png',
+          alt: 'Native n8n input and output showing an incomplete enquiry held before handoff with validation errors recorded.',
+          caption:
+            'An incomplete enquiry is held with the missing contact method and consent errors recorded.',
+        },
+      ],
+    },
+    featured: true,
+    featuredBuild: true,
+  },
+  {
+    slug: 'hubspot-lead-to-deal-crm',
+    title: 'HubSpot lead-to-deal CRM implementation',
+    lane: 'Built',
+    problemShape:
+      'A private HubSpot CRM implementation with a seven-stage pipeline, linked company, contact and deal records, stable deduplication, provider readback, and exact cleanup.',
+    caseStudyLink: '/work/hubspot-lead-to-deal-crm/',
+    caseStudy: {
+      proofStrip: [
+        {
+          label: 'PIPELINE CONTROL',
+          title: 'Seven operating stages',
+          body: 'The retained pipeline maps controlled progression from Active / Replied through qualification and proposal stages to Won or Lost.',
+        },
+        {
+          label: 'RECORD MODEL',
+          title: 'Linked CRM relationships',
+          body: "Companies, contacts, and deals were tied together through HubSpot's native association model and verified by provider readback.",
+        },
+        {
+          label: 'DATA CONTROL',
+          title: 'Dedupe and cleanup verified',
+          body: 'Stable keys matched every record on rerun, then an exact cleanup archived the temporary commissioning set.',
+        },
+      ],
+      screenshots: [
+        {
+          src: '/hubspot-lead-to-deal/lead-to-deal-pipeline.png',
+          alt: 'HubSpot deal board showing the private SM Systems lead-to-deal pipeline and its seven controlled operating stages.',
+          caption:
+            'Seven-stage HubSpot pipeline configured and verified with controlled company, contact, and deal records.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/hubspot-lead-to-deal/connected-crm-records.png',
+          alt: 'HubSpot deal view showing the associated company and contact records for a controlled commissioning deal.',
+          caption:
+            "Controlled company, contact, and deal records linked and read back through HubSpot's native association model.",
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/hubspot-lead-to-deal/auditable-stage-history.png',
+          alt: 'HubSpot deal activity showing controlled stage movement from Audit Booked to Proposal Prepared.',
+          caption:
+            'Native activity history showing controlled movement from Audit Booked to Proposal Prepared.',
+          width: 1280,
+          height: 960,
         },
       ],
     },

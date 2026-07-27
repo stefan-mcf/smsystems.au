@@ -33,7 +33,7 @@ export default function HomePage() {
         ) : null}
         {featuredBuild.length ? (
           <div className="home-anchor-work" data-reveal>
-            <p className="work-group-heading">Featured build</p>
+            <p className="work-group-heading">Featured builds</p>
             <ProofGrid items={featuredBuild} />
           </div>
         ) : null}

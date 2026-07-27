@@ -6,6 +6,8 @@ export type Screenshot = {
   src: string;
   alt: string;
   caption: string;
+  width?: number;
+  height?: number;
 };
 
 type ScreenshotCarouselProps = {
@@ -69,8 +71,21 @@ export function ScreenshotCarousel({ screenshots }: ScreenshotCarouselProps) {
         )}
 
         <figure className="screenshot-carousel-slide">
-          <span className="proof-screenshot-frame screenshot-carousel-frame">
-            <img src={current.src} alt={current.alt} loading="lazy" />
+          <span
+            className="proof-screenshot-frame screenshot-carousel-frame"
+            style={
+              current.width && current.height
+                ? { aspectRatio: `${current.width} / ${current.height}` }
+                : undefined
+            }
+          >
+            <img
+              src={current.src}
+              alt={current.alt}
+              width={current.width}
+              height={current.height}
+              loading="lazy"
+            />
           </span>
           <figcaption>{current.caption}</figcaption>
         </figure>
