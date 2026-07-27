@@ -80,11 +80,6 @@ export function ScreenshotCarousel({ screenshots }: ScreenshotCarouselProps) {
                 : undefined
             }
           >
-            <span
-              className="screenshot-carousel-backdrop"
-              aria-hidden="true"
-              style={{ backgroundImage: `url("${current.src}")` }}
-            />
             <img
               src={current.src}
               alt={current.alt}
