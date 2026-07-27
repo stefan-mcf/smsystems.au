@@ -44,7 +44,7 @@ export default function N8nServiceLeadRoutingPage() {
   const proofStrip = n8nServiceLeadRouting.caseStudy.proofStrip ?? [];
   const screenshotBySource = new Map(
     (n8nServiceLeadRouting.caseStudy.screenshots ?? []).map((screenshot) => [
-      screenshot.src,
+      screenshot.src.replace('-carousel.png', '.png'),
       screenshot,
     ]),
   );

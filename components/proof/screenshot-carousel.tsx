@@ -8,7 +8,6 @@ export type Screenshot = {
   caption: string;
   width?: number;
   height?: number;
-  objectPosition?: string;
 };
 
 type ScreenshotCarouselProps = {
@@ -56,15 +55,7 @@ export function ScreenshotCarousel({ screenshots }: ScreenshotCarouselProps) {
   }, [count, goPrev, goNext]);
 
   const current = screenshots[index];
-  const frameAspectRatio =
-    screenshots.reduce(
-      (sum, screenshot) =>
-        sum +
-        (screenshot.width && screenshot.height
-          ? screenshot.width / screenshot.height
-          : 16 / 9),
-      0,
-    ) / count;
+  const frame = screenshots[0];
 
   return (
     <div className="screenshot-carousel">
@@ -83,7 +74,11 @@ export function ScreenshotCarousel({ screenshots }: ScreenshotCarouselProps) {
         <figure className="screenshot-carousel-slide">
           <span
             className="proof-screenshot-frame screenshot-carousel-frame"
-            style={{ aspectRatio: frameAspectRatio }}
+            style={
+              frame.width && frame.height
+                ? { aspectRatio: `${frame.width} / ${frame.height}` }
+                : undefined
+            }
           >
             <img
               src={current.src}
@@ -91,11 +86,6 @@ export function ScreenshotCarousel({ screenshots }: ScreenshotCarouselProps) {
               width={current.width}
               height={current.height}
               loading="lazy"
-              style={
-                current.objectPosition
-                  ? { objectPosition: current.objectPosition }
-                  : undefined
-              }
             />
           </span>
           <figcaption className="screenshot-carousel-caption" aria-live="polite">
