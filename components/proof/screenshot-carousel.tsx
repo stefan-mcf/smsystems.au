@@ -87,7 +87,21 @@ export function ScreenshotCarousel({ screenshots }: ScreenshotCarouselProps) {
               loading="lazy"
             />
           </span>
-          <figcaption>{current.caption}</figcaption>
+          <figcaption className="screenshot-carousel-caption" aria-live="polite">
+            {screenshots.map((screenshot, captionIndex) => (
+              <span
+                className={
+                  captionIndex === index
+                    ? 'screenshot-carousel-caption-item is-active'
+                    : 'screenshot-carousel-caption-item'
+                }
+                aria-hidden={captionIndex === index ? undefined : true}
+                key={screenshot.src}
+              >
+                {screenshot.caption}
+              </span>
+            ))}
+          </figcaption>
         </figure>
 
         {canNext && (

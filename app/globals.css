@@ -1734,6 +1734,19 @@ strong {
   object-fit: contain;
 }
 
+.screenshot-carousel-caption {
+  display: grid;
+}
+
+.screenshot-carousel-caption-item {
+  grid-area: 1 / 1;
+  visibility: hidden;
+}
+
+.screenshot-carousel-caption-item.is-active {
+  visibility: visible;
+}
+
 .screenshot-carousel-btn {
   position: absolute;
   top: 50%;
