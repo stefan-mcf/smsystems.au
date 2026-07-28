@@ -153,6 +153,10 @@ async function main() {
   if (options.fixture) {
     await page.getByRole('button', { name: options.fixture === 'duplicate' ? 'Run duplicated conversion path' : 'Run valid conversion path' }).click();
   } else {
+    await page.waitForFunction(
+      () => (window.dataLayer || []).some((entry) => entry?.event === 'gtm.load'),
+      { timeout: 10000 },
+    );
     const allow = page.getByRole('button', { name: 'Allow analytics' });
     await allow.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
     if (await allow.isVisible().catch(() => false)) {
