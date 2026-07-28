@@ -59,8 +59,13 @@ export function ProjectEnquiryProvider({ children }: { children: ReactNode }) {
       >
         <header className="project-enquiry-dialog-header">
           <p id="project-enquiry-dialog-title">Start a project</p>
-          <button className="project-enquiry-dialog-close" type="button" onClick={closeDialog}>
-            Close
+          <button
+            className="project-enquiry-dialog-close"
+            type="button"
+            aria-label="Close project enquiry"
+            onClick={closeDialog}
+          >
+            <span aria-hidden="true">×</span>
           </button>
         </header>
         {hasOpened ? <ProjectEnquiryForm /> : null}
