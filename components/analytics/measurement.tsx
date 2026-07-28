@@ -13,9 +13,13 @@ declare global {
 
 const CONSENT_KEY = 'sm_analytics_consent_v1';
 
-function gtag(...args: unknown[]) {
+function gtag(
+  command: 'consent',
+  action: 'default' | 'update',
+  parameters: Record<string, string | number>,
+) {
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push(args);
+  window.dataLayer.push(arguments);
 }
 
 function loadGtm() {
