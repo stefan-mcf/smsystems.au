@@ -27,6 +27,12 @@ function loadGtm() {
     return;
   }
 
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'gtm.start': Date.now(),
+    event: 'gtm.js',
+  });
+
   const script = document.createElement('script');
   script.async = true;
   script.dataset.smGtm = measurementConfig.gtmId;

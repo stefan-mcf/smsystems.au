@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { pushMeasurementEvent } from '@/components/analytics/measurement';
+import { workflowDiagnosisMailto } from '@/content/site';
 import { measurementConfig } from '@/lib/measurement-config';
 
 type HubSpotFormEvent = CustomEvent<{
@@ -175,18 +176,17 @@ export function ProjectEnquiryForm() {
     <section className="project-enquiry" aria-labelledby="project-enquiry-title">
       <div className="project-enquiry-copy">
         <p className="eyebrow">Project enquiry</p>
-        <h2 id="project-enquiry-title">Tell me what the workflow needs to do.</h2>
+        <h2 id="project-enquiry-title">What would you like to build?</h2>
         <p>
-          Share the systems involved, what is failing now, the result you need, and your timeframe.
-          Your enquiry is reviewed before any opportunity is created.
+          Share the project, what already exists, the result you need, and your timeframe. I’ll
+          review it before creating an opportunity.
         </p>
-        <p className="project-enquiry-note">
-          Prefer email?{' '}
-          <a href="mailto:stefan@smsystems.au?subject=Workflow%20project%20request">
-            Contact stefan@smsystems.au
+        <div className="project-enquiry-email-route">
+          <p>Prefer email?</p>
+          <a className="button button-secondary" href={workflowDiagnosisMailto}>
+            Email Stefan
           </a>
-          .
-        </p>
+        </div>
       </div>
       <div className="panel project-enquiry-form">
         <div

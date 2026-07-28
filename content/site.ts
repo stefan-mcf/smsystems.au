@@ -5,14 +5,14 @@ export const contactLinks = {
   upwork: 'https://www.upwork.com/freelancers/~015484e7f9add4d6de?mp_source=share',
 };
 
-const workflowDiagnosisSubject = 'Workflow project request';
+const workflowDiagnosisSubject = 'Project request';
 const workflowDiagnosisBody = [
   'Hi Stefan,',
   '',
-  'I have a workflow I would like built, integrated, or scoped.',
+  'I have a project I would like built, integrated, or scoped.',
   '',
-  'Systems involved:',
-  'Current failure mode or gap:',
+  'Project or service needed:',
+  'What exists now:',
   'Desired outcome:',
   'Timeline / constraints:',
 ].join('\n');
@@ -66,16 +66,16 @@ export const siteMeta = {
     ],
   },
   finalCta: {
-    title: 'Bring the rough workflow.\nI’ll build the tool around it.',
+    title: 'Bring the rough idea.\nI’ll turn it into a working build.',
     primary: { label: 'Start project', href: '/#project-enquiry' },
     secondary: { label: 'Email Stefan', href: workflowDiagnosisMailto },
   },
   contact: {
     intro:
-      'If you need a workflow built, scoped, or hardened, send the problem shape, the systems involved, and the outcome you need.',
+      'If you need a website, CRM, automation, integration, or internal tool built or improved, send what exists now and the outcome you need.',
     includes: [
-      'source and destination systems',
-      'current failure mode or gap',
+      'project or service needed',
+      'what exists now',
       'desired outcome',
       'any hard constraints or deadlines',
     ],
