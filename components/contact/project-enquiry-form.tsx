@@ -29,16 +29,16 @@ declare global {
 }
 
 const visibleFields = new Set([
-  '0-1/firstname',
-  '0-1/lastname',
-  '0-1/email',
-  '0-1/phone',
-  '0-1/message',
-  '0-1/company',
-  '0-1/sm_systems_involved',
-  '0-1/sm_timeframe',
-  '0-1/sm_current_problem',
-  '0-1/sm_desired_result',
+  'firstname',
+  'lastname',
+  'email',
+  'phone',
+  'message',
+  'company',
+  'sm_systems_involved',
+  'sm_timeframe',
+  'sm_current_problem',
+  'sm_desired_result',
 ]);
 
 function newSubmissionId() {
@@ -96,11 +96,15 @@ export function ProjectEnquiryForm() {
         try {
           const fields = await form.getFormFieldValues();
           const hasInteraction = fields.some(
-            ({ name, value }) =>
-              visibleFields.has(name) &&
-              (Array.isArray(value)
-                ? value.some((entry) => entry.trim().length > 0)
-                : value.trim().length > 0),
+            ({ name, value }) => {
+              const normalizedName = name.includes('/') ? name.slice(name.lastIndexOf('/') + 1) : name;
+              return (
+                visibleFields.has(normalizedName) &&
+                (Array.isArray(value)
+                  ? value.some((entry) => entry.trim().length > 0)
+                  : value.trim().length > 0)
+              );
+            },
           );
           if (hasInteraction) {
             formStarted = true;
