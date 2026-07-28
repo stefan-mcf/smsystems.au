@@ -387,14 +387,6 @@ export const proofItems: ProofItem[] = [
           width: 1149,
           height: 648,
         },
-        {
-          src: '/hubspot-lead-to-deal/auditable-stage-history.png',
-          alt: 'HubSpot deal activity showing controlled stage movement from Audit Booked to Proposal Prepared.',
-          caption:
-            'Native activity history showing controlled movement from Audit Booked to Proposal Prepared.',
-          width: 1149,
-          height: 648,
-        },
       ],
     },
     featured: true,

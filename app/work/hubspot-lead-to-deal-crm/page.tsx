@@ -17,11 +17,6 @@ const screenshotLayout = [
     width: 1149,
     height: 648,
   },
-  {
-    src: '/hubspot-lead-to-deal/auditable-stage-history.png',
-    width: 1149,
-    height: 648,
-  },
 ];
 
 export const metadata: Metadata = {
@@ -81,8 +76,8 @@ export default function HubspotLeadToDealCrmPage() {
             Provider-native pipeline and record evidence.
           </h2>
           <p>
-            The HubSpot views show the configured pipeline, linked CRM records,
-            and retained stage history from the controlled commissioning run.
+            The HubSpot views show the configured pipeline and linked CRM records
+            from the controlled commissioning run.
           </p>
         </div>
 

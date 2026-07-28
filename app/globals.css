@@ -388,7 +388,7 @@ strong {
   gap: 1rem;
   min-height: 3.75rem;
   border-bottom: 1px solid var(--line);
-  padding: 0.72rem clamp(1rem, 2.5vw, 2rem);
+  padding: 0.72rem 3rem 0.72rem clamp(1rem, 2.5vw, 2rem);
   background: rgba(241, 243, 243, 0.96);
   backdrop-filter: blur(18px);
 }
@@ -402,11 +402,13 @@ strong {
 }
 
 .project-enquiry-dialog-close {
-  position: relative;
+  position: absolute;
+  top: 0.44rem;
+  right: 0.44rem;
   display: grid;
-  width: 1rem;
-  min-width: 1rem;
-  height: 1rem;
+  width: 2rem;
+  min-width: 2rem;
+  height: 2rem;
   place-items: center;
   border: 1px solid rgba(18, 22, 23, 0.9);
   border-radius: 2px;
@@ -434,7 +436,7 @@ strong {
 
 .project-enquiry-dialog-close span {
   display: block;
-  font-size: 0.85rem;
+  font-size: 1.45rem;
   font-weight: 560;
   line-height: 1;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.86);
