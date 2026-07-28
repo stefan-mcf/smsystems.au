@@ -29,5 +29,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${canonicalSiteUrl}/work/hubspot-lead-to-deal-crm/`,
       lastModified,
     },
+    {
+      url: `${canonicalSiteUrl}/work/conversion-measurement-inbound-lead-system/`,
+      lastModified,
+    },
   ];
 }

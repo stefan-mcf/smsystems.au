@@ -149,6 +149,77 @@ export const proofItems: ProofItem[] = [
     featured: true,
   },
   {
+    slug: 'conversion-measurement-inbound-lead-system',
+    title: 'Conversion measurement and inbound lead system',
+    lane: 'Live',
+    problemShape:
+      'A live SM Systems website path connecting HubSpot enquiry capture, versioned GTM and GA4 events, the main Airtable base, human qualification, Make routing, deal creation, event QA, and reporting.',
+    caseStudyLink: '/work/conversion-measurement-inbound-lead-system/',
+    caseStudy: {
+      proofStrip: [
+        {
+          label: 'MEASUREMENT PATH',
+          title: 'Seven non-PII events',
+          body: 'Page views, case-study views, important CTA clicks, form start, and confirmed generate_lead are routed through versioned GTM tags.',
+        },
+        {
+          label: 'LEAD OPERATIONS',
+          title: 'One deduplicated route',
+          body: 'A confirmed enquiry becomes one HubSpot contact and one matching inbound record in the main Airtable base.',
+        },
+        {
+          label: 'QA CONTROL',
+          title: 'Duplicate caught and repaired',
+          body: 'The Playwright harness caught two generate_lead events, then passed the repaired exactly-once path with zero PII findings.',
+        },
+      ],
+      screenshots: [
+        {
+          src: '/conversion-measurement/live-enquiry-path.png',
+          alt: 'Live SM Systems HubSpot enquiry form beside the website, contact, main Airtable and qualification path.',
+          caption:
+            'Live enquiry flow from smsystems.au to HubSpot and the main Airtable base, with deal creation held behind human qualification.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/conversion-measurement/versioned-events.png',
+          alt: 'Seven-event conversion plan beside cropped native GTM workspace and published version evidence.',
+          caption:
+            'Versioned GTM and GA4 event design with a stable submission ID and no personal data in analytics.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/conversion-measurement/event-qa-repair.png',
+          alt: 'Failing duplicate-event QA report beside the repaired exactly-once passing report.',
+          caption:
+            'Deterministic QA catches a duplicated generate_lead event before the repaired path passes exactly once.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/conversion-measurement/human-gated-routing.png',
+          alt: 'Native active Make scenario with valid, duplicate, malformed, review and qualification routes.',
+          caption:
+            'Active Make routing handles confirmed, duplicate, malformed and review-required outcomes without prospect communication.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/conversion-measurement/main-airtable-qa-routes.png',
+          alt: 'Native Measurement QA Runs table in the main SM Systems Pipeline Airtable base.',
+          caption:
+            'Website, delivery, review and qualification checks retained in the existing main Airtable operating base.',
+          width: 1280,
+          height: 960,
+        },
+      ],
+    },
+    featured: true,
+    featuredBuild: true,
+  },
+  {
     slug: 'airtable-make-opportunity-pipeline',
     title: 'Airtable & Make opportunity pipeline',
     lane: 'Built',
