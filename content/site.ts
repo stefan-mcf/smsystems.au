@@ -48,10 +48,10 @@ export const siteMeta = {
   },
   about: {
     eyebrow: 'About',
-    title: 'I build automation for real operations.',
+    title: 'I build connected systems for real operations.',
     body: [
-      'I build automation tools for businesses, teams, and operators where reliability, visibility, and clear operating evidence matter.',
-      'Most of my work sits between websites, APIs, CRMs, spreadsheets, dashboards, and internal tools. I focus on the parts that usually break: missing records, weak lead paths, review steps, fragile system boundaries, unclear ownership, and poor visibility.',
+      'I build websites, automation tools, and connected systems for businesses, teams, and operators where reliability, visibility, and clear operating evidence matter.',
+      'Most of my work sits between websites, payments, APIs, CRMs, spreadsheets, dashboards, and internal tools. I focus on the parts that usually break: weak enquiry paths, missing records, unreliable handoffs, unclear ownership, and poor visibility.',
       'I also bring experience with PLC-style and edge-to-cloud environments, where software connects back to physical operations.',
     ],
     imageSrc: '/stefan-profile.jpg',
