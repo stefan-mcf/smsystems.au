@@ -37,7 +37,7 @@ export const siteMeta = {
     headline: 'BUILD THE SYSTEM. KEEP IT RUNNING.',
     subhead:
       'I build reliable automation systems that connect websites, payments, dashboards, CRMs, and real-world operations into clear, repeatable workflows.',
-    primaryCta: { label: 'Start project', href: workflowDiagnosisMailto },
+    primaryCta: { label: 'Start project', href: '/#project-enquiry' },
     secondaryCta: { label: 'View work', href: '/#work' },
     operatingNotes: [
       'Show the failure clearly',
@@ -67,7 +67,8 @@ export const siteMeta = {
   },
   finalCta: {
     title: 'Bring the rough workflow.\nI’ll build the tool around it.',
-    primary: { label: 'Start project', href: workflowDiagnosisMailto },
+    primary: { label: 'Start project', href: '/#project-enquiry' },
+    secondary: { label: 'Email Stefan', href: workflowDiagnosisMailto },
   },
   contact: {
     intro:
