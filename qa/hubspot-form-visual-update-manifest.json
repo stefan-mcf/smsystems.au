@@ -1,0 +1,81 @@
+{
+  "change_id": "sm-project-enquiry-form-visual-alignment-v1",
+  "provider": "hubspot",
+  "portal_id": "443294847",
+  "form_id": "06596217-8f01-44ff-b781-4674d9cb5a94",
+  "status": "partially_applied_with_provider_constraint",
+  "approval": {
+    "approved_by": "user",
+    "approved_on": "2026-07-28"
+  },
+  "purpose": "Align the embedded project enquiry form with the SM Systems website without changing its data collection or submission behaviour.",
+  "preconditions": {
+    "heading_text": "Contact Us",
+    "intro_text": "We'd love to hear from you! Please fill out the form and we'll get back to you as soon as possible."
+  },
+  "mutations": [
+    {
+      "target": "heading_block",
+      "action": "remove",
+      "expected_current_text": "Contact Us"
+    },
+    {
+      "target": "intro_rich_text_block",
+      "action": "remove",
+      "expected_current_text": "We'd love to hear from you! Please fill out the form and we'll get back to you as soon as possible."
+    },
+    {
+      "target": "form_style",
+      "action": "update",
+      "values": {
+        "font_family": "Geist",
+        "text_color": "#121617",
+        "label_color": "#303638",
+        "background_color": "#E3E7E8",
+        "field_background_color": "#F1F3F3",
+        "field_border_color": "#7D8384",
+        "field_border_width_px": 1,
+        "field_border_radius_px": 2,
+        "submit_background_color": "#121617",
+        "submit_text_color": "#EEF2EF",
+        "submit_border_radius_px": 2
+      },
+      "fail_closed_if": "The HubSpot form editor cannot apply Geist as the form font."
+    }
+  ],
+  "preserve_exactly": [
+    "form fields",
+    "field order",
+    "field property mappings",
+    "required and optional states",
+    "hidden fields",
+    "submission notifications",
+    "post-submit behaviour",
+    "spam protection and reCAPTCHA",
+    "form ID",
+    "analytics event handling"
+  ],
+  "verification": [
+    "Reopen the saved HubSpot form and confirm the heading and intro blocks are absent.",
+    "Confirm every field, field order, required state, hidden field, and reCAPTCHA remain unchanged.",
+    "Load the public site embed at desktop and mobile widths and capture screenshots.",
+    "Confirm the embedded form uses the approved neutral palette and square controls.",
+    "Do not create a test contact or submit a live form as part of visual verification."
+  ],
+  "execution": {
+    "published": [
+      "Removed the Contact Us heading block.",
+      "Removed the generic introductory paragraph."
+    ],
+    "provider_readback": [
+      "The live embed begins with First Name and Last Name.",
+      "All visible and hidden fields remain present.",
+      "Required states, reCAPTCHA, and the existing submit path remain present.",
+      "No test contact or form submission was created."
+    ],
+    "blocked": [
+      "HubSpot retained Helvetica and the existing field, button, color, and radius values after attempted form-level edits.",
+      "The editor routes the primary button color to account-level Brand Settings, which was outside the approved form-only mutation scope."
+    ]
+  }
+}
