@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ProjectEnquiryTrigger } from '@/components/contact/project-enquiry-dialog';
 import { siteMeta } from '@/content/site';
 
 export function Hero() {
@@ -14,9 +15,9 @@ export function Hero() {
           </h1>
           <p className="hero-copy">{hero.subhead}</p>
           <div className="cta-row">
-            <Link className="button button-primary" href={hero.primaryCta.href}>
+            <ProjectEnquiryTrigger className="button button-primary">
               {hero.primaryCta.label}
-            </Link>
+            </ProjectEnquiryTrigger>
             <Link className="button button-secondary" href={hero.secondaryCta.href}>
               {hero.secondaryCta.label}
             </Link>

@@ -46,8 +46,8 @@ function parseArgs(argv) {
   if (!options.fixture && !options.url) {
     options.fixture = 'success';
   }
-  if (!['all', 'site-smoke'].includes(options.profile)) {
-    throw new Error(`Unknown profile "${options.profile}". Use all or site-smoke.`);
+  if (!['all', 'site-smoke', 'form-start'].includes(options.profile)) {
+    throw new Error(`Unknown profile "${options.profile}". Use all, site-smoke or form-start.`);
   }
 
   return options;
@@ -81,7 +81,8 @@ function findPii(value, path = '$', findings = []) {
     if (/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i.test(value)) {
       findings.push({ path, reason: 'email-pattern' });
     }
-    if (/(?:\+?\d[\s().-]*){8,}/.test(value)) {
+    const knownSafeIdentifier = /(?:^|\.)(?:submission_id|event_id|run_id|test_id)$/i.test(path);
+    if (!knownSafeIdentifier && /(?:\+?\d[\s().-]*){8,}/.test(value)) {
       findings.push({ path, reason: 'phone-pattern' });
     }
   }
@@ -103,6 +104,7 @@ function markdownReport(report) {
 - Target: \`${report.target}\`
 - Overall: **${report.status.toUpperCase()}**
 - Analytics requests observed: ${report.analyticsRequests.length}
+- Analytics event deliveries: ${report.analyticsDeliveries.length}
 - PII findings: ${report.piiFindings.length}
 
 | Event | Expected | Observed | Parameters | Result |
@@ -119,19 +121,29 @@ async function main() {
   const options = parseArgs(process.argv.slice(2));
   const target = options.url || fixtureUrl(options.fixture);
   const analyticsRequests = [];
+  const analyticsDeliveries = [];
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
 
   page.on('request', (request) => {
     const url = request.url();
-    if (
-      url.includes('google-analytics.com/g/collect') ||
-      url.includes('googletagmanager.com/g/collect') ||
-      url.includes('google.com/ccm/collect')
-    ) {
+    const parsedUrl = new URL(url);
+    if (parsedUrl.pathname.includes('/g/collect') || parsedUrl.pathname.includes('/ccm/collect')) {
+      const payloads = [parsedUrl.searchParams, ...(request.postData() || '').split('\n').filter(Boolean).map((line) => new URLSearchParams(line))];
+      payloads.forEach((payload) => {
+        const eventName = payload.get('en');
+        if (eventName) {
+          analyticsDeliveries.push({
+            eventName,
+            parameterKeys: [...payload.keys()]
+              .filter((key) => key.startsWith('ep.') || key.startsWith('epn.'))
+              .sort(),
+          });
+        }
+      });
       analyticsRequests.push({
         method: request.method(),
-        url: url.replace(/([?&](?:cid|uid|sid|sct|dl|dt)=[^&]*)/g, ''),
+        endpoint: `${parsedUrl.hostname}${parsedUrl.pathname}`,
       });
     }
   });
@@ -146,25 +158,33 @@ async function main() {
     if (await allow.isVisible().catch(() => false)) {
       await allow.click();
     }
-    await page.evaluate(() => {
-      const clickWithoutNavigation = (selector) => {
-        const link = document.querySelector(selector);
-        if (!link) return;
-        link.addEventListener('click', (event) => event.preventDefault(), { once: true });
-        link.click();
-      };
+    if (options.profile === 'form-start') {
+      await page.getByRole('button', { name: 'Start project' }).first().click();
+      const formFrame = page.frameLocator('dialog[open] iframe[title="Form"]');
+      await formFrame.getByRole('textbox', { name: 'First Name' }).fill('Synthetic QA');
+      await page.waitForTimeout(1250);
+    } else {
+      await page.evaluate(() => {
+        const clickWithoutNavigation = (selector) => {
+          const link = document.querySelector(selector);
+          if (!link) return;
+          link.addEventListener('click', (event) => event.preventDefault(), { once: true });
+          link.click();
+        };
 
-      const caseStudy = document.querySelector('details:has(a[href^="/work/"])');
-      if (caseStudy && !caseStudy.open) {
-        caseStudy.open = true;
-      }
-      clickWithoutNavigation('a[href^="mailto:"]');
-      clickWithoutNavigation('a[href*="upwork.com/"]');
-      clickWithoutNavigation('a[href^="http"]:not([href*="upwork.com/"])');
-    });
-    await page.waitForTimeout(750);
+        const caseStudy = document.querySelector('details:has(a[href^="/work/"])');
+        if (caseStudy && !caseStudy.open) {
+          caseStudy.open = true;
+        }
+        clickWithoutNavigation('a[href^="mailto:"]');
+        clickWithoutNavigation('a[href*="upwork.com/"]');
+        clickWithoutNavigation('a[href^="http"]:not([href*="upwork.com/"])');
+      });
+      await page.waitForTimeout(750);
+    }
   }
 
+  await page.waitForTimeout(2000);
   const dataLayer = await page.evaluate(() =>
     (window.dataLayer || []).filter(
       (entry) => entry && typeof entry === 'object' && !Array.isArray(entry) && entry.event,
@@ -184,6 +204,8 @@ async function main() {
             'click_external_portfolio',
           ].includes(name),
         )
+      : options.profile === 'form-start'
+        ? Object.entries(EVENT_RULES).filter(([name]) => ['page_view', 'form_start'].includes(name))
       : Object.entries(EVENT_RULES);
   const events = selectedRules.map(([name, requiredParameters]) => {
     const matches = dataLayer.filter((entry) => entry.event === name);
@@ -214,6 +236,14 @@ async function main() {
   if (piiFindings.length) {
     failures.push(`Potential PII leakage detected at ${piiFindings.map((item) => item.path).join(', ')}`);
   }
+  if (options.url) {
+    selectedRules.forEach(([name]) => {
+      const delivered = analyticsDeliveries.filter((delivery) => delivery.eventName === name).length;
+      if (delivered !== 1) {
+        failures.push(`${name}: expected 1 GA delivery, observed ${delivered}`);
+      }
+    });
+  }
 
   const report = {
     schema: 'sm-systems.event-qa.v1',
@@ -224,6 +254,7 @@ async function main() {
     events,
     piiFindings,
     analyticsRequests,
+    analyticsDeliveries,
     dataLayer,
     failures,
   };

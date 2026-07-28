@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ProjectEnquiryTrigger } from '@/components/contact/project-enquiry-dialog';
 
 type CtaSectionProps = {
   eyebrow?: string;
@@ -17,9 +18,15 @@ type CtaSectionProps = {
 export function CtaSection({ eyebrow, title, body, primary, secondary, profile }: CtaSectionProps) {
   const actions = (
     <div className="cta-row">
-      <Link className="button button-primary" href={primary.href}>
-        {primary.label}
-      </Link>
+      {primary.href === '/#project-enquiry' ? (
+        <ProjectEnquiryTrigger className="button button-primary">
+          {primary.label}
+        </ProjectEnquiryTrigger>
+      ) : (
+        <Link className="button button-primary" href={primary.href}>
+          {primary.label}
+        </Link>
+      )}
       {secondary ? (
         <Link className="button button-secondary" href={secondary.href}>
           {secondary.label}

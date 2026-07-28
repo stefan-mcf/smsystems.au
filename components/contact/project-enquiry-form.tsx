@@ -172,7 +172,7 @@ export function ProjectEnquiryForm() {
   }, []);
 
   return (
-    <section className="project-enquiry" id="project-enquiry" aria-labelledby="project-enquiry-title">
+    <section className="project-enquiry" aria-labelledby="project-enquiry-title">
       <div className="project-enquiry-copy">
         <p className="eyebrow">Project enquiry</p>
         <h2 id="project-enquiry-title">Tell me what the workflow needs to do.</h2>
