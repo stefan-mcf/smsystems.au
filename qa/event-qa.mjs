@@ -184,7 +184,7 @@ async function main() {
     }
   }
 
-  await page.waitForTimeout(2000);
+  await page.waitForTimeout(5000);
   const dataLayer = await page.evaluate(() =>
     (window.dataLayer || []).filter(
       (entry) => entry && typeof entry === 'object' && !Array.isArray(entry) && entry.event,

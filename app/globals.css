@@ -453,11 +453,20 @@ strong {
   font-size: clamp(1rem, 1.14vw, 1.12rem);
 }
 
-.project-enquiry-note a {
-  color: var(--accent-strong);
-  font-weight: 720;
-  text-decoration: underline;
-  text-underline-offset: 0.22em;
+.project-enquiry-email-route {
+  display: grid;
+  justify-items: start;
+  gap: 0.58rem;
+  margin-top: 0.15rem;
+}
+
+.project-enquiry-email-route p {
+  color: #41494a;
+  font-size: 0.92rem;
+}
+
+.project-enquiry-email-route .button {
+  min-width: 9.1rem;
 }
 
 .project-enquiry-form {
