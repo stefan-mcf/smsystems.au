@@ -199,7 +199,7 @@ export function Measurement() {
           </div>
         </aside>
       ) : null}
-      {choice ? (
+      {choice === 'denied' ? (
         <button
           className="consent-reopen"
           type="button"
