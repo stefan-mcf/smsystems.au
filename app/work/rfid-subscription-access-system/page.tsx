@@ -10,8 +10,8 @@ const screenshotLayout = [
   {
     src: '/rfid/subscription-website.png',
     title: 'Customer plan selection',
-    width: 2654,
-    height: 1502,
+    width: 2048,
+    height: 1060,
   },
   {
     src: '/rfid/operator-dashboard.png',
@@ -22,14 +22,14 @@ const screenshotLayout = [
   {
     src: '/rfid/operator-tag-setup.png',
     title: 'Tag setup and activation',
-    width: 1280,
-    height: 720,
+    width: 2048,
+    height: 1060,
   },
   {
     src: '/rfid/operator-wash-test.png',
     title: 'Wash automation controls',
-    width: 1280,
-    height: 720,
+    width: 2048,
+    height: 1060,
   },
 ];
 

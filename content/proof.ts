@@ -392,8 +392,8 @@ export const proofItems: ProofItem[] = [
           alt: 'HubSpot deal activity showing controlled stage movement from Audit Booked to Proposal Prepared.',
           caption:
             'Native activity history showing controlled movement from Audit Booked to Proposal Prepared.',
-          width: 1116,
-          height: 803,
+          width: 1149,
+          height: 648,
         },
       ],
     },
@@ -512,24 +512,24 @@ export const proofItems: ProofItem[] = [
           alt: 'RFID operator dashboard Tag Setup workspace with tag selection, claim-code activation, and manual activation controls.',
           caption:
             'Tag Setup workspace for selecting tags, activating customer claim codes, and managing tag assignments.',
-          width: 1280,
-          height: 720,
+          width: 2048,
+          height: 1060,
         },
         {
           src: '/rfid/operator-wash-test.png',
           alt: 'RFID operator dashboard Wash Test workspace with automation modes and wash-output signal indicators.',
           caption:
             'Wash Test workspace for selecting an automation mode and monitoring wash-output signals.',
-          width: 1280,
-          height: 720,
+          width: 2048,
+          height: 1060,
         },
         {
           src: '/rfid/subscription-website.png',
           alt: 'Subscription website showing Standard, Premium, and Ultimate monthly wash-plan cards.',
           caption:
             'Customer plan-selection screen showing Standard, Premium, and Ultimate options before checkout.',
-          width: 2654,
-          height: 1502,
+          width: 2048,
+          height: 1060,
         },
       ],
     },

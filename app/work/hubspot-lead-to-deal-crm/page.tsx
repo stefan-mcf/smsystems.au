@@ -19,8 +19,8 @@ const screenshotLayout = [
   },
   {
     src: '/hubspot-lead-to-deal/auditable-stage-history.png',
-    width: 1116,
-    height: 803,
+    width: 1149,
+    height: 648,
   },
 ];
 
