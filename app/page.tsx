@@ -5,6 +5,7 @@ import { SectionIntro } from '@/components/ui/section-intro';
 import { CtaSection } from '@/components/ui/cta-section';
 import { proofItems } from '@/content/proof';
 import { siteMeta } from '@/content/site';
+import { ProjectEnquiryForm } from '@/components/contact/project-enquiry-form';
 
 export default function HomePage() {
   const featuredProof = proofItems.filter(
@@ -52,11 +53,16 @@ export default function HomePage() {
 
       <div className="page-divider" aria-hidden="true" />
 
+      <ProjectEnquiryForm />
+
+      <div className="page-divider" aria-hidden="true" />
+
       <div className="final-contact-section" id="contact" data-reveal>
         <CtaSection
           eyebrow="Contact"
           title={siteMeta.finalCta.title}
           primary={siteMeta.finalCta.primary}
+          secondary={siteMeta.finalCta.secondary}
         />
       </div>
     </>

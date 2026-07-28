@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>SM Systems duplicate-event QA fixture</title>
+  </head>
+  <body>
+    <button id="run">Run duplicated conversion path</button>
+    <script>
+      window.dataLayer = [];
+      document.querySelector('#run').addEventListener('click', () => {
+        const shared = {
+          event_version: 'sm-measurement-v1',
+          page_path: '/qa/fixture/',
+        };
+        window.dataLayer.push({ event: 'page_view', ...shared, page_title: document.title });
+        window.dataLayer.push({ event: 'view_case_study', ...shared, case_study_path: '/work/example/' });
+        window.dataLayer.push({ event: 'click_email', ...shared, link_location: 'site' });
+        window.dataLayer.push({ event: 'click_upwork_profile', ...shared, link_location: 'site' });
+        window.dataLayer.push({
+          event: 'click_external_portfolio',
+          ...shared,
+          link_domain: 'example.com',
+        });
+        window.dataLayer.push({
+          event: 'form_start',
+          ...shared,
+          form_name: 'sm_project_enquiry_v1',
+          submission_id: 'sm-inbound-qa-duplicate-001',
+        });
+        const duplicatedLead = {
+          event: 'generate_lead',
+          ...shared,
+          form_name: 'sm_project_enquiry_v1',
+          submission_id: 'sm-inbound-qa-duplicate-001',
+        };
+        window.dataLayer.push(duplicatedLead);
+        window.dataLayer.push({ ...duplicatedLead });
+      });
+    </script>
+  </body>
+</html>

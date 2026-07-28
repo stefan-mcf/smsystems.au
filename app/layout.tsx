@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { SiteHeader } from '@/components/layout/site-header';
 import { SiteFooter } from '@/components/layout/site-footer';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
+import { Measurement } from '@/components/analytics/measurement';
 import { contactLinks, siteMeta } from '@/content/site';
 
 const canonicalSiteUrl = 'https://smsystems.au';
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body>
+        <Measurement />
         <ScrollReveal />
         <div className="wire-field" aria-hidden="true">
           <span className="wire-pulse wire-pulse-one" />
