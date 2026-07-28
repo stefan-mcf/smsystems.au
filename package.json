@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "qa:event": "node qa/event-qa.mjs"
+    "qa:event": "node qa/event-qa.mjs",
+    "qa:responsive": "node qa/responsive-smoke.mjs"
   },
   "dependencies": {
     "next": "^16.2.7",

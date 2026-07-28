@@ -117,11 +117,88 @@ ${report.failures.length ? report.failures.map((failure) => `- ${failure}`).join
 `;
 }
 
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+function htmlReport(report) {
+  const rows = report.events
+    .map(
+      (event) => `
+        <tr>
+          <td><code>${escapeHtml(event.name)}</code></td>
+          <td>${event.expected}</td>
+          <td>${event.observed}</td>
+          <td><span class="badge ${event.parametersValid ? 'pass' : 'fail'}">${event.parametersValid ? 'pass' : 'fail'}</span></td>
+          <td><span class="badge ${event.status}">${event.status}</span></td>
+        </tr>`,
+    )
+    .join('');
+  const failures = report.failures.length
+    ? report.failures.map((failure) => `<li>${escapeHtml(failure)}</li>`).join('')
+    : '<li>None</li>';
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SM Systems event QA — ${escapeHtml(report.status)}</title>
+    <style>
+      :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+      body { margin: 0; background: #08111f; color: #e8eef8; }
+      main { width: min(1080px, calc(100% - 48px)); margin: 48px auto; }
+      .eyebrow { color: #7dd3fc; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+      h1 { margin: 8px 0 12px; font-size: clamp(30px, 5vw, 52px); }
+      .summary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 28px 0; }
+      .card, table, .failures { border: 1px solid #24334a; border-radius: 14px; background: #101d30; }
+      .card { padding: 18px; }
+      .label { color: #9aabc3; font-size: 12px; text-transform: uppercase; }
+      .value { margin-top: 8px; font-size: 24px; font-weight: 750; }
+      table { width: 100%; border-collapse: collapse; overflow: hidden; }
+      th, td { padding: 14px 16px; border-bottom: 1px solid #24334a; text-align: left; }
+      th { color: #9aabc3; font-size: 12px; text-transform: uppercase; }
+      tr:last-child td { border-bottom: 0; }
+      .badge { display: inline-block; border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 800; text-transform: uppercase; }
+      .pass { background: #123b2d; color: #86efac; }
+      .fail { background: #4b1d28; color: #fda4af; }
+      .failures { margin-top: 20px; padding: 20px 24px; }
+      code { color: #bae6fd; }
+      @media (max-width: 680px) { .summary { grid-template-columns: 1fr; } th, td { padding: 10px; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Deterministic conversion measurement</p>
+      <h1>Event QA: ${escapeHtml(report.status.toUpperCase())}</h1>
+      <p>Run <code>${escapeHtml(report.runId)}</code></p>
+      <section class="summary">
+        <div class="card"><div class="label">Analytics deliveries</div><div class="value">${report.analyticsDeliveries.length}</div></div>
+        <div class="card"><div class="label">PII findings</div><div class="value">${report.piiFindings.length}</div></div>
+        <div class="card"><div class="label">Failed checks</div><div class="value">${report.failures.length}</div></div>
+      </section>
+      <table>
+        <thead><tr><th>Event</th><th>Expected</th><th>Observed</th><th>Parameters</th><th>Result</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+      <section class="failures"><h2>Failures</h2><ul>${failures}</ul></section>
+    </main>
+  </body>
+</html>
+`;
+}
+
 async function main() {
   const options = parseArgs(process.argv.slice(2));
   const target = options.url || fixtureUrl(options.fixture);
   const analyticsRequests = [];
   const analyticsDeliveries = [];
+  const analyticsPiiFindings = [];
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
 
@@ -133,6 +210,20 @@ async function main() {
       payloads.forEach((payload) => {
         const eventName = payload.get('en');
         if (eventName) {
+          const inspectable = {};
+          payload.forEach((value, key) => {
+            if (['dl', 'dr', 'dt'].includes(key)) {
+              inspectable[key] = value;
+            } else if (key.startsWith('ep.') || key.startsWith('epn.')) {
+              inspectable[key.replace(/^epn?\./, '')] = value;
+            }
+          });
+          analyticsPiiFindings.push(
+            ...findPii(
+              inspectable,
+              `$analyticsDelivery[${analyticsDeliveries.length}]`,
+            ),
+          );
           analyticsDeliveries.push({
             eventName,
             parameterKeys: [...payload.keys()]
@@ -230,7 +321,7 @@ async function main() {
     };
   });
 
-  const piiFindings = findPii(dataLayer);
+  const piiFindings = [...findPii(dataLayer), ...analyticsPiiFindings];
   const failures = events
     .filter((event) => event.status === 'fail')
     .map(
@@ -266,6 +357,7 @@ async function main() {
   await mkdir(dirname(options.out), { recursive: true });
   await writeFile(options.out, `${JSON.stringify(report, null, 2)}\n`);
   await writeFile(options.out.replace(/\.json$/i, '.md'), markdownReport(report));
+  await writeFile(options.out.replace(/\.json$/i, '.html'), htmlReport(report));
 
   console.log(JSON.stringify({ status: report.status, output: options.out, failures }, null, 2));
   process.exitCode = report.status === 'pass' ? 0 : 1;
