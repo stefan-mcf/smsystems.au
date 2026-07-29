@@ -9,9 +9,10 @@ export function Hero() {
     <section className="hero" id="top">
       <div className="hero-grid">
         <div className="hero-copy-block">
+          <p className="hero-kicker">{hero.eyebrow}</p>
           <h1>
-            <span className="hero-line">BUILD THE SYSTEM.</span>
-            <span className="hero-line hero-line-accent">KEEP IT RUNNING.</span>
+            <span className="hero-line">SYSTEMS BUILT.</span>
+            <span className="hero-line hero-line-accent">FOR REAL OPERATIONS.</span>
           </h1>
           <p className="hero-copy">{hero.subhead}</p>
           <div className="cta-row">
