@@ -2,6 +2,7 @@
 out/
 node_modules/
 tsconfig.tsbuildinfo
+qa-output/
 .DS_Store
 .env*.local
 

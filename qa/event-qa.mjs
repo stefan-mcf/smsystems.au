@@ -267,10 +267,7 @@ async function main() {
           link.click();
         };
 
-        const caseStudy = document.querySelector('details:has(a[href^="/work/"])');
-        if (caseStudy && !caseStudy.open) {
-          caseStudy.open = true;
-        }
+        clickWithoutNavigation('a[href^="/work/"]');
         clickWithoutNavigation('a[href^="mailto:"]');
         clickWithoutNavigation('a[href*="upwork.com/"]');
         clickWithoutNavigation('a[href^="http"]:not([href*="upwork.com/"])');
