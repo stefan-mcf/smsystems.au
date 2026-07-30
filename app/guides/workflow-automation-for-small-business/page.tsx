@@ -160,12 +160,6 @@ export default function WorkflowAutomationGuidePage() {
         {
           '@type': 'ListItem',
           position: 2,
-          name: 'Guides',
-          item: guideUrl,
-        },
-        {
-          '@type': 'ListItem',
-          position: 3,
           name: 'Workflow automation for small business',
           item: guideUrl,
         },

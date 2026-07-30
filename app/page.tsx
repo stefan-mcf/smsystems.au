@@ -60,15 +60,15 @@ export default function HomePage() {
           ))}
         </div>
         <div className="service-guide-link">
-          <div>
-            <p className="proof-lane">Practical guide</p>
-            <h3>Workflow automation for small business: what to automate first</h3>
+          <div className="service-guide-copy">
+            <h3>Not sure where to begin?</h3>
+            <p>Use the five-step guide to choose the first workflow worth automating.</p>
           </div>
           <Link
             className="text-link"
             href="/guides/workflow-automation-for-small-business/"
           >
-            Read the guide
+            See what to automate first
           </Link>
         </div>
       </section>
