@@ -10,27 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${canonicalSiteUrl}/`, lastModified },
     {
-      url: `${canonicalSiteUrl}/work/zendesk-ai-support-copilot/`,
-      lastModified,
-    },
-    {
-      url: `${canonicalSiteUrl}/work/automation-debugger/`,
-      lastModified,
-    },
-    {
-      url: `${canonicalSiteUrl}/work/conversion-measurement-inbound-lead-system/`,
-      lastModified,
-    },
-    {
       url: `${canonicalSiteUrl}/work/precision-residential-construction/`,
       lastModified,
     },
     {
-      url: `${canonicalSiteUrl}/work/zendesk-jira-support-escalation/`,
-      lastModified,
-    },
-    {
-      url: `${canonicalSiteUrl}/work/airtable-coaching-program-delivery-hub/`,
+      url: `${canonicalSiteUrl}/work/rfid-subscription-access-system/`,
       lastModified,
     },
     {
@@ -42,7 +26,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
     },
     {
-      url: `${canonicalSiteUrl}/work/rfid-subscription-access-system/`,
+      url: `${canonicalSiteUrl}/work/hubspot-lead-to-deal-crm/`,
+      lastModified,
+    },
+    {
+      url: `${canonicalSiteUrl}/work/conversion-measurement-inbound-lead-system/`,
       lastModified,
     },
   ];

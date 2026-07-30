@@ -12,18 +12,6 @@ export const metadata: Metadata = {
   title: siteMeta.title,
   description: siteMeta.description,
   metadataBase: new URL(canonicalSiteUrl),
-  openGraph: {
-    title: siteMeta.title,
-    description: siteMeta.description,
-    url: canonicalSiteUrl,
-    siteName: 'SM Systems',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary',
-    title: siteMeta.title,
-    description: siteMeta.description,
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -47,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       name: 'SM Systems',
       url: canonicalSiteUrl,
       description:
-        'SM Systems designs and builds AI support systems, workflow automation, API integrations, CRM operations, dashboards, data syncs, and operator tools.',
+        'SM Systems builds workflow automation, API integrations, dashboards, data syncs, CRM/intake routing, review-gated AI workflows, and operator tools for businesses, operators, and technical teams.',
       areaServed: 'Australia',
       founder: {
         '@type': 'Person',
@@ -60,7 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         'Dashboard development',
         'Data cleanup and sync',
         'CRM and intake routing',
-        'Human-reviewed AI workflow setup',
+        'Review-gated AI workflow setup',
         'Operator tools',
         'Edge-to-cloud workflow integration',
       ],

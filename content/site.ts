@@ -22,9 +22,9 @@ export const workflowDiagnosisMailto = `mailto:${contactLinks.email}?subject=${e
 )}&body=${encodeURIComponent(workflowDiagnosisBody)}`;
 
 export const siteMeta = {
-  title: 'Stefan McFeeters | Automation and Integration Developer',
+  title: 'SM Systems | Workflow Automation Builds & Integrations',
   description:
-    'Portfolio of Stefan McFeeters, an automation and integration developer building AI support systems, APIs, workflow automation, CRM operations, and connected tools.',
+    'SM Systems builds workflow automation, API integrations, dashboards, data syncs, CRM/intake routing, review-gated AI workflows, and operator tools.',
   nav: [
     { href: '/#top', label: 'Home' },
     { href: '/#work', label: 'Work' },
@@ -32,11 +32,11 @@ export const siteMeta = {
     { href: '/#contact', label: 'Contact' },
   ],
   hero: {
-    eyebrow: 'Automation and integration developer',
+    eyebrow: 'Independent systems builder',
     kicker: 'Practical systems work for teams that need steadier operations and less brittle automation.',
     headline: 'BUILD THE SYSTEM. KEEP IT RUNNING.',
     subhead:
-      'I design and build AI support systems, integrations, workflow automation, and operator tools for real business operations.',
+      'I build reliable automation systems that connect websites, payments, dashboards, CRMs, and real-world operations into clear, repeatable workflows.',
     primaryCta: { label: 'Start project', href: '/#project-enquiry' },
     secondaryCta: { label: 'View work', href: '/#work' },
     operatingNotes: [
@@ -48,21 +48,21 @@ export const siteMeta = {
   },
   about: {
     eyebrow: 'About',
-    title: 'I work where software meets an operating process.',
+    title: 'I build connected systems for real operations.',
     body: [
-      'I am an automation and integration developer based in Melbourne. I build the connections between customer-facing software, APIs, CRMs, data stores, workflow platforms, and the people responsible for running them.',
-      'My strongest work starts with an operational problem: a support handoff nobody trusts, a conversion path that counts twice, an automation that is unsafe to retry, or a customer journey that does not explain the business clearly.',
-      'I work across Python, TypeScript, FastAPI, Next.js, PostgreSQL, AWS, Airtable, Make, n8n, Zendesk, Jira, HubSpot, and connected edge systems.',
+      'I build websites, automation tools, and connected systems for businesses, teams, and operators where reliability, visibility, and clear operating evidence matter.',
+      'Most of my work sits between websites, payments, APIs, CRMs, spreadsheets, dashboards, and internal tools. I focus on the parts that usually break: weak enquiry paths, missing records, unreliable handoffs, unclear ownership, and poor visibility.',
+      'I also bring experience with PLC-style and edge-to-cloud environments, where software connects back to physical operations.',
     ],
     imageSrc: '/stefan-profile.jpg',
     imageAlt: 'Portrait of Stefan McFeeters',
     facts: [
-      'Automation and integration development',
-      'Python, TypeScript, FastAPI, Next.js',
-      'AI workflows with human review',
-      'CRM and lead operations',
-      'AWS and PostgreSQL systems',
-      'Operator and edge integrations',
+      'Automation systems developer',
+      'API + workflow integrations',
+      'CRM / intake routing',
+      'Review-gated AI workflows',
+      'Dashboards + operator tools',
+      'PLC / edge systems',
     ],
   },
   finalCta: {
