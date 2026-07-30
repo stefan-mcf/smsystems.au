@@ -8,11 +8,6 @@ export function AboutSection() {
       <div className="about-copy">
         <p className="eyebrow">{about.eyebrow}</p>
         <h2>{about.title}</h2>
-        <div className="about-body">
-          {about.body.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
       </div>
 
       <aside className="about-card panel" aria-label="About Stefan McFeeters">
@@ -28,6 +23,12 @@ export function AboutSection() {
           </ul>
         </div>
       </aside>
+
+      <div className="about-body">
+        {about.body.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
     </section>
   );
 }
