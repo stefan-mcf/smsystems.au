@@ -4294,8 +4294,19 @@ body::after {
 
 /* Mobile readiness pass for the single-page publish build. */
 @media (max-width: 760px) {
+  html {
+    scroll-padding-top: 8.15rem;
+  }
+
   body {
     --site-header-height: 6.25rem;
+  }
+
+  #top,
+  #work,
+  #about,
+  #contact {
+    scroll-margin-top: 0;
   }
 
   .site-header-inner {
@@ -4334,6 +4345,10 @@ body::after {
     max-width: none;
   }
 
+  .home-proof-shell {
+    margin-top: 0;
+  }
+
   .site-footer-inner {
     gap: 0.7rem;
   }
@@ -4346,8 +4361,9 @@ body::after {
 
 @media (max-width: 560px) {
   .hero {
-    padding-top: clamp(0.35rem, 2.2vw, 0.8rem);
-    padding-bottom: clamp(2.45rem, 8vw, 3.35rem);
+    min-height: calc(100dvh - var(--site-header-height));
+    padding-top: clamp(0.9rem, 4vw, 1.2rem);
+    padding-bottom: clamp(3rem, 9vw, 3.8rem);
   }
 
   .hero-copy-block::before {
