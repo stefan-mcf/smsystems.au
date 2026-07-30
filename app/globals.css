@@ -4461,6 +4461,14 @@ body::after {
     width: 100%;
   }
 
+  .about-card {
+    grid-template-columns: minmax(8.15rem, 0.38fr) minmax(0, 1fr);
+  }
+
+  .about-portrait-frame {
+    max-width: 9.4rem;
+  }
+
   .footer-kicker {
     font-size: 0.78rem;
     line-height: 1.25;
@@ -4498,6 +4506,14 @@ body::after {
 
   .hero .button {
     font-size: 0.65rem;
+  }
+
+  .about-card {
+    grid-template-columns: minmax(7.35rem, 0.36fr) minmax(0, 1fr);
+  }
+
+  .about-portrait-frame {
+    max-width: 8.25rem;
   }
 
 }
