@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ProjectEnquiryTrigger } from '@/components/contact/project-enquiry-dialog';
+import { ZoomableImage } from '@/components/ui/image-lightbox';
 
 type CtaSectionProps = {
   eyebrow?: string;
@@ -49,7 +50,10 @@ export function CtaSection({ eyebrow, title, body, primary, secondary, profile }
       <div className="cta-panel-actions">
         {profile ? (
           <div className="cta-profile" aria-label={`Profile for ${profile.name}`}>
-            <img src={profile.imageSrc} alt={`${profile.name} portrait`} />
+            <ZoomableImage
+              src={profile.imageSrc}
+              alt={`${profile.name} portrait`}
+            />
             <div className="cta-profile-copy">
               <div>
                 <p className="cta-profile-name">{profile.name}</p>

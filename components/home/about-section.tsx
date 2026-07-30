@@ -1,4 +1,5 @@
 import { siteMeta } from '@/content/site';
+import { ZoomableImage } from '@/components/ui/image-lightbox';
 
 export function AboutSection() {
   const { about } = siteMeta;
@@ -12,7 +13,7 @@ export function AboutSection() {
 
       <aside className="about-card panel" aria-label="About Stefan McFeeters">
         <div className="about-portrait-frame">
-          <img src={about.imageSrc} alt={about.imageAlt} />
+          <ZoomableImage src={about.imageSrc} alt={about.imageAlt} />
         </div>
         <div className="about-card-copy">
           <p className="about-name">Stefan McFeeters</p>

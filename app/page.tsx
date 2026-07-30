@@ -52,8 +52,7 @@ export default function HomePage() {
       <section className="page-section service-section" id="services" data-reveal>
         <SectionIntro
           eyebrow="Services"
-          title="What you can hire me to build."
-          body="Start with the customer path, workflow, or operational system that needs to become clearer and more reliable."
+          title="Services for websites, workflows, and operations."
         />
         <div className="service-grid service-grid-featured">
           {serviceItems.map((service) => (

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { WorkStructuredData } from '@/components/seo/work-structured-data';
+import { ZoomableImage } from '@/components/ui/image-lightbox';
 import { createPageMetadata } from '@/content/metadata';
 import { proofItems } from '@/content/proof';
 
@@ -112,7 +113,7 @@ export default function AirtableMakeOpportunityPipelinePage() {
           {screenshots.map((screenshot, index) => (
             <figure className="case-study-shot" key={screenshot.src}>
               <div className="case-study-shot-media">
-                <img
+                <ZoomableImage
                   src={screenshot.src}
                   alt={screenshot.alt}
                   width={screenshot.width}

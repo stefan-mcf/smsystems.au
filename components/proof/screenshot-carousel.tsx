@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useEffect } from 'react';
+import { ZoomableImage } from '@/components/ui/image-lightbox';
 
 export type Screenshot = {
   src: string;
@@ -80,7 +81,7 @@ export function ScreenshotCarousel({ screenshots }: ScreenshotCarouselProps) {
                 : undefined
             }
           >
-            <img
+            <ZoomableImage
               src={current.src}
               alt={current.alt}
               width={current.width}

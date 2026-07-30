@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { ZoomableImage } from '@/components/ui/image-lightbox';
 import { createPageMetadata } from '@/content/metadata';
 import { getService, serviceItems } from '@/content/services';
 
@@ -188,13 +189,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
         <div className="case-study-shot-list service-proof-list">
           {service.proof.map((proof) => (
-            <Link
+            <article
               className="case-study-shot service-proof-card"
-              href={proof.href}
               key={proof.href}
             >
               <span className="case-study-shot-media">
-                <img
+                <ZoomableImage
                   src={proof.image.src}
                   alt={proof.image.alt}
                   width={proof.image.width}
@@ -202,12 +202,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   loading="lazy"
                 />
               </span>
-              <span className="service-proof-caption">
+              <Link className="service-proof-caption" href={proof.href}>
                 <strong>{proof.title}</strong>
                 <span>{proof.description}</span>
                 <span className="text-link">View case study</span>
-              </span>
-            </Link>
+              </Link>
+            </article>
           ))}
         </div>
       </section>
