@@ -62,9 +62,6 @@ export default function RfidSubscriptionAccessSystemPage() {
   return (
     <article className="case-study-page" data-reveal>
       <header className="case-study-hero">
-        <Link className="text-link case-study-back" href="/#work">
-          Back to selected work
-        </Link>
         <p className="eyebrow">Client project</p>
         <h1 className="case-study-title-wide">
           RFID carwash subscription access system
@@ -78,6 +75,9 @@ export default function RfidSubscriptionAccessSystemPage() {
             Discuss your system
           </Link>
         </div>
+        <Link className="text-link case-study-back" href="/#work">
+          Back to selected work
+        </Link>
       </header>
 
       <section className="case-study-gallery" aria-labelledby="rfid-walkthrough">

@@ -46,9 +46,6 @@ export default function PrecisionResidentialConstructionPage() {
   return (
     <article className="case-study-page" data-reveal>
       <header className="case-study-hero">
-        <Link className="text-link case-study-back" href="/#work">
-          Back to selected work
-        </Link>
         <p className="eyebrow">Client project</p>
         <h1>Precision Residential Construction website</h1>
         <p className="case-study-lede">
@@ -67,6 +64,9 @@ export default function PrecisionResidentialConstructionPage() {
             Discuss a project
           </Link>
         </div>
+        <Link className="text-link case-study-back" href="/#work">
+          Back to selected work
+        </Link>
       </header>
 
       <section className="case-study-gallery" aria-labelledby="website-walkthrough">

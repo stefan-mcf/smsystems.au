@@ -2210,7 +2210,7 @@ strong {
 }
 
 .case-study-back {
-  margin-bottom: clamp(2rem, 5vw, 4.5rem);
+  margin-top: clamp(1.2rem, 2.4vw, 1.8rem);
 }
 
 .case-study-hero h1,
@@ -2380,10 +2380,6 @@ strong {
   .case-study-page {
     gap: 2.4rem;
     padding-top: 0.5rem;
-  }
-
-  .case-study-back {
-    margin-bottom: 1.6rem;
   }
 
   .case-study-hero h1 {

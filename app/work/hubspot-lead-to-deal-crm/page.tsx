@@ -48,9 +48,6 @@ export default function HubspotLeadToDealCrmPage() {
   return (
     <article className="case-study-page" data-reveal>
       <header className="case-study-hero">
-        <Link className="text-link case-study-back" href="/#work">
-          Back to selected work
-        </Link>
         <p className="eyebrow">Featured build</p>
         <h1 className="case-study-title-wide">
           HubSpot CRM pipeline and record controls
@@ -64,6 +61,9 @@ export default function HubspotLeadToDealCrmPage() {
             Discuss your workflow
           </Link>
         </div>
+        <Link className="text-link case-study-back" href="/#work">
+          Back to selected work
+        </Link>
       </header>
 
       <section

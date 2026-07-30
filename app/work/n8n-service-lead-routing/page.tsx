@@ -56,9 +56,6 @@ export default function N8nServiceLeadRoutingPage() {
   return (
     <article className="case-study-page" data-reveal>
       <header className="case-study-hero">
-        <Link className="text-link case-study-back" href="/#work">
-          Back to selected work
-        </Link>
         <p className="eyebrow">Featured build</p>
         <h1 className="case-study-title-wide">n8n lead routing workflow</h1>
         <p className="case-study-lede">
@@ -70,6 +67,9 @@ export default function N8nServiceLeadRoutingPage() {
             Discuss your workflow
           </Link>
         </div>
+        <Link className="text-link case-study-back" href="/#work">
+          Back to selected work
+        </Link>
       </header>
 
       <section

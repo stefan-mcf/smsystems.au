@@ -23,7 +23,6 @@ export default function HomePage() {
           <SectionIntro
             eyebrow="Selected work"
             title="Systems and tools I’ve built."
-            body="Examples of workflow automation, integrations, data syncs, operator tools, and review-gated systems showing the tool, the data path, and the result."
           />
         </div>
         {clientProof.length ? (
