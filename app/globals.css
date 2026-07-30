@@ -1541,11 +1541,16 @@ strong {
 
 .about-section {
   grid-template-columns: minmax(0, 0.96fr) minmax(24rem, 0.92fr);
-  gap: clamp(1.2rem, 2.35vw, 2.45rem);
+  grid-template-areas:
+    "copy card"
+    "body card";
+  column-gap: clamp(1.2rem, 2.35vw, 2.45rem);
+  row-gap: 1rem;
   align-items: center;
 }
 
 .about-copy {
+  grid-area: copy;
   position: relative;
   display: grid;
   gap: 1rem;
@@ -1576,12 +1581,13 @@ strong {
 }
 
 .about-body {
+  grid-area: body;
   display: grid;
   gap: 0.78rem;
   max-width: 43rem;
 }
 
-.about-copy p:not(.eyebrow) {
+.about-body p {
   max-width: 43rem;
   color: #30383b;
   font-size: clamp(1.01rem, 1.22vw, 1.16rem);
@@ -1592,6 +1598,7 @@ strong {
 }
 
 .about-card {
+  grid-area: card;
   position: relative;
   display: grid;
   grid-template-columns: minmax(8rem, 0.38fr) minmax(0, 1fr);
@@ -3186,6 +3193,10 @@ strong {
 @media (max-width: 860px) {
   .about-section {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "copy"
+      "card"
+      "body";
   }
 
   .about-card {
@@ -3444,7 +3455,7 @@ strong {
   }
 
   .about-card {
-    grid-template-columns: minmax(6rem, 0.34fr) minmax(0, 1fr);
+    grid-template-columns: minmax(6.5rem, 0.34fr) minmax(0, 1fr);
     align-items: center;
     gap: 0.72rem;
   }
@@ -4040,11 +4051,11 @@ body::after {
 .section-body,
 .fit-intro p:not(.eyebrow),
 .process-intro p:not(.eyebrow),
-.about-copy p:not(.eyebrow) {
+.about-body p {
   color: #41494a;
 }
 
-.about-copy p:not(.eyebrow) {
+.about-body p {
   color: #30383b;
 }
 
@@ -4291,7 +4302,7 @@ body::after {
 /* Mobile readiness pass for the single-page publish build. */
 @media (max-width: 760px) {
   html {
-    scroll-padding-top: 8.15rem;
+    scroll-padding-top: 0;
   }
 
   body {
@@ -4302,7 +4313,7 @@ body::after {
   #work,
   #about,
   #contact {
-    scroll-margin-top: 0;
+    scroll-margin-top: 9rem;
   }
 
   .site-header-inner {
@@ -4450,14 +4461,6 @@ body::after {
     width: 100%;
   }
 
-  .about-card {
-    grid-template-columns: minmax(8.15rem, 0.38fr) minmax(0, 1fr);
-  }
-
-  .about-portrait-frame {
-    max-width: 9.4rem;
-  }
-
   .footer-kicker {
     font-size: 0.78rem;
     line-height: 1.25;
@@ -4497,11 +4500,4 @@ body::after {
     font-size: 0.65rem;
   }
 
-  .about-card {
-    grid-template-columns: minmax(7.35rem, 0.36fr) minmax(0, 1fr);
-  }
-
-  .about-portrait-frame {
-    max-width: 8.25rem;
-  }
 }
