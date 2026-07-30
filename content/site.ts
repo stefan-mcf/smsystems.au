@@ -27,6 +27,7 @@ export const siteMeta = {
     'SM Systems builds workflow automation, API integrations, dashboards, data syncs, CRM/intake routing, review-gated AI workflows, and operator tools.',
   nav: [
     { href: '/#top', label: 'Home' },
+    { href: '/#services', label: 'Services' },
     { href: '/#work', label: 'Work' },
     { href: '/#about', label: 'About' },
     { href: '/#contact', label: 'Contact' },

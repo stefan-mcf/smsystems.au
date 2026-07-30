@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { WorkStructuredData } from '@/components/seo/work-structured-data';
+import { createPageMetadata } from '@/content/metadata';
 import { proofItems } from '@/content/proof';
 
 const rfidSystem = proofItems.find(
@@ -33,14 +35,18 @@ const screenshotLayout = [
   },
 ];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'RFID carwash subscription access system | SM Systems',
   description:
     'An RFID carwash subscription and access system connecting customer wash plans, tag activation, access decisions, operator controls, and event visibility.',
-  alternates: {
-    canonical: '/work/rfid-subscription-access-system/',
+  path: '/work/rfid-subscription-access-system/',
+  image: {
+    url: '/rfid/subscription-website.png',
+    width: 2048,
+    height: 1060,
+    alt: 'RFID carwash subscription website and access system',
   },
-};
+});
 
 export default function RfidSubscriptionAccessSystemPage() {
   if (!rfidSystem?.caseStudy) {
@@ -61,6 +67,12 @@ export default function RfidSubscriptionAccessSystemPage() {
 
   return (
     <article className="case-study-page" data-reveal>
+      <WorkStructuredData
+        title="RFID carwash subscription access system"
+        description="An RFID carwash subscription and access system connecting customer wash plans, tag activation, access decisions, operator controls, and event visibility."
+        path="/work/rfid-subscription-access-system/"
+        image="/rfid/subscription-website.png"
+      />
       <header className="case-study-hero">
         <p className="eyebrow">Client project</p>
         <h1 className="case-study-title-wide">

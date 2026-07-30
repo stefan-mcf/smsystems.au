@@ -1,11 +1,22 @@
 import { Hero } from '@/components/home/hero';
 import { AboutSection } from '@/components/home/about-section';
 import { ProofGrid } from '@/components/proof/proof-grid';
+import { ServiceCard } from '@/components/services/service-card';
 import { SectionIntro } from '@/components/ui/section-intro';
 import { CtaSection } from '@/components/ui/cta-section';
+import { createPageMetadata } from '@/content/metadata';
 import { proofItems } from '@/content/proof';
+import { serviceItems } from '@/content/services';
 import { siteMeta } from '@/content/site';
 import { ProjectEnquiryProvider } from '@/components/contact/project-enquiry-dialog';
+
+const canonicalSiteUrl = 'https://smsystems.au';
+
+export const metadata = createPageMetadata({
+  title: siteMeta.title,
+  description: siteMeta.description,
+  path: '/',
+});
 
 export default function HomePage() {
   const featuredProof = proofItems.filter(
@@ -16,7 +27,40 @@ export default function HomePage() {
 
   return (
     <ProjectEnquiryProvider>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            '@id': `${canonicalSiteUrl}/#webpage`,
+            url: `${canonicalSiteUrl}/`,
+            name: siteMeta.title,
+            description: siteMeta.description,
+            isPartOf: {
+              '@id': `${canonicalSiteUrl}/#website`,
+            },
+            about: {
+              '@id': `${canonicalSiteUrl}/#business`,
+            },
+          }),
+        }}
+      />
+
       <Hero />
+
+      <section className="page-section service-section" id="services" data-reveal>
+        <SectionIntro
+          eyebrow="Services"
+          title="What you can hire me to build."
+          body="Start with the customer path, workflow, or operational system that needs to become clearer and more reliable."
+        />
+        <div className="service-grid service-grid-featured">
+          {serviceItems.map((service) => (
+            <ServiceCard item={service} key={service.slug} />
+          ))}
+        </div>
+      </section>
 
       <section className="page-section home-proof-section" id="work" data-reveal>
         <div className="home-proof-shell">

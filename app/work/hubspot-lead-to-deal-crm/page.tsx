@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { WorkStructuredData } from '@/components/seo/work-structured-data';
+import { createPageMetadata } from '@/content/metadata';
 import { proofItems } from '@/content/proof';
 
 const hubspotLeadToDeal = proofItems.find(
@@ -19,14 +21,18 @@ const screenshotLayout = [
   },
 ];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'HubSpot CRM pipeline and record controls | SM Systems',
   description:
     'A private HubSpot CRM implementation with controlled pipeline stages, linked records, stable deduplication, provider readback, and exact cleanup.',
-  alternates: {
-    canonical: '/work/hubspot-lead-to-deal-crm/',
+  path: '/work/hubspot-lead-to-deal-crm/',
+  image: {
+    url: '/hubspot-lead-to-deal/lead-to-deal-pipeline.png',
+    width: 1149,
+    height: 648,
+    alt: 'HubSpot lead-to-deal CRM pipeline',
   },
-};
+});
 
 export default function HubspotLeadToDealCrmPage() {
   if (!hubspotLeadToDeal?.caseStudy) {
@@ -47,6 +53,12 @@ export default function HubspotLeadToDealCrmPage() {
 
   return (
     <article className="case-study-page" data-reveal>
+      <WorkStructuredData
+        title="HubSpot CRM pipeline and record controls"
+        description="A private HubSpot CRM implementation with controlled pipeline stages, linked records, stable deduplication, provider readback, and exact cleanup."
+        path="/work/hubspot-lead-to-deal-crm/"
+        image="/hubspot-lead-to-deal/lead-to-deal-pipeline.png"
+      />
       <header className="case-study-hero">
         <p className="eyebrow">Featured build</p>
         <h1 className="case-study-title-wide">

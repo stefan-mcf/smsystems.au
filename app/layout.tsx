@@ -19,12 +19,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
+      '@id': `${canonicalSiteUrl}/#website`,
       name: 'SM Systems',
       url: canonicalSiteUrl,
     },
     {
       '@context': 'https://schema.org',
       '@type': 'Person',
+      '@id': `${canonicalSiteUrl}/#stefan-mcfeeters`,
       name: 'Stefan McFeeters',
       url: canonicalSiteUrl,
       sameAs: [contactLinks.linkedin, contactLinks.github, contactLinks.upwork],
@@ -32,17 +34,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     {
       '@context': 'https://schema.org',
       '@type': 'ProfessionalService',
+      '@id': `${canonicalSiteUrl}/#business`,
       name: 'SM Systems',
       url: canonicalSiteUrl,
       description:
         'SM Systems builds workflow automation, API integrations, dashboards, data syncs, CRM/intake routing, review-gated AI workflows, and operator tools for businesses, operators, and technical teams.',
       areaServed: 'Australia',
       founder: {
-        '@type': 'Person',
-        name: 'Stefan McFeeters',
-        url: canonicalSiteUrl,
+        '@id': `${canonicalSiteUrl}/#stefan-mcfeeters`,
       },
       serviceType: [
+        'Business website development',
+        'Quote and enquiry system development',
         'Workflow automation build',
         'API and webhook integration',
         'Dashboard development',

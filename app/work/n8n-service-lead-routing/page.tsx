@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { WorkStructuredData } from '@/components/seo/work-structured-data';
+import { createPageMetadata } from '@/content/metadata';
 import { proofItems } from '@/content/proof';
 
 const n8nServiceLeadRouting = proofItems.find(
@@ -8,37 +10,50 @@ const n8nServiceLeadRouting = proofItems.find(
 
 const screenshotLayout = [
   {
-    src: '/n8n-service-lead/workflow-overview.png',
-    title: 'Service lead routing workflow',
-    width: 1496,
-    height: 758,
+    src: '/n8n-service-lead/customer-intake.png',
+    title: 'Service enquiry intake form',
+    width: 1280,
+    height: 960,
   },
   {
-    src: '/n8n-service-lead/validation-logic.png',
-    title: 'Checks applied before handoff',
-    width: 1496,
-    height: 722,
+    src: '/n8n-service-lead/routing-workflow.png',
+    title: 'n8n service enquiry routing',
+    width: 1280,
+    height: 960,
   },
   {
-    src: '/n8n-service-lead/invalid-lead-output.png',
-    title: 'Incomplete enquiry held safely',
-    width: 1242,
-    height: 699,
+    src: '/n8n-service-lead/operator-register.png',
+    title: 'Service Enquiry Register',
+    width: 1280,
+    height: 960,
+  },
+  {
+    src: '/n8n-service-lead/human-review.png',
+    title: 'Human review gate',
+    width: 1280,
+    height: 960,
   },
 ];
 
-export const metadata: Metadata = {
-  title: 'n8n lead routing workflow | SM Systems',
-  description:
-    'A controlled n8n workflow for checking service enquiries, separating exceptions, and preparing clean downstream handoffs.',
-  alternates: {
-    canonical: '/work/n8n-service-lead-routing/',
+const pageTitle = 'n8n service enquiry intake and routing';
+const pageDescription =
+  'A customer quote form connected to an inactive n8n workflow with validation, persistent duplicate checks, human review, exception holds, and a local operator register.';
+
+export const metadata: Metadata = createPageMetadata({
+  title: `${pageTitle} | SM Systems`,
+  description: pageDescription,
+  path: '/work/n8n-service-lead-routing/',
+  image: {
+    url: '/n8n-service-lead/routing-workflow.png',
+    width: 1280,
+    height: 960,
+    alt: 'n8n service enquiry intake and routing workflow',
   },
-};
+});
 
 export default function N8nServiceLeadRoutingPage() {
   if (!n8nServiceLeadRouting?.caseStudy) {
-    throw new Error('n8n service lead routing case study is missing.');
+    throw new Error('n8n service enquiry routing case study is missing.');
   }
 
   const proofStrip = n8nServiceLeadRouting.caseStudy.proofStrip ?? [];
@@ -55,13 +70,15 @@ export default function N8nServiceLeadRoutingPage() {
 
   return (
     <article className="case-study-page" data-reveal>
+      <WorkStructuredData
+        title={pageTitle}
+        description={pageDescription}
+        path="/work/n8n-service-lead-routing/"
+        image="/n8n-service-lead/routing-workflow.png"
+      />
       <header className="case-study-hero">
-        <p className="eyebrow">Featured build</p>
-        <h1 className="case-study-title-wide">n8n lead routing workflow</h1>
-        <p className="case-study-lede">
-          A controlled n8n workflow for checking service enquiries, separating
-          exceptions, and preparing clean downstream handoffs.
-        </p>
+        <h1 className="case-study-title-wide">{pageTitle}</h1>
+        <p className="case-study-lede">{pageDescription}</p>
         <div className="case-study-actions">
           <Link className="button button-primary" href="/#contact">
             Discuss your workflow
@@ -77,14 +94,13 @@ export default function N8nServiceLeadRoutingPage() {
         aria-labelledby="n8n-workflow-walkthrough"
       >
         <div className="case-study-section-heading">
-          <p className="proof-lane">Workflow walkthrough</p>
           <h2 id="n8n-workflow-walkthrough">
-            From enquiry intake to prepared handoff.
+            Service enquiry intake, routing, and review.
           </h2>
           <p>
-            The n8n views show the complete workflow, its validation controls,
-            and the matching output for a record stopped during the completed
-            run.
+            Quote requests enter through a structured form. Each record is
+            checked and routed to one of five explicit outcomes before any
+            external handoff is prepared.
           </p>
         </div>
 
@@ -113,17 +129,14 @@ export default function N8nServiceLeadRoutingPage() {
 
       <section className="case-study-overview" aria-labelledby="n8n-overview">
         <div className="case-study-section-heading">
-          <p className="proof-lane">Project overview</p>
-          <h2 id="n8n-overview">
-            One controlled path from enquiry to handoff.
-          </h2>
+          <h2 id="n8n-overview">Routing controls and operator states.</h2>
         </div>
         <div className="proof-proof-strip">
-          {proofStrip.map((proof) => (
-            <article key={proof.label}>
-              <span>{proof.label}</span>
-              <strong>{proof.title}</strong>
-              <p>{proof.body}</p>
+          {proofStrip.map((item) => (
+            <article key={item.label}>
+              <span>{item.label}</span>
+              <strong>{item.title}</strong>
+              <p>{item.body}</p>
             </article>
           ))}
         </div>
@@ -134,39 +147,39 @@ export default function N8nServiceLeadRoutingPage() {
         aria-label="What the n8n workflow includes"
       >
         <article>
-          <p className="proof-lane">Workflow structure</p>
-          <h2>Sixteen nodes keep each decision visible.</h2>
+          <h2>Workflow structure</h2>
           <p>
-            Enquiries are normalised, checked, and routed through named paths
-            before any CRM, booking, or acknowledgement payload is prepared.
+            The main inactive workflow contains the form trigger, validation,
+            persistent Data Table lookups, a human-review wait state, and
+            controlled preparation steps. A separate inactive QA workflow runs
+            the five synthetic scenarios.
           </p>
         </article>
         <article>
-          <p className="proof-lane">Routing controls</p>
-          <h2>Problem records stop cleanly.</h2>
+          <h2>Routing outcomes</h2>
           <p>
-            Invalid, duplicate, uncertain, and failed records move to dedicated
-            review or exception paths instead of being treated as successful.
+            Accepted, duplicate, invalid, human-review, and
+            integration-exception records are written to named terminal states
+            in the local Service Enquiry Register.
           </p>
         </article>
         <article>
-          <p className="proof-lane">Test boundary</p>
-          <h2>The completed run stayed isolated.</h2>
+          <h2>Execution boundary</h2>
           <p>
-            Five controlled scenarios were run manually in n8n 2.31.6. The
-            workflow referenced no credentials and performed no external
-            actions.
+            Both workflows remained inactive outside controlled runs in n8n
+            2.31.6. No external credentials, CRM writes, booking calls,
+            acknowledgements, emails, or SMS actions were attached or
+            performed.
           </p>
         </article>
       </section>
 
       <section className="case-study-final">
         <div>
-          <p className="proof-lane">Similar workflows</p>
-          <h2>Bring service enquiries into one controlled path.</h2>
+          <h2>Service enquiry workflow implementation.</h2>
           <p>
-            SM Systems builds n8n validation, routing, review, and handoff
-            workflows around the systems a business already uses.
+            The same intake, routing, review, and operator-state structure can
+            be adapted around the systems a business already uses.
           </p>
         </div>
         <div className="case-study-actions">

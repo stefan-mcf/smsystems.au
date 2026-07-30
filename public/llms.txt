@@ -21,6 +21,21 @@ SM Systems builds workflow automation and integration tools that connect website
 
 - Home: https://smsystems.au/
 
+## Services
+
+- Business websites and quote systems: https://smsystems.au/services/business-websites-quote-systems/
+- Workflow automation and integrations: https://smsystems.au/services/workflow-automation-integrations/
+- CRM, lead routing, and operational systems: https://smsystems.au/services/crm-lead-routing-operational-systems/
+
+## Public Work
+
+- Precision Residential Construction website: https://smsystems.au/work/precision-residential-construction/
+- RFID carwash subscription access system: https://smsystems.au/work/rfid-subscription-access-system/
+- Airtable and Make opportunity pipeline: https://smsystems.au/work/airtable-make-opportunity-pipeline/
+- n8n service enquiry intake and routing: https://smsystems.au/work/n8n-service-lead-routing/
+- HubSpot CRM pipeline and record controls: https://smsystems.au/work/hubspot-lead-to-deal-crm/
+- Conversion measurement and inbound lead system: https://smsystems.au/work/conversion-measurement-inbound-lead-system/
+
 ## Featured Proof
 
 Precision Residential Construction website:

@@ -1,19 +1,25 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { WorkStructuredData } from '@/components/seo/work-structured-data';
+import { createPageMetadata } from '@/content/metadata';
 import { proofItems } from '@/content/proof';
 
 const conversionMeasurement = proofItems.find(
   (item) => item.slug === 'conversion-measurement-inbound-lead-system',
 );
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'Conversion measurement and inbound lead system | SM Systems',
   description:
     'A live conversion-measurement and inbound-lead path across GTM, GA4, HubSpot, the main Airtable base, Make, deterministic event QA, and reporting.',
-  alternates: {
-    canonical: '/work/conversion-measurement-inbound-lead-system/',
+  path: '/work/conversion-measurement-inbound-lead-system/',
+  image: {
+    url: '/conversion-measurement/live-enquiry-path.png',
+    width: 1280,
+    height: 960,
+    alt: 'SM Systems conversion measurement and inbound lead path',
   },
-};
+});
 
 export default function ConversionMeasurementInboundLeadPage() {
   if (!conversionMeasurement?.caseStudy) {
@@ -25,6 +31,12 @@ export default function ConversionMeasurementInboundLeadPage() {
 
   return (
     <article className="case-study-page" data-reveal>
+      <WorkStructuredData
+        title="Conversion measurement and inbound lead system"
+        description="A live conversion-measurement and inbound-lead path across GTM, GA4, HubSpot, the main Airtable base, Make, deterministic event QA, and reporting."
+        path="/work/conversion-measurement-inbound-lead-system/"
+        image="/conversion-measurement/live-enquiry-path.png"
+      />
       <header className="case-study-hero">
         <p className="eyebrow">Live SM Systems implementation</p>
         <h1 className="case-study-title-wide">

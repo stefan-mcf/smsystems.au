@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { WorkStructuredData } from '@/components/seo/work-structured-data';
+import { createPageMetadata } from '@/content/metadata';
 import { proofItems } from '@/content/proof';
 
 const airtableMakePipeline = proofItems.find(
@@ -39,14 +41,18 @@ const screenshotLayout = [
   },
 ];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'Airtable & Make opportunity pipeline | SM Systems',
   description:
     'A private Airtable and Make opportunity pipeline connecting approved intake, review decisions, exception routing, and project handoff.',
-  alternates: {
-    canonical: '/work/airtable-make-opportunity-pipeline/',
+  path: '/work/airtable-make-opportunity-pipeline/',
+  image: {
+    url: '/airtable-make/pipeline-overview.png',
+    width: 1504,
+    height: 705,
+    alt: 'Airtable and Make opportunity pipeline overview',
   },
-};
+});
 
 export default function AirtableMakeOpportunityPipelinePage() {
   if (!airtableMakePipeline?.caseStudy) {
@@ -67,6 +73,12 @@ export default function AirtableMakeOpportunityPipelinePage() {
 
   return (
     <article className="case-study-page" data-reveal>
+      <WorkStructuredData
+        title="Airtable & Make opportunity pipeline"
+        description="A private Airtable and Make opportunity pipeline connecting approved intake, review decisions, exception routing, and project handoff."
+        path="/work/airtable-make-opportunity-pipeline/"
+        image="/airtable-make/pipeline-overview.png"
+      />
       <header className="case-study-hero">
         <p className="eyebrow">Featured build</p>
         <h1 className="case-study-title-wide">

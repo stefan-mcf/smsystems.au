@@ -292,53 +292,61 @@ export const proofItems: ProofItem[] = [
   },
   {
     slug: 'n8n-service-lead-routing',
-    title: 'n8n lead routing workflow',
+    title: 'n8n service enquiry intake and routing',
     lane: 'Built',
     problemShape:
-      'A 16-node workflow that checks service enquiries, separates invalid, duplicate, review, and exception outcomes, and prepares clean CRM and booking handoffs.',
+      'A customer quote form, local duplicate checks, human review, exception holds, an operator register, and five synthetic routing scenarios implemented in n8n 2.31.6.',
     caseStudyLink: '/work/n8n-service-lead-routing/',
     caseStudy: {
       proofStrip: [
         {
-          label: 'INTAKE CONTROL',
-          title: 'Required details checked first',
-          body: 'Contact details, service information, and consent are validated before a record can move forward.',
+          label: 'FORM INTAKE',
+          title: 'Structured service request',
+          body: 'Contact details, service, location, timing, project details, and consent enter through one n8n form.',
         },
         {
-          label: 'ROUTING CONTROLS',
-          title: 'Five tested outcomes',
-          body: 'Accepted, duplicate, invalid, review, and system exception outcomes each move to an explicit path.',
+          label: 'ROUTING',
+          title: 'Five explicit outcomes',
+          body: 'Accepted, duplicate, invalid, human-review, and integration-exception records each move to a named state.',
         },
         {
-          label: 'HANDOFF PREPARATION',
-          title: 'CRM and booking data prepared',
-          body: 'Accepted records prepare CRM, booking, and acknowledgement data while failed records remain held for review.',
+          label: 'OPERATOR STATE',
+          title: 'Register and review gate',
+          body: 'The local register retains each outcome while uncertain enquiries wait for a written human decision.',
         },
       ],
       screenshots: [
         {
-          src: '/n8n-service-lead/workflow-overview.png',
-          alt: 'Complete 16-node n8n service lead workflow from enquiry intake through validation, exception handling, and prepared handoff.',
+          src: '/n8n-service-lead/customer-intake.png',
+          alt: 'Structured service enquiry form implemented with the native n8n Form Trigger.',
           caption:
-            'Complete 16-node path from enquiry intake through validation, exception handling, and prepared handoff.',
-          width: 1496,
-          height: 758,
+            'The quote request collects contact, service, location, timing, project details, and consent before routing begins.',
+          width: 1280,
+          height: 960,
         },
         {
-          src: '/n8n-service-lead/validation-logic.png',
-          alt: 'Native n8n validation logic for incomplete enquiries, duplicate control, manual review, and system exceptions.',
+          src: '/n8n-service-lead/routing-workflow.png',
+          alt: 'Native n8n service enquiry workflow grouped into intake, routing controls, and controlled handoff.',
           caption:
-            'Required details, duplicate control, manual review, and system exceptions are checked before handoff.',
-          width: 1496,
-          height: 722,
+            'The inactive workflow applies validation, persistent duplicate checks, human review, exception holds, and controlled handoff preparation.',
+          width: 1280,
+          height: 960,
         },
         {
-          src: '/n8n-service-lead/invalid-lead-output.png',
-          alt: 'Native n8n input and output showing an incomplete enquiry held before handoff with validation errors recorded.',
+          src: '/n8n-service-lead/operator-register.png',
+          alt: 'Native n8n Service Enquiry Register containing five synthetic routing outcomes.',
           caption:
-            'An incomplete enquiry is held with the missing contact method and consent errors recorded.',
-          width: 1242,
-          height: 699,
+            'The local Service Enquiry Register holds accepted, duplicate, invalid, human-review, and integration-exception states.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/n8n-service-lead/human-review.png',
+          alt: 'Native n8n human review form with approve, hold, and reject decision paths.',
+          caption:
+            'Regulated or unclear enquiries wait for an explicit decision and written reason before the workflow continues.',
+          width: 1280,
+          height: 960,
         },
       ],
     },

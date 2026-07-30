@@ -12,6 +12,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
+    host: canonicalSiteUrl,
     sitemap: `${canonicalSiteUrl}/sitemap.xml`,
   };
 }

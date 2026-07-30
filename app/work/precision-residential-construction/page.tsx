@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { WorkStructuredData } from '@/components/seo/work-structured-data';
+import { createPageMetadata } from '@/content/metadata';
 import { proofItems } from '@/content/proof';
 
 const precisionWebsite = proofItems.find(
@@ -14,14 +16,18 @@ const detailScreenshotSources = [
   { src: '/precision/website-quote-crm-full.png', width: 1280, height: 867 },
 ];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'Precision Residential Construction website | SM Systems',
   description:
     'The Precision Residential Construction website project: services, project photography, direct contact options, and a structured quote enquiry flow.',
-  alternates: {
-    canonical: '/work/precision-residential-construction/',
+  path: '/work/precision-residential-construction/',
+  image: {
+    url: '/precision/website-homepage.png',
+    width: 1280,
+    height: 720,
+    alt: 'Precision Residential Construction website homepage',
   },
-};
+});
 
 export default function PrecisionResidentialConstructionPage() {
   if (!precisionWebsite?.caseStudy) {
@@ -45,6 +51,12 @@ export default function PrecisionResidentialConstructionPage() {
 
   return (
     <article className="case-study-page" data-reveal>
+      <WorkStructuredData
+        title="Precision Residential Construction website"
+        description="The Precision Residential Construction website project: services, project photography, direct contact options, and a structured quote enquiry flow."
+        path="/work/precision-residential-construction/"
+        image="/precision/website-homepage.png"
+      />
       <header className="case-study-hero">
         <p className="eyebrow">Client project</p>
         <h1>Precision Residential Construction website</h1>
