@@ -54,9 +54,9 @@ export default function ConversionMeasurementInboundLeadPage() {
             One traceable path from enquiry to qualified deal.
           </h2>
           <p>
-            The visuals combine the live public form, privacy-safe provider
-            views, the event plan, deterministic QA reports, active routing,
-            and the measurement ledger in the main Airtable base.
+            The live public form feeds an active lead-routing path into the
+            main Airtable base, with a defined event plan, deterministic QA
+            checks, and a measurement ledger tracking each stage.
           </p>
         </div>
 
