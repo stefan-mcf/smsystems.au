@@ -517,6 +517,46 @@ strong {
   top: max(0.44rem, env(safe-area-inset-top));
   right: max(0.44rem, env(safe-area-inset-right));
   z-index: 3;
+  width: 2.75rem;
+  min-width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: 0;
+  color: #ffffff;
+  background: transparent;
+  box-shadow: none;
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease;
+}
+
+.image-lightbox-close::before {
+  inset: 0;
+}
+
+.image-lightbox-close span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  text-shadow: none;
+  transform: none;
+}
+
+.image-lightbox-close:hover {
+  opacity: 0.72;
+  background: transparent;
+}
+
+.image-lightbox-close:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.82);
+  outline-offset: -4px;
+  border-radius: 50%;
+}
+
+.image-lightbox-close:active {
+  opacity: 0.58;
+  box-shadow: none;
+  transform: scale(0.9);
 }
 
 .image-lightbox-stage {
