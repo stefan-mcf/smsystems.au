@@ -27,6 +27,10 @@ SM Systems builds workflow automation and integration tools that connect website
 - Workflow automation and integrations: https://smsystems.au/services/workflow-automation-integrations/
 - CRM, lead routing, and operational systems: https://smsystems.au/services/crm-lead-routing-operational-systems/
 
+## Practical Guides
+
+- Workflow automation for small business: what to automate first: https://smsystems.au/guides/workflow-automation-for-small-business/
+
 ## Public Work
 
 - Precision Residential Construction website: https://smsystems.au/work/precision-residential-construction/

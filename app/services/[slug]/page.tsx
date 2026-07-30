@@ -212,6 +212,28 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
 
+      {service.slug === 'workflow-automation-integrations' ||
+      service.slug === 'crm-lead-routing-operational-systems' ? (
+        <section className="case-study-final service-guide-callout">
+          <div>
+            <p className="proof-lane">Practical guide</p>
+            <h2>What should a small business automate first?</h2>
+            <p>
+              Use a five-step framework to choose a useful first workflow,
+              define its controls, keep human review, and verify the handoff.
+            </p>
+          </div>
+          <div className="case-study-actions">
+            <Link
+              className="button button-secondary"
+              href="/guides/workflow-automation-for-small-business/"
+            >
+              Read the guide
+            </Link>
+          </div>
+        </section>
+      ) : null}
+
       <section className="case-study-final">
         <div>
           <p className="proof-lane">Start a project</p>

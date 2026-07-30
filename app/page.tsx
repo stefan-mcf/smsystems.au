@@ -9,6 +9,7 @@ import { proofItems } from '@/content/proof';
 import { serviceItems } from '@/content/services';
 import { siteMeta } from '@/content/site';
 import { ProjectEnquiryProvider } from '@/components/contact/project-enquiry-dialog';
+import Link from 'next/link';
 
 const canonicalSiteUrl = 'https://smsystems.au';
 
@@ -58,6 +59,18 @@ export default function HomePage() {
           {serviceItems.map((service) => (
             <ServiceCard item={service} key={service.slug} />
           ))}
+        </div>
+        <div className="service-guide-link">
+          <div>
+            <p className="proof-lane">Practical guide</p>
+            <h3>Workflow automation for small business: what to automate first</h3>
+          </div>
+          <Link
+            className="text-link"
+            href="/guides/workflow-automation-for-small-business/"
+          >
+            Read the guide
+          </Link>
         </div>
       </section>
 

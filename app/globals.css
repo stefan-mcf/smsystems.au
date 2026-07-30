@@ -2603,6 +2603,125 @@ strong {
   margin-top: 0.25rem;
 }
 
+.service-guide-link {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(1rem, 2vw, 1.45rem);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  background: rgba(241, 243, 243, 0.72);
+}
+
+.service-guide-link > div {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.service-guide-link h3 {
+  max-width: 34ch;
+  color: var(--ink);
+  font-size: clamp(1.18rem, 2vw, 1.55rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.service-guide-link .text-link {
+  flex: none;
+}
+
+.guide-steps,
+.guide-comparison {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.72fr) minmax(0, 1.28fr);
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  background: var(--line);
+}
+
+.guide-steps > .case-study-section-heading,
+.guide-comparison > .case-study-section-heading {
+  align-content: start;
+  background: rgba(241, 243, 243, 0.92);
+}
+
+.guide-steps ol {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: rgba(241, 243, 243, 0.96);
+}
+
+.guide-steps li {
+  display: grid;
+  gap: 0.55rem;
+  padding: clamp(1.15rem, 2.25vw, 1.7rem);
+}
+
+.guide-steps li + li {
+  border-top: 1px solid var(--line);
+}
+
+.guide-steps h3 {
+  color: var(--ink);
+  font-size: clamp(1.2rem, 1.8vw, 1.62rem);
+  line-height: 1.06;
+  letter-spacing: -0.05em;
+}
+
+.guide-steps li > p:last-child {
+  max-width: 42rem;
+  color: #596466;
+}
+
+.guide-comparison-table {
+  background: rgba(241, 243, 243, 0.96);
+}
+
+.guide-comparison-header,
+.guide-comparison-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.guide-comparison-header {
+  color: #405866;
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.105em;
+  text-transform: uppercase;
+}
+
+.guide-comparison-header span,
+.guide-comparison-row span {
+  padding: clamp(0.9rem, 1.8vw, 1.25rem);
+}
+
+.guide-comparison-header span + span,
+.guide-comparison-row span + span {
+  border-left: 1px solid var(--line);
+}
+
+.guide-comparison-row {
+  border-top: 1px solid var(--line);
+  color: #596466;
+}
+
+.guide-comparison-row span:last-child {
+  color: var(--ink);
+}
+
+.service-guide-callout {
+  background:
+    linear-gradient(90deg, rgba(127, 156, 173, 0.08), transparent 55%),
+    rgba(241, 243, 243, 0.9);
+}
+
 @media (max-width: 640px) {
   .screenshot-carousel-btn {
     width: 2.75rem;
@@ -2638,8 +2757,26 @@ strong {
 
   .service-page-signal-list,
   .service-page-process,
-  .service-proof-list {
+  .service-proof-list,
+  .guide-steps,
+  .guide-comparison {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .service-guide-link {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .guide-comparison-header,
+  .guide-comparison-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .guide-comparison-header span + span,
+  .guide-comparison-row span + span {
+    border-top: 1px solid var(--line);
+    border-left: 0;
   }
 
   .case-study-final .case-study-actions {

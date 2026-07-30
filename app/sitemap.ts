@@ -33,6 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${canonicalSiteUrl}/guides/workflow-automation-for-small-business/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${canonicalSiteUrl}/work/precision-residential-construction/`,
       lastModified,
       changeFrequency: 'yearly',
