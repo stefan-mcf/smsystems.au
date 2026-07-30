@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ProjectEnquiryTrigger } from '@/components/contact/project-enquiry-dialog';
 import { WorkStructuredData } from '@/components/seo/work-structured-data';
 import { ZoomableImage } from '@/components/ui/image-lightbox';
 import { createPageMetadata } from '@/content/metadata';
@@ -84,9 +85,9 @@ export default function RfidSubscriptionAccessSystemPage() {
           access decisions, operator controls, and event visibility.
         </p>
         <div className="case-study-actions">
-          <Link className="button button-primary" href="/#contact">
+          <ProjectEnquiryTrigger className="button button-primary">
             Discuss your system
-          </Link>
+          </ProjectEnquiryTrigger>
         </div>
         <Link className="text-link case-study-back" href="/#work">
           Back to selected work
@@ -184,9 +185,9 @@ export default function RfidSubscriptionAccessSystemPage() {
           </p>
         </div>
         <div className="case-study-actions">
-          <Link className="button button-primary" href="/#contact">
+          <ProjectEnquiryTrigger className="button button-primary">
             Discuss your system
-          </Link>
+          </ProjectEnquiryTrigger>
         </div>
       </section>
     </article>

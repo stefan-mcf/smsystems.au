@@ -8,7 +8,6 @@ import { createPageMetadata } from '@/content/metadata';
 import { proofItems } from '@/content/proof';
 import { serviceItems } from '@/content/services';
 import { siteMeta } from '@/content/site';
-import { ProjectEnquiryProvider } from '@/components/contact/project-enquiry-dialog';
 import Link from 'next/link';
 
 const canonicalSiteUrl = 'https://smsystems.au';
@@ -27,7 +26,7 @@ export default function HomePage() {
   const featuredBuild = proofItems.filter((item) => item.featuredBuild);
 
   return (
-    <ProjectEnquiryProvider>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -116,6 +115,6 @@ export default function HomePage() {
           secondary={siteMeta.finalCta.secondary}
         />
       </div>
-    </ProjectEnquiryProvider>
+    </>
   );
 }

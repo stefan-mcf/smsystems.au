@@ -56,7 +56,11 @@ export function ProofCard({ item }: ProofCardProps) {
 
         {item.caseStudyLink ? (
           <div className="proof-card-actions">
-            <Link className="button button-primary" href={item.caseStudyLink}>
+            <Link
+              className="button button-primary"
+              href={item.caseStudyLink}
+              scroll
+            >
               View full case study
             </Link>
             {item.primaryLink && item.primaryLinkLabel ? (

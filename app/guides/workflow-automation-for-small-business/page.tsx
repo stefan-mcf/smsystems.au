@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ProjectEnquiryTrigger } from '@/components/contact/project-enquiry-dialog';
 import { ZoomableImage } from '@/components/ui/image-lightbox';
 import { createPageMetadata } from '@/content/metadata';
 
@@ -196,9 +197,9 @@ export default function WorkflowAutomationGuidePage() {
           >
             Explore automation services
           </Link>
-          <Link className="button button-secondary" href="/#contact">
+          <ProjectEnquiryTrigger className="button button-secondary">
             Discuss a workflow
-          </Link>
+          </ProjectEnquiryTrigger>
         </div>
         <Link className="text-link case-study-back" href="/#services">
           Back to services
@@ -320,9 +321,9 @@ export default function WorkflowAutomationGuidePage() {
           </p>
         </div>
         <div className="case-study-actions">
-          <Link className="button button-primary" href="/#contact">
+          <ProjectEnquiryTrigger className="button button-primary">
             Discuss your workflow
-          </Link>
+          </ProjectEnquiryTrigger>
         </div>
       </section>
     </article>

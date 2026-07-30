@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ProjectEnquiryTrigger } from '@/components/contact/project-enquiry-dialog';
 import { WorkStructuredData } from '@/components/seo/work-structured-data';
 import { ZoomableImage } from '@/components/ui/image-lightbox';
 import { createPageMetadata } from '@/content/metadata';
@@ -48,9 +49,9 @@ export default function ConversionMeasurementInboundLeadPage() {
           human qualification, deal creation, analytics QA, and reporting.
         </p>
         <div className="case-study-actions">
-          <Link className="button button-primary" href="/#contact">
+          <ProjectEnquiryTrigger className="button button-primary">
             Discuss your tracking path
-          </Link>
+          </ProjectEnquiryTrigger>
         </div>
         <Link className="text-link case-study-back" href="/#work">
           Back to selected work
@@ -159,9 +160,9 @@ export default function ConversionMeasurementInboundLeadPage() {
           </p>
         </div>
         <div className="case-study-actions">
-          <Link className="button button-primary" href="/#contact">
+          <ProjectEnquiryTrigger className="button button-primary">
             Discuss your tracking path
-          </Link>
+          </ProjectEnquiryTrigger>
         </div>
       </section>
     </article>

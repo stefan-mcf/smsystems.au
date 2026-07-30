@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ProjectEnquiryTrigger } from '@/components/contact/project-enquiry-dialog';
 import { WorkStructuredData } from '@/components/seo/work-structured-data';
 import { ZoomableImage } from '@/components/ui/image-lightbox';
 import { createPageMetadata } from '@/content/metadata';
@@ -73,9 +74,9 @@ export default function PrecisionResidentialConstructionPage() {
           >
             Visit live website
           </Link>
-          <Link className="button button-secondary" href="/#contact">
+          <ProjectEnquiryTrigger className="button button-secondary">
             Discuss a project
-          </Link>
+          </ProjectEnquiryTrigger>
         </div>
         <Link className="text-link case-study-back" href="/#work">
           Back to selected work
@@ -176,9 +177,9 @@ export default function PrecisionResidentialConstructionPage() {
           >
             Visit live website
           </Link>
-          <Link className="button button-secondary" href="/#contact">
+          <ProjectEnquiryTrigger className="button button-secondary">
             Contact SM Systems
-          </Link>
+          </ProjectEnquiryTrigger>
         </div>
       </section>
     </article>

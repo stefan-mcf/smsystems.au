@@ -46,7 +46,11 @@ export function ServiceCard({ item }: ServiceCardProps) {
         </div>
 
         <div className="service-card-cta">
-          <Link className="button button-primary" href={`/services/${item.slug}/`}>
+          <Link
+            className="button button-primary"
+            href={`/services/${item.slug}/`}
+            scroll
+          >
             Explore this service
           </Link>
         </div>

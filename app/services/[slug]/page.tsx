@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { ProjectEnquiryTrigger } from '@/components/contact/project-enquiry-dialog';
 import { ZoomableImage } from '@/components/ui/image-lightbox';
 import { createPageMetadata } from '@/content/metadata';
 import { getService, serviceItems } from '@/content/services';
@@ -118,9 +119,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
         <h1 className="case-study-title-wide">{service.name}</h1>
         <p className="case-study-lede">{service.description}</p>
         <div className="case-study-actions">
-          <Link className="button button-primary" href="/#contact">
+          <ProjectEnquiryTrigger className="button button-primary">
             Discuss your project
-          </Link>
+          </ProjectEnquiryTrigger>
           <Link className="button button-secondary" href="/#work">
             View related work
           </Link>
@@ -244,9 +245,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
           </p>
         </div>
         <div className="case-study-actions">
-          <Link className="button button-primary" href="/#contact">
+          <ProjectEnquiryTrigger className="button button-primary">
             Discuss your project
-          </Link>
+          </ProjectEnquiryTrigger>
         </div>
       </section>
     </article>
