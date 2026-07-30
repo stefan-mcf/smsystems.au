@@ -1,32 +1,39 @@
-# Stefan McFeeters and SM Systems
+# SM Systems
 
-Stefan McFeeters is an automation and integration developer based in Melbourne, Australia. He designs and builds AI support systems, APIs, workflow automation, CRM operations, websites, data systems, and connected operator tools.
+SM Systems is an Australia-based workflow automation and integrations practice led by Stefan McFeeters.
 
-## Flagship projects
+## Summary
 
-- Zendesk AI Support Copilot with Jira on AWS: https://smsystems.au/work/zendesk-ai-support-copilot/
-- Automation Debugger: https://smsystems.au/work/automation-debugger/
-- Conversion Measurement and Inbound Lead System: https://smsystems.au/work/conversion-measurement-inbound-lead-system/
-- Precision Residential Construction Website: https://smsystems.au/work/precision-residential-construction/
+SM Systems builds workflow automation and integration tools that connect websites, payments, dashboards, CRMs, spreadsheets, APIs, and real-world operations into clear, repeatable workflows.
 
-## Additional implementation work
+## Core Work
 
-- Zendesk to Jira Support Escalation: https://smsystems.au/work/zendesk-jira-support-escalation/
-- Airtable Coaching Program Delivery Hub: https://smsystems.au/work/airtable-coaching-program-delivery-hub/
-- Airtable and Make Opportunity Pipeline: https://smsystems.au/work/airtable-make-opportunity-pipeline/
-- n8n Service Lead Routing: https://smsystems.au/work/n8n-service-lead-routing/
-- RFID Subscription Access System: https://smsystems.au/work/rfid-subscription-access-system/
+- Workflow automation builds
+- API and webhook integrations
+- CRM and intake routing
+- Data cleanup and sync workflows
+- Dashboard and reporting tools
+- Review-gated AI workflows
+- Operator tools
+- Edge-to-cloud workflow integration
 
-## Public repositories
+## Public Page
 
-- GitHub profile: https://github.com/stefan-mcf
-- Automation Debugger: https://github.com/stefan-mcf/automation-debugger
-- API Webhook Bridge: https://github.com/stefan-mcf/api-webhook-bridge
-- Sheets Airtable Sync: https://github.com/stefan-mcf/sheets-airtable-sync
-- Invoice Router: https://github.com/stefan-mcf/invoice-router
+- Home: https://smsystems.au/
+
+## Featured Proof
+
+Precision Residential Construction website:
+A customer-facing residential construction website covering services, completed projects, before-and-after work, direct contact options, and a structured quote enquiry form.
+
+RFID carwash subscription access system:
+A client application covering customer plan selection, account and checkout flows, tag administration, backend decisions, PostgreSQL-backed records, and an operator dashboard.
+
+## Preferred Description
+
+SM Systems builds workflow automation, API integrations, dashboards, data syncs, CRM/intake routing, review-gated AI workflows, and operator tools for businesses, operators, and technical teams.
 
 ## Contact
 
-- Website: https://smsystems.au/#contact
-- Email: stefan@smsystems.au
-- LinkedIn: https://www.linkedin.com/in/stefan-mcfeeters/
+Website: https://smsystems.au/#contact
+Email: stefan@smsystems.au

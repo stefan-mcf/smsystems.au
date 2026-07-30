@@ -1,59 +1,39 @@
-# SM Systems portfolio
+# SM Systems
 
-[smsystems.au](https://smsystems.au/) is my public portfolio for automation, integration, AI support, and operational systems work.
+Source for [smsystems.au](https://smsystems.au/), my portfolio for automation, integration, and operational systems work.
 
-The site is structured around four flagship projects:
+The site includes client work and case studies covering:
 
-1. [Zendesk AI Support Copilot with Jira on AWS](https://smsystems.au/work/zendesk-ai-support-copilot/)
-2. [Automation Debugger](https://smsystems.au/work/automation-debugger/)
-3. [Conversion Measurement and Inbound Lead System](https://smsystems.au/work/conversion-measurement-inbound-lead-system/)
-4. [Precision Residential Construction Website](https://smsystems.au/work/precision-residential-construction/)
-
-Each project page explains the operating problem, my role, architecture, key decisions, implementation corrections, validation, result, and current boundary. Smaller Airtable, Make, n8n, Zendesk, Jira, and RFID implementations are retained as focused engineering notes.
-
-## Architecture
-
-```text
-Next.js App Router
-├── structured project content
-├── reusable long-form project layout
-├── static image assets
-├── HubSpot project enquiry
-├── consent-aware GA4 measurement
-└── static export to GitHub Pages
-```
+- customer-facing websites and enquiry paths;
+- CRM implementation and lead-to-deal routing;
+- n8n, Make, Airtable, and HubSpot workflows;
+- measurement and event QA;
+- API, webhook, and operator-facing automation tools.
 
 ## Stack
 
-- Next.js 16, React 19, and TypeScript
+- Next.js and TypeScript
 - Static export hosted on GitHub Pages
-- Playwright checks for conversion events and responsive behavior
-- GitHub Actions for build and deployment
+- Playwright-based responsive checks
+- GitHub Actions deployment
 
-## Local development
+## Quick start
 
 ```bash
 npm ci
 npm run dev
 ```
 
-Create a production export:
+## Checks
 
 ```bash
 npm run build
-```
-
-Run the browser checks against a local server:
-
-```bash
 npm run qa:event
 npm run qa:responsive
 ```
 
-## Content model
+The responsive check expects a locally running development server.
 
-Project narratives live in [`content/projects.ts`](content/projects.ts). The shared renderer is [`components/projects/project-story.tsx`](components/projects/project-story.tsx), which keeps page structure consistent without flattening every project into the same three-card summary.
+## Publication boundary
 
-## Public content boundary
-
-Screenshots are prepared for public use. Credentials, customer records, private planning material, cloud account identifiers, and local machine paths are excluded from the repository.
+Public screenshots are sanitized before publication. Private planning notes, client data, credentials, and local machine paths do not belong in this repository.
