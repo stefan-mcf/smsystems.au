@@ -48,6 +48,7 @@ export function ScreenshotCarousel({ screenshots }: ScreenshotCarouselProps) {
   useEffect(() => {
     if (count <= 1) return;
     const onKey = (e: KeyboardEvent) => {
+      if (document.querySelector('.image-lightbox-dialog[open]')) return;
       if (e.key === 'ArrowLeft') goPrev();
       if (e.key === 'ArrowRight') goNext();
     };
@@ -87,6 +88,9 @@ export function ScreenshotCarousel({ screenshots }: ScreenshotCarouselProps) {
               width={current.width}
               height={current.height}
               loading="lazy"
+              lightboxImages={screenshots}
+              lightboxIndex={index}
+              onLightboxIndexChange={setIndex}
             />
           </span>
           <figcaption className="screenshot-carousel-caption" aria-live="polite">
