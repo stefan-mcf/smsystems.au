@@ -406,6 +406,80 @@ export const proofItems: ProofItem[] = [
     featuredBuild: true,
   },
   {
+    slug: 'hubspot-zendesk-customer-handoff',
+    title: 'HubSpot to Zendesk customer handoff',
+    lane: 'Built',
+    problemShape:
+      'A controlled CRM-to-support handoff that maps an approved won HubSpot relationship into one Zendesk organization and linked end user with provider readback and duplicate-safe replay.',
+    caseStudyLink: '/work/hubspot-zendesk-customer-handoff/',
+    primaryLink:
+      'https://github.com/stefan-mcf/hubspot-zendesk-customer-handoff',
+    primaryLinkLabel: 'View GitHub repository',
+    caseStudy: {
+      proofStrip: [
+        {
+          label: 'CRM SOURCE',
+          title: 'One linked HubSpot relationship',
+          body: 'One company, contact, and closed-won deal were retained through three native associations and verified by provider readback.',
+        },
+        {
+          label: 'SUPPORT CONTEXT',
+          title: 'One Zendesk customer record',
+          body: 'The mapped organization retains service context, the next action, and one linked end user without creating a ticket.',
+        },
+        {
+          label: 'REPLAY CONTROL',
+          title: 'Duplicate-safe second run',
+          body: 'The second run reused every provider record, preserved the relationship, and performed no customer communication.',
+        },
+      ],
+      screenshots: [
+        {
+          src: '/hubspot-zendesk-handoff/01-crm-to-support-lifecycle.png',
+          alt: 'Controlled CRM-to-support lifecycle from an approved HubSpot relationship to mapped Zendesk customer context.',
+          caption:
+            'The handoff keeps validation, provider sequencing, readback, reconciliation, and communication boundaries visible.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/hubspot-zendesk-handoff/02-hubspot-approved-relationship.png',
+          alt: 'Native HubSpot deal record showing a closed-won stage, linked contact, and primary company.',
+          caption:
+            'Native HubSpot proof shows the controlled closed-won deal and its linked contact and company records.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/hubspot-zendesk-handoff/03-mapping-and-approval-controls.png',
+          alt: 'HubSpot to Zendesk field mapping beside approval and payload validation controls.',
+          caption:
+            'Explicit field mappings, stable keys, exact payload hashes, and owner approval gate both provider stages.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/hubspot-zendesk-handoff/04-zendesk-customer-context.png',
+          alt: 'Native Zendesk organization views showing service context, one linked end user, and zero tickets.',
+          caption:
+            'Native Zendesk proof shows retained onboarding context, one linked end user, and the controlled zero-ticket state.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/hubspot-zendesk-handoff/05-reconciliation-and-exceptions.png',
+          alt: 'Idempotent HubSpot and Zendesk reconciliation checks beside CLI exception coverage.',
+          caption:
+            'The second run reuses every record while invalid, unapproved, incomplete, or mismatched inputs remain blocked.',
+          width: 1280,
+          height: 960,
+        },
+      ],
+    },
+    featured: true,
+    featuredBuild: true,
+  },
+  {
     slug: 'precision-residential-construction-website',
     title: 'Precision Residential Construction website',
     lane: 'Client project',

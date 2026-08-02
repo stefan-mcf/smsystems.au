@@ -5,7 +5,7 @@ const canonicalSiteUrl = 'https://smsystems.au';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = '2026-07-30';
+  const lastModified = '2026-08-03';
 
   return [
     {
@@ -64,6 +64,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${canonicalSiteUrl}/work/hubspot-lead-to-deal-crm/`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.7,
+    },
+    {
+      url: `${canonicalSiteUrl}/work/hubspot-zendesk-customer-handoff/`,
       lastModified,
       changeFrequency: 'yearly',
       priority: 0.7,
