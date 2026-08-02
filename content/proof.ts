@@ -55,7 +55,7 @@ export const proofItems: ProofItem[] = [
         {
           label: 'Output',
           title: 'Reviewable artifacts',
-          body: 'Diagnosis JSON, replay success/refusal records, dead-letter traces, implementation notes, and screenshot evidence.',
+          body: 'Diagnosis JSON, replay success/refusal records, dead-letter traces, implementation notes, and reviewable run records.',
         },
       ],
     },
@@ -79,7 +79,7 @@ export const proofItems: ProofItem[] = [
         {
           label: 'Tested',
           title: 'Synthetic contracts',
-          body: 'Local walkthrough covers HubSpot-like contact, Shopify-like order, and Stripe-like payment intake with dead-letter records.',
+          body: 'Representative local runs cover HubSpot-like contact, Shopify-like order, and Stripe-like payment intake with dead-letter records.',
         },
         {
           label: 'Output',
@@ -113,7 +113,7 @@ export const proofItems: ProofItem[] = [
         {
           label: 'Output',
           title: 'Quality gates',
-          body: 'pytest, Ruff, mypy, example verification, screenshot rendering, and executor verification for every fixture bundle.',
+          body: 'pytest, Ruff, mypy, example verification, rendered output checks, and executor verification for every fixture bundle.',
         },
       ],
     },
@@ -187,7 +187,7 @@ export const proofItems: ProofItem[] = [
         },
         {
           src: '/conversion-measurement/versioned-events.png',
-          alt: 'Seven-event conversion plan beside cropped native GTM workspace and published version evidence.',
+          alt: 'Seven-event conversion plan beside a cropped native GTM workspace and published version details.',
           caption:
             'Versioned GTM and GA4 event design with a stable submission ID and no personal data in analytics.',
           width: 1280,
@@ -389,7 +389,7 @@ export const proofItems: ProofItem[] = [
       screenshots: [
         {
           src: '/hubspot-lead-to-deal/lead-to-deal-pipeline-framed.png',
-          alt: 'Cropped native HubSpot deal board in a proof frame showing the SM Systems lead-to-deal pipeline.',
+          alt: 'Cropped native HubSpot deal board showing the SM Systems lead-to-deal pipeline.',
           caption:
             'Seven-stage HubSpot pipeline configured and verified with controlled company, contact, and deal records.',
           width: 1280,
@@ -397,7 +397,7 @@ export const proofItems: ProofItem[] = [
         },
         {
           src: '/hubspot-lead-to-deal/deal-stage-history-framed.png',
-          alt: 'Cropped native HubSpot deal record in a proof frame showing creation and controlled deal stage activity receipts.',
+          alt: 'Cropped native HubSpot deal record showing creation and controlled deal stage activity receipts.',
           caption:
             'Native HubSpot activity retains deal creation and controlled stage-change receipts on one auditable record.',
           width: 1280,
@@ -415,7 +415,7 @@ export const proofItems: ProofItem[] = [
           src: '/hubspot-zendesk-handoff/02-hubspot-approved-relationship.png',
           alt: 'Native HubSpot deal record showing a closed-won stage, linked contact, and primary company.',
           caption:
-            'Native HubSpot proof shows the controlled closed-won deal and its linked contact and company records.',
+            'The native HubSpot record shows the controlled closed-won deal and its linked contact and company records.',
           width: 1280,
           height: 960,
         },
@@ -431,7 +431,7 @@ export const proofItems: ProofItem[] = [
           src: '/hubspot-zendesk-handoff/04-zendesk-customer-context.png',
           alt: 'Native Zendesk organization views showing service context, one linked end user, and zero tickets.',
           caption:
-            'Native Zendesk proof shows retained onboarding context, one linked end user, and the controlled zero-ticket state.',
+            'The native Zendesk organization views show retained onboarding context, one linked end user, and the controlled zero-ticket state.',
           width: 1280,
           height: 960,
         },
@@ -461,7 +461,7 @@ export const proofItems: ProofItem[] = [
       proofStrip: [
         {
           label: 'CUSTOMER WEBSITE',
-          title: 'Services and project proof',
+          title: 'Services and completed work',
           body: 'A clear path through services, completed work, and before-and-after results.',
         },
         {

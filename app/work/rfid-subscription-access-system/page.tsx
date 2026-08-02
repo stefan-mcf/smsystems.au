@@ -96,11 +96,11 @@ export default function RfidSubscriptionAccessSystemPage() {
 
       <section className="case-study-gallery" aria-labelledby="rfid-walkthrough">
         <div className="case-study-section-heading">
-          <p className="proof-lane">System walkthrough</p>
+          <p className="proof-lane">Operating sequence</p>
           <h2 id="rfid-walkthrough">From plan selection to wash control.</h2>
           <p>
-            The customer and operator views show how subscriptions, tags,
-            access decisions, and wash controls connect.
+            Subscriptions, registered tags, access decisions, and wash controls
+            remain connected across the customer and operator workflow.
           </p>
         </div>
 

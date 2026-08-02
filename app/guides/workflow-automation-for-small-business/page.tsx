@@ -47,10 +47,10 @@ const workflowSteps = [
       'Automate stable rules. Keep a visible review gate where the decision is ambiguous, high impact, or depends on context the system cannot reliably determine.',
   },
   {
-    label: '04 / Evidence',
+    label: '04 / Validation',
     title: 'Prove success and failure paths.',
     body:
-      'Test representative inputs, duplicates, missing data, provider errors, and reruns. Keep enough evidence to show what happened without exposing private customer data.',
+      'Test representative inputs, duplicates, missing data, provider errors, and reruns. Retain clear operating records without exposing private customer data.',
   },
   {
     label: '05 / Operation',
@@ -74,7 +74,7 @@ const comparisonRows = [
     stronger: 'Keep human review for judgement calls',
   },
   {
-    weak: 'Treat a successful run as proof',
+    weak: 'Treat one successful run as complete validation',
     stronger: 'Check the destination record and failure path',
   },
   {
@@ -175,7 +175,7 @@ export default function WorkflowAutomationGuidePage() {
       />
 
       <header className="case-study-hero">
-        <p className="eyebrow">Practical guide</p>
+        <p className="eyebrow">Workflow planning framework</p>
         <h1 className="case-study-title-wide">
           Workflow automation for small business: what to automate first
         </h1>
@@ -277,7 +277,7 @@ export default function WorkflowAutomationGuidePage() {
           <h2 id="automation-examples">See the framework in working systems.</h2>
           <p>
             These case studies show intake rules, review gates, operator states,
-            exception paths, and evidence in completed builds.
+            exception paths, and operating records in completed builds.
           </p>
         </div>
         <div className="case-study-shot-list service-proof-list">
@@ -311,7 +311,7 @@ export default function WorkflowAutomationGuidePage() {
           <h2>Bring one repeated handoff that needs to become reliable.</h2>
           <p>
             SM Systems can map the record, rules, review points, failure paths,
-            proof, and operating handoff before the build expands.
+            validation, and operating handoff before the build expands.
           </p>
         </div>
         <div className="case-study-actions">

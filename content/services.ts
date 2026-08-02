@@ -41,7 +41,7 @@ export const serviceItems: ServiceItem[] = [
     summary:
       'Customer-facing websites that explain the work clearly and turn genuine interest into structured enquiries.',
     description:
-      'SM Systems builds practical websites for Australian service businesses, with clear service information, credible project proof, direct contact routes, quote forms, and the measurement needed to understand the enquiry path.',
+      'SM Systems builds practical websites for Australian service businesses, with clear service information, credible completed work, direct contact routes, quote forms, and the measurement needed to understand the enquiry path.',
     fitTitle: 'A clearer path from search to a useful enquiry.',
     fit:
       'This service fits businesses whose website undersells the work, makes customers hunt for answers, or passes incomplete enquiry details into an inconsistent follow-up process.',
@@ -53,7 +53,7 @@ export const serviceItems: ServiceItem[] = [
     capabilities: [
       {
         label: 'Customer experience',
-        title: 'Clear services, proof, and contact paths.',
+        title: 'Clear services, completed work, and contact paths.',
         body:
           'Structure the site around what prospective customers need to understand before they call, email, or request a quote.',
       },
@@ -74,7 +74,7 @@ export const serviceItems: ServiceItem[] = [
       {
         title: 'Map the customer path',
         body:
-          'Review the current website, services, proof, enquiry routes, and the information needed before follow-up.',
+          'Review the current website, services, completed work, enquiry routes, and the information needed before follow-up.',
       },
       {
         title: 'Build the narrow conversion path',
@@ -91,7 +91,7 @@ export const serviceItems: ServiceItem[] = [
       {
         title: 'Precision Residential Construction website',
         description:
-          'A published service-business website with service navigation, project photography, before-and-after proof, direct contact routes, and a structured quote enquiry.',
+          'A published service-business website with service navigation, project photography, before-and-after comparisons, direct contact routes, and a structured quote enquiry.',
         href: '/work/precision-residential-construction/',
         image: {
           src: '/precision/website-homepage.png',
@@ -103,7 +103,7 @@ export const serviceItems: ServiceItem[] = [
     ],
     metaTitle: 'Business websites and quote systems | SM Systems',
     metaDescription:
-      'Business websites and structured quote systems for Australian service businesses, including service content, project proof, enquiry forms, and conversion measurement.',
+      'Business websites and structured quote systems for Australian service businesses, including service content, completed project work, enquiry forms, and conversion measurement.',
   },
   {
     slug: 'workflow-automation-integrations',
@@ -136,7 +136,7 @@ export const serviceItems: ServiceItem[] = [
       },
       {
         label: 'Operation',
-        title: 'Evidence someone can maintain.',
+        title: 'Operating records someone can maintain.',
         body:
           'Leave test cases, readback, logging expectations, failure notes, and a clear description of what owns the next step.',
       },
@@ -221,7 +221,7 @@ export const serviceItems: ServiceItem[] = [
         label: 'Visibility',
         title: 'Dashboards and tools for daily operation.',
         body:
-          'Present the records, actions, and evidence needed to run the process without rebuilding business logic in a report.',
+          'Present the records, actions, and status needed to run the process without rebuilding business logic in a report.',
       },
     ],
     process: [
@@ -238,7 +238,7 @@ export const serviceItems: ServiceItem[] = [
       {
         title: 'Document the operating boundary',
         body:
-          'Record what is automated, what requires approval, what evidence is retained, and how changes should be made safely.',
+          'Record what is automated, what requires approval, which operating records are retained, and how changes should be made safely.',
       },
     ],
     proof: [

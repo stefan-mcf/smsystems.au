@@ -45,7 +45,7 @@ export default function ConversionMeasurementInboundLeadPage() {
           Conversion measurement and inbound lead system
         </h1>
         <p className="case-study-lede">
-          A verified path from website enquiry to CRM, the main Airtable base,
+          A live path from website enquiry to CRM, the main Airtable base,
           human qualification, deal creation, analytics QA, and reporting.
         </p>
         <div className="case-study-actions">
@@ -72,7 +72,7 @@ export default function ConversionMeasurementInboundLeadPage() {
         aria-labelledby="conversion-walkthrough"
       >
         <div className="case-study-section-heading">
-          <p className="proof-lane">Implementation walkthrough</p>
+          <p className="proof-lane">Operating sequence</p>
           <h2 id="conversion-walkthrough">
             One traceable path from enquiry to qualified deal.
           </h2>
