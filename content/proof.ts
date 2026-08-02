@@ -360,27 +360,30 @@ export const proofItems: ProofItem[] = [
   },
   {
     slug: 'hubspot-lead-to-deal-crm',
-    title: 'HubSpot lead-to-deal CRM implementation',
+    title: 'HubSpot lead-to-deal and Zendesk handoff',
     lane: 'Built',
     problemShape:
-      'A private HubSpot CRM implementation with a seven-stage pipeline, linked company, contact and deal records, stable deduplication, provider readback, and exact cleanup.',
+      'A controlled customer path from a seven-stage HubSpot pipeline and linked CRM records into approved Zendesk customer context with provider readback and duplicate-safe replay.',
     caseStudyLink: '/work/hubspot-lead-to-deal-crm/',
+    primaryLink:
+      'https://github.com/stefan-mcf/hubspot-zendesk-customer-handoff',
+    primaryLinkLabel: 'View GitHub repository',
     caseStudy: {
       proofStrip: [
         {
-          label: 'PIPELINE CONTROL',
-          title: 'Seven operating stages',
-          body: 'The retained pipeline maps controlled progression from Active / Replied through qualification and proposal stages to Won or Lost.',
+          label: 'CRM FOUNDATION',
+          title: 'Seven-stage HubSpot lifecycle',
+          body: 'Linked companies, contacts, and deals move through controlled qualification and proposal stages using stable record keys.',
         },
         {
-          label: 'RECORD MODEL',
-          title: 'Linked CRM relationships',
-          body: "Companies, contacts, and deals were tied together through HubSpot's native association model and verified by provider readback.",
+          label: 'PROVIDER HANDOFF',
+          title: 'Approved Zendesk context',
+          body: 'A closed-won HubSpot relationship maps into one Zendesk organization and linked end user without creating a ticket.',
         },
         {
-          label: 'DATA CONTROL',
-          title: 'Dedupe and cleanup verified',
-          body: 'Stable keys matched every record on rerun, then an exact cleanup archived the temporary commissioning set.',
+          label: 'REPLAY CONTROL',
+          title: 'Readback and reconciliation',
+          body: 'Provider IDs are read back and reused while invalid, unapproved, incomplete, or mismatched inputs remain blocked.',
         },
       ],
       screenshots: [
@@ -400,40 +403,6 @@ export const proofItems: ProofItem[] = [
           width: 1149,
           height: 648,
         },
-      ],
-    },
-    featured: true,
-    featuredBuild: true,
-  },
-  {
-    slug: 'hubspot-zendesk-customer-handoff',
-    title: 'HubSpot to Zendesk customer handoff',
-    lane: 'Built',
-    problemShape:
-      'A controlled CRM-to-support handoff that maps an approved won HubSpot relationship into one Zendesk organization and linked end user with provider readback and duplicate-safe replay.',
-    caseStudyLink: '/work/hubspot-zendesk-customer-handoff/',
-    primaryLink:
-      'https://github.com/stefan-mcf/hubspot-zendesk-customer-handoff',
-    primaryLinkLabel: 'View GitHub repository',
-    caseStudy: {
-      proofStrip: [
-        {
-          label: 'CRM SOURCE',
-          title: 'One linked HubSpot relationship',
-          body: 'One company, contact, and closed-won deal were retained through three native associations and verified by provider readback.',
-        },
-        {
-          label: 'SUPPORT CONTEXT',
-          title: 'One Zendesk customer record',
-          body: 'The mapped organization retains service context, the next action, and one linked end user without creating a ticket.',
-        },
-        {
-          label: 'REPLAY CONTROL',
-          title: 'Duplicate-safe second run',
-          body: 'The second run reused every provider record, preserved the relationship, and performed no customer communication.',
-        },
-      ],
-      screenshots: [
         {
           src: '/hubspot-zendesk-handoff/01-crm-to-support-lifecycle.png',
           alt: 'Controlled CRM-to-support lifecycle from an approved HubSpot relationship to mapped Zendesk customer context.',

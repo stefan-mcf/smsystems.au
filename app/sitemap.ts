@@ -69,12 +69,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${canonicalSiteUrl}/work/hubspot-zendesk-customer-handoff/`,
-      lastModified,
-      changeFrequency: 'yearly',
-      priority: 0.7,
-    },
-    {
       url: `${canonicalSiteUrl}/work/conversion-measurement-inbound-lead-system/`,
       lastModified,
       changeFrequency: 'yearly',

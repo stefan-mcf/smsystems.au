@@ -243,9 +243,9 @@ export const serviceItems: ServiceItem[] = [
     ],
     proof: [
       {
-        title: 'HubSpot lead-to-deal CRM',
+        title: 'HubSpot lead-to-deal and Zendesk handoff',
         description:
-          'A controlled HubSpot implementation with pipeline stages, linked records, deduplication, provider readback, and exact cleanup.',
+          'A controlled customer path from HubSpot pipeline stages and linked records into approved Zendesk customer context with provider readback and replay controls.',
         href: '/work/hubspot-lead-to-deal-crm/',
         image: {
           src: '/hubspot-lead-to-deal/lead-to-deal-pipeline.png',

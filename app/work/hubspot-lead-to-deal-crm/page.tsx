@@ -6,74 +6,61 @@ import { ZoomableImage } from '@/components/ui/image-lightbox';
 import { createPageMetadata } from '@/content/metadata';
 import { proofItems } from '@/content/proof';
 
-const hubspotLeadToDeal = proofItems.find(
+const project = proofItems.find(
   (item) => item.slug === 'hubspot-lead-to-deal-crm',
 );
 
-const screenshotLayout = [
-  {
-    src: '/hubspot-lead-to-deal/lead-to-deal-pipeline.png',
-    width: 1149,
-    height: 648,
-  },
-  {
-    src: '/hubspot-lead-to-deal/connected-crm-records.png',
-    width: 1149,
-    height: 648,
-  },
-];
+const pageTitle = 'HubSpot lead-to-deal and Zendesk handoff';
+const pageDescription =
+  'A controlled path from HubSpot pipeline and linked records into approved Zendesk customer context, with readback and duplicate-safe replay.';
+const caseStudyPath = '/work/hubspot-lead-to-deal-crm/';
+const heroImage = '/hubspot-zendesk-handoff/01-crm-to-support-lifecycle.png';
 
 export const metadata: Metadata = createPageMetadata({
-  title: 'HubSpot CRM pipeline and record controls | SM Systems',
-  description:
-    'A private HubSpot CRM implementation with controlled pipeline stages, linked records, stable deduplication, provider readback, and exact cleanup.',
-  path: '/work/hubspot-lead-to-deal-crm/',
+  title: `${pageTitle} | SM Systems`,
+  description: pageDescription,
+  path: caseStudyPath,
   image: {
-    url: '/hubspot-lead-to-deal/lead-to-deal-pipeline.png',
-    width: 1149,
-    height: 648,
-    alt: 'HubSpot lead-to-deal CRM pipeline',
+    url: heroImage,
+    width: 1280,
+    height: 960,
+    alt: 'Controlled customer path from HubSpot CRM to Zendesk support context',
   },
 });
 
 export default function HubspotLeadToDealCrmPage() {
-  if (!hubspotLeadToDeal?.caseStudy) {
-    throw new Error('HubSpot lead-to-deal CRM case study is missing.');
+  if (!project?.caseStudy) {
+    throw new Error('Combined HubSpot and Zendesk case study is missing.');
   }
 
-  const proofStrip = hubspotLeadToDeal.caseStudy.proofStrip ?? [];
-  const screenshotBySource = new Map(
-    (hubspotLeadToDeal.caseStudy.screenshots ?? []).map((screenshot) => [
-      screenshot.src,
-      screenshot,
-    ]),
-  );
-  const screenshots = screenshotLayout.map((layout) => ({
-    ...screenshotBySource.get(layout.src)!,
-    ...layout,
-  }));
+  const proofStrip = project.caseStudy.proofStrip ?? [];
+  const screenshots = project.caseStudy.screenshots ?? [];
 
   return (
     <article className="case-study-page" data-reveal>
       <WorkStructuredData
-        title="HubSpot CRM pipeline and record controls"
-        description="A private HubSpot CRM implementation with controlled pipeline stages, linked records, stable deduplication, provider readback, and exact cleanup."
-        path="/work/hubspot-lead-to-deal-crm/"
-        image="/hubspot-lead-to-deal/lead-to-deal-pipeline.png"
+        title={pageTitle}
+        description={pageDescription}
+        path={caseStudyPath}
+        image={heroImage}
       />
       <header className="case-study-hero">
         <p className="eyebrow">Featured build</p>
-        <h1 className="case-study-title-wide">
-          HubSpot CRM pipeline and record controls
-        </h1>
-        <p className="case-study-lede">
-          A private HubSpot CRM implementation with controlled pipeline stages,
-          linked records, deduplication, readback, and exact cleanup.
-        </p>
+        <h1 className="case-study-title-wide">{pageTitle}</h1>
+        <p className="case-study-lede">{pageDescription}</p>
         <div className="case-study-actions">
           <ProjectEnquiryTrigger className="button button-primary">
             Discuss your workflow
           </ProjectEnquiryTrigger>
+          <Link
+            className="button button-secondary"
+            href={
+              project.primaryLink ??
+              'https://github.com/stefan-mcf/hubspot-zendesk-customer-handoff'
+            }
+          >
+            View GitHub repository
+          </Link>
         </div>
         <Link className="text-link case-study-back" href="/#work">
           Back to selected work
@@ -82,16 +69,16 @@ export default function HubspotLeadToDealCrmPage() {
 
       <section
         className="case-study-gallery"
-        aria-labelledby="hubspot-crm-walkthrough"
+        aria-labelledby="hubspot-customer-path"
       >
         <div className="case-study-section-heading">
-          <p className="proof-lane">CRM walkthrough</p>
-          <h2 id="hubspot-crm-walkthrough">
-            Provider-native pipeline and record evidence.
+          <h2 id="hubspot-customer-path">
+            From HubSpot pipeline to Zendesk context.
           </h2>
           <p>
-            The HubSpot views show the configured pipeline and linked CRM records
-            from the controlled commissioning run.
+            The seven-frame walkthrough starts with the HubSpot pipeline and
+            linked records, then extends the same customer relationship through
+            approved mapping, readback, and reconciliation.
           </p>
         </div>
 
@@ -102,8 +89,8 @@ export default function HubspotLeadToDealCrmPage() {
                 <ZoomableImage
                   src={screenshot.src}
                   alt={screenshot.alt}
-                  width={screenshot.width}
-                  height={screenshot.height}
+                  width={screenshot.width ?? 1280}
+                  height={screenshot.height ?? 960}
                   loading={index === 0 ? 'eager' : 'lazy'}
                 />
               </div>
@@ -119,9 +106,8 @@ export default function HubspotLeadToDealCrmPage() {
 
       <section className="case-study-overview" aria-labelledby="hubspot-overview">
         <div className="case-study-section-heading">
-          <p className="proof-lane">Project overview</p>
           <h2 id="hubspot-overview">
-            One controlled CRM path from lead to deal.
+            Control stays visible across both systems.
           </h2>
         </div>
         <div className="proof-proof-strip">
@@ -137,41 +123,37 @@ export default function HubspotLeadToDealCrmPage() {
 
       <section
         className="case-study-content-grid"
-        aria-label="What the HubSpot CRM implementation includes"
+        aria-label="What the combined HubSpot and Zendesk implementation includes"
       >
         <article>
-          <p className="proof-lane">Pipeline structure</p>
-          <h2>Seven stages keep deal progression visible.</h2>
+          <h2>HubSpot remains the relationship source.</h2>
           <p>
-            The retained pipeline covers Active / Replied, Qualified, Audit
-            Booked, Proposal Requested, Proposal Prepared, Won, and Lost.
+            Company, contact, and deal records are matched by stable keys and
+            verified through native associations before mapping begins.
           </p>
         </article>
         <article>
-          <p className="proof-lane">Record integrity</p>
-          <h2>Associations and deduplication read back cleanly.</h2>
+          <h2>Zendesk receives controlled customer context.</h2>
           <p>
-            Three controlled companies, contacts, and deals were linked through
-            nine HubSpot associations. An idempotent rerun matched every record.
+            The organization is created or matched first, then its readback ID
+            binds one end user without ticket or message actions.
           </p>
         </article>
         <article>
-          <p className="proof-lane">Commissioning boundary</p>
-          <h2>Temporary proof records were removed exactly.</h2>
+          <h2>Replay and exceptions fail closed.</h2>
           <p>
-            The run used no live relationship import or external action. An
-            exact cleanup archived all nine records, and its rerun was a no-op.
+            The second run reuses every provider record. Unapproved, incomplete,
+            duplicate, or mismatched inputs remain blocked.
           </p>
         </article>
       </section>
 
       <section className="case-study-final">
         <div>
-          <p className="proof-lane">Similar systems</p>
-          <h2>Build a CRM around the way your business qualifies work.</h2>
+          <h2>Connect qualification to customer operations.</h2>
           <p>
-            SM Systems builds HubSpot pipelines, record models, validation
-            controls, and review gates for clear lead-to-deal operations.
+            SM Systems can adapt the same pipeline, mapping, approval, readback,
+            and replay controls around an authorized HubSpot and Zendesk workflow.
           </p>
         </div>
         <div className="case-study-actions">
