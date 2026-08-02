@@ -77,8 +77,8 @@ export default function HubspotLeadToDealCrmPage() {
           </h2>
           <p>
             The seven-frame walkthrough starts with the HubSpot pipeline and
-            linked records, then extends the same customer relationship through
-            approved mapping, readback, and reconciliation.
+            its activity trail, then carries the approved customer relationship
+            through mapping, readback, and reconciliation.
           </p>
         </div>
 
