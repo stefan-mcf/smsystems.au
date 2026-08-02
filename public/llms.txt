@@ -38,6 +38,7 @@ SM Systems builds workflow automation and integration tools that connect website
 - Airtable and Make opportunity pipeline: https://smsystems.au/work/airtable-make-opportunity-pipeline/
 - n8n service enquiry intake and routing: https://smsystems.au/work/n8n-service-lead-routing/
 - HubSpot CRM pipeline and record controls: https://smsystems.au/work/hubspot-lead-to-deal-crm/
+- HubSpot to Zendesk customer handoff: https://smsystems.au/work/hubspot-zendesk-customer-handoff/
 - Conversion measurement and inbound lead system: https://smsystems.au/work/conversion-measurement-inbound-lead-system/
 
 ## Featured Proof
