@@ -300,6 +300,8 @@ export const proofItems: ProofItem[] = [
     problemShape:
       'A customer quote form, local duplicate checks, human review, exception holds, an operator register, and five synthetic routing scenarios implemented in n8n 2.31.6.',
     caseStudyLink: '/work/n8n-service-lead-routing/',
+    primaryLink: 'https://github.com/stefan-mcf/n8n-service-lead-routing',
+    primaryLinkLabel: 'View GitHub repository',
     caseStudy: {
       proofStrip: [
         {
@@ -328,8 +330,8 @@ export const proofItems: ProofItem[] = [
           height: 960,
         },
         {
-          src: '/n8n-service-lead/routing-workflow.png',
-          alt: 'Native n8n service enquiry workflow grouped into intake, routing controls, and controlled handoff.',
+          src: '/n8n-service-lead/routing-workflow.svg',
+          alt: 'Readable map of the inactive n8n service enquiry workflow from intake through recorded outcomes.',
           caption:
             'The inactive workflow applies validation, persistent duplicate checks, human review, exception holds, and controlled handoff preparation.',
           width: 1280,

@@ -90,7 +90,7 @@ const proofExamples = [
       'A quote form, duplicate checks, human review, exception holds, and an operator register implemented in n8n.',
     href: '/work/n8n-service-lead-routing/',
     image: {
-      src: '/n8n-service-lead/routing-workflow.png',
+      src: '/n8n-service-lead/routing-workflow.svg',
       alt: 'n8n service enquiry workflow from intake to controlled handoff',
       width: 1280,
       height: 960,
