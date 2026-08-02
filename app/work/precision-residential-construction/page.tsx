@@ -46,7 +46,7 @@ export default function PrecisionResidentialConstructionPage() {
   const screenshotTitles = [
     'Homepage and contact actions',
     'Services at a glance',
-    'Before-and-after proof',
+    'Before-and-after projects',
     'Recent project gallery',
     'Structured quote enquiry',
   ];
@@ -64,7 +64,7 @@ export default function PrecisionResidentialConstructionPage() {
         <h1>Precision Residential Construction website</h1>
         <p className="case-study-lede">
           A customer-facing website built around the work a prospective client
-          needs to see: services, finished projects, before-and-after proof,
+          needs to see: services, finished projects, before-and-after comparisons,
           direct contact options, and a structured quote enquiry.
         </p>
         <div className="case-study-actions">
@@ -85,11 +85,11 @@ export default function PrecisionResidentialConstructionPage() {
 
       <section className="case-study-gallery" aria-labelledby="website-walkthrough">
         <div className="case-study-section-heading">
-          <p className="proof-lane">Website walkthrough</p>
+          <p className="proof-lane">Customer experience</p>
           <h2 id="website-walkthrough">The published customer experience.</h2>
           <p>
-            The core website sections are shown in sequence below, from first
-            impression through to quote enquiry.
+            The published experience moves from first impression and service
+            detail through to completed work and quote enquiry.
           </p>
         </div>
 
@@ -119,7 +119,9 @@ export default function PrecisionResidentialConstructionPage() {
       <section className="case-study-overview" aria-labelledby="project-overview">
         <div className="case-study-section-heading">
           <p className="proof-lane">Project overview</p>
-          <h2 id="project-overview">Built to turn project proof into enquiries.</h2>
+          <h2 id="project-overview">
+            Built to turn completed project work into enquiries.
+          </h2>
         </div>
         <div className="proof-proof-strip">
           {proofStrip.map((proof) => (

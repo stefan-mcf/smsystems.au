@@ -109,9 +109,9 @@ export default function N8nServiceLeadRoutingPage() {
             From quote request to controlled outcome.
           </h2>
           <p>
-            The walkthrough follows a structured enquiry through duplicate
-            control, human review, exception handling, and controlled handoff,
-            with every outcome recorded in the operator register.
+            A structured enquiry moves through duplicate control, human review,
+            exception handling, and controlled handoff, with every outcome
+            recorded in the operator register.
           </p>
         </div>
 

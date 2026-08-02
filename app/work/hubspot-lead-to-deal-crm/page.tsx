@@ -76,9 +76,9 @@ export default function HubspotLeadToDealCrmPage() {
             From HubSpot pipeline to Zendesk context.
           </h2>
           <p>
-            The seven-frame walkthrough starts with the HubSpot pipeline and
-            its activity trail, then carries the approved customer relationship
-            through mapping, readback, and reconciliation.
+            The implementation begins with the HubSpot pipeline and its activity
+            trail, then carries the approved customer relationship through
+            mapping, readback, and reconciliation.
           </p>
         </div>
 

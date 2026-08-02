@@ -62,7 +62,7 @@ export default function HomePage() {
         <div className="service-guide-link">
           <div className="service-guide-copy">
             <h3>Not sure where to begin?</h3>
-            <p>Use the five-step guide to choose the first workflow worth automating.</p>
+            <p>Use the five-step framework to choose the first workflow worth automating.</p>
           </div>
           <Link
             className="text-link"

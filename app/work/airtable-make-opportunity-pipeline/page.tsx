@@ -102,7 +102,7 @@ export default function AirtableMakeOpportunityPipelinePage() {
 
       <section className="case-study-gallery" aria-labelledby="pipeline-walkthrough">
         <div className="case-study-section-heading">
-          <p className="proof-lane">System walkthrough</p>
+          <p className="proof-lane">Operating sequence</p>
           <h2 id="pipeline-walkthrough">From opportunity to project handoff.</h2>
           <p>
             The Airtable and Make views show how approved records are routed,

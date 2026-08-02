@@ -184,8 +184,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <p className="proof-lane">Related work</p>
           <h2 id="related-proof">See the service through completed builds.</h2>
           <p>
-            These project pages show the implementation, operating decisions,
-            and evidence behind related work.
+            These completed builds show the implementation scope, operating
+            decisions, and delivery standards for related work.
           </p>
         </div>
         <div className="case-study-shot-list service-proof-list">
@@ -217,7 +217,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       service.slug === 'crm-lead-routing-operational-systems' ? (
         <section className="case-study-final service-guide-callout">
           <div>
-            <p className="proof-lane">Practical guide</p>
+            <p className="proof-lane">Planning framework</p>
             <h2>What should a small business automate first?</h2>
             <p>
               Use a five-step framework to choose a useful first workflow,
@@ -229,7 +229,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               className="button button-secondary"
               href="/guides/workflow-automation-for-small-business/"
             >
-              Read the guide
+              View the framework
             </Link>
           </div>
         </section>
