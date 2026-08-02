@@ -108,6 +108,11 @@ export default function N8nServiceLeadRoutingPage() {
           <h2 id="n8n-workflow-walkthrough">
             From quote request to controlled outcome.
           </h2>
+          <p>
+            The walkthrough follows a structured enquiry through duplicate
+            control, human review, exception handling, and controlled handoff,
+            with every outcome recorded in the operator register.
+          </p>
         </div>
 
         <div className="case-study-shot-list">
