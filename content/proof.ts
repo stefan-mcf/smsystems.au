@@ -388,20 +388,20 @@ export const proofItems: ProofItem[] = [
       ],
       screenshots: [
         {
-          src: '/hubspot-lead-to-deal/lead-to-deal-pipeline.png',
-          alt: 'HubSpot deal board showing the private SM Systems lead-to-deal pipeline and its seven controlled operating stages.',
+          src: '/hubspot-lead-to-deal/lead-to-deal-pipeline-framed.png',
+          alt: 'Cropped native HubSpot deal board in a proof frame showing the SM Systems lead-to-deal pipeline.',
           caption:
             'Seven-stage HubSpot pipeline configured and verified with controlled company, contact, and deal records.',
-          width: 1149,
-          height: 648,
+          width: 1280,
+          height: 960,
         },
         {
-          src: '/hubspot-lead-to-deal/connected-crm-records.png',
-          alt: 'HubSpot deal view showing the associated company and contact records for a controlled commissioning deal.',
+          src: '/hubspot-lead-to-deal/deal-stage-history-framed.png',
+          alt: 'Cropped native HubSpot deal record in a proof frame showing creation and controlled deal stage activity receipts.',
           caption:
-            "Controlled company, contact, and deal records linked and read back through HubSpot's native association model.",
-          width: 1149,
-          height: 648,
+            'Native HubSpot activity retains deal creation and controlled stage-change receipts on one auditable record.',
+          width: 1280,
+          height: 960,
         },
         {
           src: '/hubspot-zendesk-handoff/01-crm-to-support-lifecycle.png',
