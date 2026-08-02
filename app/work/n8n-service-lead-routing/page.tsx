@@ -18,7 +18,7 @@ const screenshotLayout = [
     height: 960,
   },
   {
-    src: '/n8n-service-lead/routing-workflow.png',
+    src: '/n8n-service-lead/routing-workflow.svg',
     title: 'n8n service enquiry routing',
     width: 1280,
     height: 960,
@@ -85,6 +85,15 @@ export default function N8nServiceLeadRoutingPage() {
           <ProjectEnquiryTrigger className="button button-primary">
             Discuss your workflow
           </ProjectEnquiryTrigger>
+          <Link
+            className="button button-secondary"
+            href={
+              n8nServiceLeadRouting.primaryLink ??
+              'https://github.com/stefan-mcf/n8n-service-lead-routing'
+            }
+          >
+            View GitHub repository
+          </Link>
         </div>
         <Link className="text-link case-study-back" href="/#work">
           Back to selected work
