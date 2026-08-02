@@ -155,6 +155,9 @@ export const proofItems: ProofItem[] = [
     problemShape:
       'A live SM Systems website path connecting HubSpot enquiry capture, versioned GTM and GA4 events, the main Airtable base, human qualification, Make routing, deal creation, event QA, and reporting.',
     caseStudyLink: '/work/conversion-measurement-inbound-lead-system/',
+    primaryLink:
+      'https://github.com/stefan-mcf/conversion-measurement-inbound-lead-system',
+    primaryLinkLabel: 'View GitHub repository',
     caseStudy: {
       proofStrip: [
         {
