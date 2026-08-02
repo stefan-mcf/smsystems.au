@@ -530,7 +530,7 @@ export const proofItems: ProofItem[] = [
     title: 'Precision Residential Construction website',
     lane: 'Client project',
     problemShape:
-      'A customer-facing residential construction website combining services, project photography, before-and-after work, direct contact options, and a structured quote enquiry form.',
+      'A paid-client responsive construction website launched through Cloudflare Pages with an n8n-backed quote enquiry and owner-notification path.',
     primaryLink: 'https://prconstruction.au/',
     primaryLinkLabel: 'Visit live website',
     caseStudyLink: '/work/precision-residential-construction/',
@@ -542,14 +542,14 @@ export const proofItems: ProofItem[] = [
           body: 'A clear path through services, completed work, and before-and-after results.',
         },
         {
-          label: 'LEAD CAPTURE',
-          title: 'Quote enquiry form',
-          body: 'A structured enquiry flow for contact details, suburb, service type, timing, and preferred contact method.',
+          label: 'PRODUCTION LAUNCH',
+          title: 'Cloudflare Pages and custom domain',
+          body: 'Production deployment with custom-domain connection, DNS, SSL, canonical routing, Zoho Mail setup, and responsive desktop/mobile QA.',
         },
         {
-          label: 'DIRECT CONTACT',
-          title: 'Call and email actions',
-          body: 'Prominent phone, quote, and email paths across desktop and mobile layouts.',
+          label: 'N8N LEAD INTAKE',
+          title: 'Recorded enquiry and owner notification',
+          body: 'The production form posts to n8n; a labelled commissioning enquiry reached the owner and received a reply.',
         },
       ],
       screenshots: [
@@ -589,7 +589,7 @@ export const proofItems: ProofItem[] = [
           src: '/precision/website-quote-crm.png',
           alt: 'Precision Residential Construction quote enquiry form collecting contact details, project location, service type, timeframe, preferred contact method, and project details.',
           caption:
-            'Structured quote intake captures the project details needed for CRM follow-up.',
+            'Structured quote intake posts project details to the production n8n workflow for recording and owner notification.',
           width: 1280,
           height: 720,
         },

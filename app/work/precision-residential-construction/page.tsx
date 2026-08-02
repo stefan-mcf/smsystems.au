@@ -21,7 +21,7 @@ const detailScreenshotSources = [
 export const metadata: Metadata = createPageMetadata({
   title: 'Precision Residential Construction website | SM Systems',
   description:
-    'The Precision Residential Construction website project: services, project photography, direct contact options, and a structured quote enquiry flow.',
+    'A paid-client responsive website launched through Cloudflare Pages with a production n8n quote-intake and owner-notification path.',
   path: '/work/precision-residential-construction/',
   image: {
     url: '/precision/website-homepage.png',
@@ -55,7 +55,7 @@ export default function PrecisionResidentialConstructionPage() {
     <article className="case-study-page" data-reveal>
       <WorkStructuredData
         title="Precision Residential Construction website"
-        description="The Precision Residential Construction website project: services, project photography, direct contact options, and a structured quote enquiry flow."
+        description="A paid-client responsive website launched through Cloudflare Pages with a production n8n quote-intake and owner-notification path."
         path="/work/precision-residential-construction/"
         image="/precision/website-homepage.png"
       />
@@ -63,9 +63,9 @@ export default function PrecisionResidentialConstructionPage() {
         <p className="eyebrow">Client project</p>
         <h1>Precision Residential Construction website</h1>
         <p className="case-study-lede">
-          A customer-facing website built around the work a prospective client
-          needs to see: services, finished projects, before-and-after comparisons,
-          direct contact options, and a structured quote enquiry.
+          A paid-client responsive website built around services, finished
+          projects, before-and-after proof, and a structured quote enquiry,
+          then launched through Cloudflare Pages with production n8n intake.
         </p>
         <div className="case-study-actions">
           <Link
@@ -145,20 +145,23 @@ export default function PrecisionResidentialConstructionPage() {
           </p>
         </article>
         <article>
-          <p className="proof-lane">Enquiry detail</p>
-          <h2>Useful project information captured upfront.</h2>
+          <p className="proof-lane">Production delivery</p>
+          <h2>Custom domain, responsive QA, and live launch.</h2>
           <p>
-            The quote form collects contact details, suburb, service type,
-            timeframe, preferred contact method, and project notes so the first
-            follow-up starts with useful context.
+            The site was deployed through Cloudflare Pages with custom-domain
+            connection, DNS, SSL, canonical routing, Zoho Mail DNS and email
+            authentication, and responsive checks across desktop and mobile
+            layouts.
           </p>
         </article>
         <article>
-          <p className="proof-lane">Contact options</p>
-          <h2>Direct routes for customers who are ready now.</h2>
+          <p className="proof-lane">n8n enquiry path</p>
+          <h2>Recorded intake and owner notification.</h2>
           <p>
-            Phone, email, and quote actions remain visible across the site so a
-            customer can choose the contact path that suits them.
+            The form posts structured project details to a production n8n
+            webhook. A labelled commissioning enquiry was recorded, reached
+            the business owner, and received a direct reply. No automated
+            follow-up or multi-stage CRM pipeline is claimed.
           </p>
         </article>
       </section>
