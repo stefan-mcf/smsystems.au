@@ -106,13 +106,8 @@ export default function N8nServiceLeadRoutingPage() {
       >
         <div className="case-study-section-heading">
           <h2 id="n8n-workflow-walkthrough">
-            Service enquiry intake, routing, and review.
+            From quote request to controlled outcome.
           </h2>
-          <p>
-            Quote requests enter through a structured form. Each record is
-            checked and routed to one of five explicit outcomes before any
-            external handoff is prepared.
-          </p>
         </div>
 
         <div className="case-study-shot-list">
