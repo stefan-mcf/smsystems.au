@@ -52,6 +52,15 @@ export default function ConversionMeasurementInboundLeadPage() {
           <ProjectEnquiryTrigger className="button button-primary">
             Discuss your tracking path
           </ProjectEnquiryTrigger>
+          <Link
+            className="button button-secondary"
+            href={
+              conversionMeasurement.primaryLink ??
+              'https://github.com/stefan-mcf/conversion-measurement-inbound-lead-system'
+            }
+          >
+            View GitHub repository
+          </Link>
         </div>
         <Link className="text-link case-study-back" href="/#work">
           Back to selected work
