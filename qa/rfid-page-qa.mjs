@@ -187,6 +187,8 @@ for (const profile of profiles) {
           'a[href="https://github.com/stefan-mcf/rfid-subscription-access-system"]',
         )
         .count()) === 1,
+    homeOutcomeSectionAbsent:
+      (await homeCard.locator('.proof-case-outcome').count()) === 0,
     homeCarouselFrames:
       (await carouselDots.count()) === EXPECTED_FRAME_COUNT,
     homeCarouselOrder:

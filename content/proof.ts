@@ -609,8 +609,6 @@ export const proofItems: ProofItem[] = [
       'https://github.com/stefan-mcf/rfid-subscription-access-system',
     primaryLinkLabel: 'View GitHub repository',
     caseStudy: {
-      outcome:
-        'One connected platform carries customer-owned vehicle and billing state into explicit RFID access decisions while keeping physical actuation behind a separate field acceptance boundary.',
       proofStrip: [
         {
           label: 'ACCESS',
