@@ -554,44 +554,44 @@ export const proofItems: ProofItem[] = [
       ],
       screenshots: [
         {
-          src: '/precision/website-homepage.png',
-          alt: 'Precision Residential Construction homepage with service navigation, contact actions, and residential project photography.',
+          src: '/precision/01-live-paid-client-website.png',
+          alt: 'Responsive Precision Residential Construction website shown on desktop and mobile.',
           caption:
-            'Customer-facing homepage with clear service navigation, phone contact, and quote actions.',
+            'The paid-client website is live on its custom domain with responsive desktop and mobile layouts.',
           width: 1280,
-          height: 720,
+          height: 960,
         },
         {
-          src: '/precision/website-services.png',
+          src: '/precision/02-services-at-a-glance.png',
           alt: 'Precision Residential Construction services section showing decking, framing, pergolas, renovations, cladding, and exterior carpentry.',
           caption:
-            'Services section covering the company’s residential carpentry and construction work.',
+            'Six residential service categories are organised into one scannable customer-facing view.',
           width: 1280,
-          height: 720,
+          height: 960,
         },
         {
-          src: '/precision/website-before-after.png',
+          src: '/precision/03-before-and-after-transformation.png',
           alt: 'Precision Residential Construction before-and-after section comparing the original brick facade with the completed timber re-clad.',
           caption:
-            'Before-and-after project presentation showing the completed exterior transformation.',
+            'A direct before-and-after comparison makes the completed exterior transformation clear.',
           width: 1280,
-          height: 720,
+          height: 960,
         },
         {
-          src: '/precision/website-projects.png',
+          src: '/precision/04-completed-work-in-context.png',
           alt: 'Precision Residential Construction recent projects gallery showing completed hardwood and glass-balustrade decking.',
           caption:
-            'Recent-project gallery presenting completed work with clear project descriptions.',
+            'Finished-project photography is paired with concise scope details across three residential builds.',
           width: 1280,
-          height: 720,
+          height: 960,
         },
         {
-          src: '/precision/website-quote-crm.png',
+          src: '/precision/05-production-quote-intake.png',
           alt: 'Precision Residential Construction quote enquiry form collecting contact details, project location, service type, timeframe, preferred contact method, and project details.',
           caption:
-            'Structured quote intake posts project details to the production n8n workflow for recording and owner notification.',
+            'Structured project details post to the production n8n workflow for recording and owner notification.',
           width: 1280,
-          height: 720,
+          height: 960,
         },
       ],
     },

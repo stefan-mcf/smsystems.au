@@ -42,7 +42,7 @@ SM Systems builds workflow automation and integration tools that connect website
 - HubSpot to Zendesk customer handoff: https://smsystems.au/work/hubspot-zendesk-customer-handoff/
 - Conversion measurement and inbound lead system: https://smsystems.au/work/conversion-measurement-inbound-lead-system/
 
-## Featured Proof
+## Featured Work
 
 Precision Residential Construction website:
 A paid-client responsive construction website launched through Cloudflare Pages with custom-domain setup, Zoho Mail, desktop/mobile QA, and a production n8n quote-intake path that records enquiries and notifies the business owner.

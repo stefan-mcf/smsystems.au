@@ -10,24 +10,16 @@ const precisionWebsite = proofItems.find(
   (item) => item.slug === 'precision-residential-construction-website',
 );
 
-const detailScreenshotSources = [
-  { src: '/precision/website-homepage.png', width: 1280, height: 720 },
-  { src: '/precision/website-services-full.png', width: 1280, height: 864 },
-  { src: '/precision/website-before-after-full.png', width: 1280, height: 753 },
-  { src: '/precision/website-projects-full.png', width: 1280, height: 1219 },
-  { src: '/precision/website-quote-crm-full.png', width: 1280, height: 867 },
-];
-
 export const metadata: Metadata = createPageMetadata({
   title: 'Precision Residential Construction website | SM Systems',
   description:
     'A paid-client responsive website launched through Cloudflare Pages with a production n8n quote-intake and owner-notification path.',
   path: '/work/precision-residential-construction/',
   image: {
-    url: '/precision/website-homepage.png',
+    url: '/precision/01-live-paid-client-website.png',
     width: 1280,
-    height: 720,
-    alt: 'Precision Residential Construction website homepage',
+    height: 960,
+    alt: 'Responsive Precision Residential Construction website on desktop and mobile',
   },
 });
 
@@ -37,19 +29,7 @@ export default function PrecisionResidentialConstructionPage() {
   }
 
   const proofStrip = precisionWebsite.caseStudy.proofStrip ?? [];
-  const screenshots = (precisionWebsite.caseStudy.screenshots ?? []).map(
-    (screenshot, index) => ({
-      ...screenshot,
-      ...detailScreenshotSources[index],
-    }),
-  );
-  const screenshotTitles = [
-    'Homepage and contact actions',
-    'Services at a glance',
-    'Before-and-after projects',
-    'Recent project gallery',
-    'Structured quote enquiry',
-  ];
+  const screenshots = precisionWebsite.caseStudy.screenshots ?? [];
 
   return (
     <article className="case-study-page" data-reveal>
@@ -57,15 +37,16 @@ export default function PrecisionResidentialConstructionPage() {
         title="Precision Residential Construction website"
         description="A paid-client responsive website launched through Cloudflare Pages with a production n8n quote-intake and owner-notification path."
         path="/work/precision-residential-construction/"
-        image="/precision/website-homepage.png"
+        image="/precision/01-live-paid-client-website.png"
       />
       <header className="case-study-hero">
         <p className="eyebrow">Client project</p>
-        <h1>Precision Residential Construction website</h1>
+        <h1 className="case-study-title-wide">
+          Precision Residential Construction website
+        </h1>
         <p className="case-study-lede">
-          A paid-client responsive website built around services, finished
-          projects, before-and-after proof, and a structured quote enquiry,
-          then launched through Cloudflare Pages with production n8n intake.
+          A paid-client responsive website with a production n8n quote-intake
+          path, launched on Cloudflare Pages at prconstruction.au.
         </p>
         <div className="case-study-actions">
           <Link
@@ -77,19 +58,29 @@ export default function PrecisionResidentialConstructionPage() {
           <ProjectEnquiryTrigger className="button button-secondary">
             Discuss a project
           </ProjectEnquiryTrigger>
+          <Link
+            className="button button-secondary"
+            href="https://github.com/stefan-mcf/precision-residential-construction"
+          >
+            View GitHub repository
+          </Link>
         </div>
         <Link className="text-link case-study-back" href="/#work">
           Back to selected work
         </Link>
       </header>
 
-      <section className="case-study-gallery" aria-labelledby="website-walkthrough">
+      <section
+        className="case-study-gallery"
+        aria-labelledby="precision-production"
+      >
         <div className="case-study-section-heading">
-          <p className="proof-lane">Customer experience</p>
-          <h2 id="website-walkthrough">The published customer experience.</h2>
+          <h2 id="precision-production">
+            A live website built around customer decisions.
+          </h2>
           <p>
-            The published experience moves from first impression and service
-            detail through to completed work and quote enquiry.
+            Responsive presentation, service clarity, finished-work examples,
+            and structured quote intake are shown across five production views.
           </p>
         </div>
 
@@ -107,7 +98,6 @@ export default function PrecisionResidentialConstructionPage() {
               </div>
               <figcaption>
                 <span>
-                  <strong>{screenshotTitles[index] ?? 'Website view'}</strong>
                   <span>{screenshot.caption}</span>
                 </span>
               </figcaption>
@@ -118,9 +108,8 @@ export default function PrecisionResidentialConstructionPage() {
 
       <section className="case-study-overview" aria-labelledby="project-overview">
         <div className="case-study-section-heading">
-          <p className="proof-lane">Project overview</p>
           <h2 id="project-overview">
-            Built to turn completed project work into enquiries.
+            Production delivery from page load to owner notification.
           </h2>
         </div>
         <div className="proof-proof-strip">
@@ -136,17 +125,14 @@ export default function PrecisionResidentialConstructionPage() {
 
       <section className="case-study-content-grid" aria-label="What the website includes">
         <article>
-          <p className="proof-lane">Customer path</p>
-          <h2>From first impression to quote request.</h2>
+          <h2>Services and finished work stay easy to inspect.</h2>
           <p>
-            Visitors can move from the company’s core services into completed
-            project photography and before-and-after work, then use a clear
-            quote action when they are ready to talk.
+            Visitors move from core services into completed project photography
+            and a direct before-and-after comparison before requesting a quote.
           </p>
         </article>
         <article>
-          <p className="proof-lane">Production delivery</p>
-          <h2>Custom domain, responsive QA, and live launch.</h2>
+          <h2>The live site runs on a custom production domain.</h2>
           <p>
             The site was deployed through Cloudflare Pages with custom-domain
             connection, DNS, SSL, canonical routing, Zoho Mail DNS and email
@@ -155,8 +141,7 @@ export default function PrecisionResidentialConstructionPage() {
           </p>
         </article>
         <article>
-          <p className="proof-lane">n8n enquiry path</p>
-          <h2>Recorded intake and owner notification.</h2>
+          <h2>Enquiries enter a recorded n8n workflow.</h2>
           <p>
             The form posts structured project details to a production n8n
             webhook. A labelled commissioning enquiry was recorded, reached
@@ -168,8 +153,7 @@ export default function PrecisionResidentialConstructionPage() {
 
       <section className="case-study-final">
         <div>
-          <p className="proof-lane">Live project</p>
-          <h2>See the website in use.</h2>
+          <h2>See the website in production.</h2>
           <p>
             Open the live Precision Residential Construction website, or get in
             touch to discuss a similar website and enquiry flow for your business.
@@ -183,7 +167,7 @@ export default function PrecisionResidentialConstructionPage() {
             Visit live website
           </Link>
           <ProjectEnquiryTrigger className="button button-secondary">
-            Contact SM Systems
+            Discuss a project
           </ProjectEnquiryTrigger>
         </div>
       </section>
