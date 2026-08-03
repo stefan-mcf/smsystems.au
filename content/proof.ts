@@ -600,61 +600,77 @@ export const proofItems: ProofItem[] = [
   },
   {
     slug: 'rfid-subscription-access-system',
-    title: 'RFID carwash subscription access system',
+    title: 'RFID subscription and access platform',
     lane: 'Client project',
     problemShape:
-      'A carwash subscription and access system linking customer plan selection, checkout, accounts, tag registration, backend decisions, database records, and operator dashboards.',
+      'A client system linking customer subscriptions, Stripe sandbox billing, tag registration, access decisions, operator controls, and a request-driven AWS data layer.',
     caseStudyLink: '/work/rfid-subscription-access-system/',
     caseStudy: {
       proofStrip: [
         {
-          label: 'CUSTOMER FLOW',
-          title: 'Plans and checkout',
-          body: 'Customer plan selection, account and signup flows, and secure checkout-session handling.',
+          label: 'SUBSCRIPTION',
+          title: 'Customer and billing lifecycle',
+          body: 'Verified accounts, per-vehicle plans, Stripe sandbox Checkout, Billing Portal access, and signed lifecycle events.',
         },
         {
-          label: 'ACCOUNT TOOLS',
-          title: 'Account and tag management',
-          body: 'Customer accounts, subscription records, and operator-managed tag assignments.',
+          label: 'ACCESS',
+          title: 'Decision and field controls',
+          body: 'Tag registration, entitlement checks, repeat protection, operator modes, and explicit field-commissioning gates.',
         },
         {
-          label: 'OPERATOR VIEW',
-          title: 'Dashboard and events',
-          body: 'Operator visibility into access decisions, wash tiers, runtime status, and event history.',
+          label: 'CLOUD',
+          title: 'Request-driven PostgreSQL',
+          body: 'A live migration from fixed RDS compute to private Aurora Serverless v2 with observed zero-ACU idle state.',
         },
       ],
       screenshots: [
         {
-          src: '/rfid/operator-dashboard.png',
-          alt: 'RFID operator dashboard showing access decisions, wash tiers, system status, and recent event history.',
+          src: '/rfid/01-subscription-to-access-decision.png',
+          alt: 'RFID system architecture connecting the customer portal, Stripe sandbox, AWS FIFO processing, Aurora PostgreSQL, the access API, and field controls.',
           caption:
-            'Operator dashboard for reviewing access decisions, wash tiers, system status, and event history.',
-          width: 2048,
-          height: 1060,
+            'Customer, billing, durable state, access decisions, and field controls are separated by explicit system boundaries.',
+          width: 1280,
+          height: 960,
         },
         {
-          src: '/rfid/operator-tag-setup.png',
-          alt: 'RFID operator dashboard Tag Setup workspace with tag selection, claim-code activation, and manual activation controls.',
+          src: '/rfid/02-customer-plans-and-vehicle-access.png',
+          alt: 'Customer portal showing vehicle plan selection and a verified account with active, awaiting-tag, and payment-issue states.',
           caption:
-            'Tag Setup workspace for selecting tags, activating customer claim codes, and managing tag assignments.',
-          width: 2048,
-          height: 1060,
+            'A verified account keeps per-vehicle plans, tag status, and customer-managed billing actions visible.',
+          width: 1280,
+          height: 960,
         },
         {
-          src: '/rfid/operator-wash-test.png',
-          alt: 'RFID operator dashboard Wash Test workspace with automation modes and wash-output signal indicators.',
+          src: '/rfid/03-stripe-sandbox-billing-lifecycle.png',
+          alt: 'Stripe sandbox subscription screen beside the commissioned Checkout, webhook, reconciliation, invoice, and queue lifecycle.',
           caption:
-            'Wash Test workspace for selecting an automation mode and monitoring wash-output signals.',
-          width: 2048,
-          height: 1060,
+            'Stripe sandbox Checkout and signed lifecycle events were commissioned with temporary test pricing; no live payments are claimed.',
+          width: 1280,
+          height: 960,
         },
         {
-          src: '/rfid/subscription-website.png',
-          alt: 'Subscription website showing Standard, Premium, and Ultimate monthly wash-plan cards.',
+          src: '/rfid/04-operator-access-decisions.png',
+          alt: 'RFID operator dashboard showing the latest access decision, subscription tier, system status, and recent events.',
           caption:
-            'Customer plan-selection screen showing Standard, Premium, and Ultimate options before checkout.',
-          width: 2048,
-          height: 1060,
+            'The operator view brings together allow-or-deny results, customer context, runtime status, and recent events.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/rfid/05-tag-setup-and-wash-control.png',
+          alt: 'RFID operator controls for claim-code tag setup and off, manual, or automatic wash modes.',
+          caption:
+            'Tag assignment and wash controls remain visible without treating a dashboard action as confirmation of physical movement.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/rfid/06-aurora-serverless-database-migration.png',
+          alt: 'Before-and-after database architecture comparing fixed RDS PostgreSQL with Aurora Serverless v2 and verified acceptance checks.',
+          caption:
+            'The live service moved to Aurora Serverless v2, preserved record counts, returned to zero ACU at idle, and retired the old RDS instance.',
+          width: 1280,
+          height: 960,
         },
       ],
     },

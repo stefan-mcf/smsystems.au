@@ -279,15 +279,15 @@ export const serviceItems: ServiceItem[] = [
         },
       },
       {
-        title: 'RFID subscription access system',
+        title: 'RFID subscription and access platform',
         description:
-          'A connected customer, payment, tag administration, backend, database, and operator-dashboard system for physical operations.',
+          'A connected customer, Stripe sandbox, tag administration, access-decision, operator-control, and Aurora Serverless system.',
         href: '/work/rfid-subscription-access-system/',
         image: {
-          src: '/rfid/operator-dashboard.png',
-          alt: 'RFID subscription access system operator dashboard',
-          width: 2048,
-          height: 1060,
+          src: '/rfid/01-subscription-to-access-decision.png',
+          alt: 'RFID subscription and access platform architecture',
+          width: 1280,
+          height: 960,
         },
       },
     ],

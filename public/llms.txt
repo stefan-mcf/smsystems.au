@@ -35,7 +35,7 @@ SM Systems builds workflow automation and integration tools that connect website
 
 - Zendesk AI Support Copilot and Jira on AWS: https://smsystems.au/work/zendesk-ai-support-copilot/
 - Precision Residential Construction website: https://smsystems.au/work/precision-residential-construction/
-- RFID carwash subscription access system: https://smsystems.au/work/rfid-subscription-access-system/
+- RFID subscription and access platform: https://smsystems.au/work/rfid-subscription-access-system/
 - Airtable and Make opportunity pipeline: https://smsystems.au/work/airtable-make-opportunity-pipeline/
 - n8n service enquiry intake and routing: https://smsystems.au/work/n8n-service-lead-routing/
 - HubSpot CRM pipeline and record controls: https://smsystems.au/work/hubspot-lead-to-deal-crm/
@@ -47,8 +47,8 @@ SM Systems builds workflow automation and integration tools that connect website
 Precision Residential Construction website:
 A paid-client responsive construction website launched through Cloudflare Pages with custom-domain setup, Zoho Mail, desktop/mobile QA, and a production n8n quote-intake path that records enquiries and notifies the business owner.
 
-RFID carwash subscription access system:
-A client application covering customer plan selection, account and checkout flows, tag administration, backend decisions, PostgreSQL-backed records, and an operator dashboard.
+RFID subscription and access platform:
+A client system connecting verified customer accounts, per-vehicle plans, Stripe sandbox lifecycle processing, tag administration, access decisions, operator controls, and a verified migration from fixed RDS PostgreSQL to Aurora Serverless v2. Live payments, final savings, and physical equipment activation are not claimed.
 
 ## Preferred Description
 
