@@ -613,14 +613,14 @@ export const proofItems: ProofItem[] = [
         'One connected platform carries customer-owned vehicle and billing state into explicit RFID access decisions while keeping physical actuation behind a separate field acceptance boundary.',
       proofStrip: [
         {
-          label: 'SUBSCRIPTION',
-          title: 'Customer and billing lifecycle',
-          body: 'Verified accounts, per-vehicle plans, Stripe sandbox Checkout, Billing Portal access, and signed lifecycle events.',
-        },
-        {
           label: 'ACCESS',
           title: 'Decision and field controls',
           body: 'Tag registration, entitlement checks, repeat protection, operator modes, and explicit field-commissioning gates.',
+        },
+        {
+          label: 'SUBSCRIPTION',
+          title: 'Customer and billing lifecycle',
+          body: 'Verified accounts, per-vehicle plans, Stripe sandbox Checkout, Billing Portal access, and signed lifecycle events.',
         },
         {
           label: 'CLOUD',
@@ -629,6 +629,30 @@ export const proofItems: ProofItem[] = [
         },
       ],
       screenshots: [
+        {
+          src: '/rfid/06-operator-and-edge-access-decisions.png',
+          alt: 'RFID operator dashboard showing an access decision, subscription context, runtime status, and recent allowed or denied events.',
+          caption:
+            'The operator view brings together allow-or-deny results, customer context, durable runtime state, and recent events.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/rfid/07-tag-assignment-and-claim-lookup.png',
+          alt: 'RFID operator tag setup showing reader selection, customer claim-code lookup, and controlled manual assignment.',
+          caption:
+            'Tag assignment supports reader selection and customer claim codes while retaining a controlled operator fallback.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/rfid/08-wash-controls-outputs-disabled.png',
+          alt: 'RFID operator wash controls showing off, manual, and automatic modes with all physical outputs disabled.',
+          caption:
+            'Modes and output indicators remain visible without treating a dashboard action as confirmation of physical movement.',
+          width: 1280,
+          height: 960,
+        },
         {
           src: '/rfid/01-subscription-to-access-decision.png',
           alt: 'RFID system architecture connecting the customer portal, Stripe sandbox, AWS FIFO processing, Aurora PostgreSQL, the access API, and field controls.',
@@ -665,31 +689,7 @@ export const proofItems: ProofItem[] = [
           src: '/rfid/05-stripe-sandbox-billing-state.png',
           alt: 'Stripe sandbox subscription and paid test-invoice state with private customer identifiers excluded.',
           caption:
-            'Sandbox subscription and invoice state anchor the signed event lifecycle; no live payment or production pricing is claimed.',
-          width: 1280,
-          height: 960,
-        },
-        {
-          src: '/rfid/06-operator-and-edge-access-decisions.png',
-          alt: 'RFID operator dashboard showing an access decision, subscription context, runtime status, and recent allowed or denied events.',
-          caption:
-            'The operator view brings together allow-or-deny results, customer context, durable runtime state, and recent events.',
-          width: 1280,
-          height: 960,
-        },
-        {
-          src: '/rfid/07-tag-assignment-and-claim-lookup.png',
-          alt: 'RFID operator tag setup showing reader selection, customer claim-code lookup, and controlled manual assignment.',
-          caption:
-            'Tag assignment supports reader selection and customer claim codes while retaining a controlled operator fallback.',
-          width: 1280,
-          height: 960,
-        },
-        {
-          src: '/rfid/08-wash-controls-outputs-disabled.png',
-          alt: 'RFID operator wash controls showing off, manual, and automatic modes with all physical outputs disabled.',
-          caption:
-            'Modes and output indicators remain visible without treating a dashboard action as confirmation of physical movement.',
+            'Sandbox subscription and invoice state anchor the signed event lifecycle. The displayed amount is a temporary test price, not commercial pricing.',
           width: 1280,
           height: 960,
         },

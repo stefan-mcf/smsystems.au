@@ -36,13 +36,13 @@ const operatingPath = [
 export const metadata: Metadata = createPageMetadata({
   title: 'RFID subscription and access platform | SM Systems',
   description:
-    'A client system connecting vehicle subscriptions, Stripe sandbox billing, RFID entitlement decisions, operator controls, and an Aurora Serverless data layer.',
+    'A client system connecting RFID operator controls, entitlement decisions, vehicle subscriptions, Stripe sandbox billing, and an Aurora Serverless data layer.',
   path: '/work/rfid-subscription-access-system/',
   image: {
-    url: '/rfid/01-subscription-to-access-decision.png',
+    url: '/rfid/06-operator-and-edge-access-decisions.png',
     width: 1280,
     height: 960,
-    alt: 'RFID subscription and access platform architecture',
+    alt: 'RFID operator dashboard and edge access decisions',
   },
 });
 
@@ -58,9 +58,9 @@ export default function RfidSubscriptionAccessSystemPage() {
     <article className="case-study-page" data-reveal>
       <WorkStructuredData
         title="RFID subscription and access platform"
-        description="A client system connecting vehicle subscriptions, Stripe sandbox billing, RFID entitlement decisions, operator controls, and an Aurora Serverless data layer."
+        description="A client system connecting RFID operator controls, entitlement decisions, vehicle subscriptions, Stripe sandbox billing, and an Aurora Serverless data layer."
         path="/work/rfid-subscription-access-system/"
-        image="/rfid/01-subscription-to-access-decision.png"
+        image="/rfid/06-operator-and-edge-access-decisions.png"
       />
       <header className="case-study-hero">
         <p className="eyebrow">Client system</p>
@@ -68,7 +68,7 @@ export default function RfidSubscriptionAccessSystemPage() {
           RFID subscription and access platform
         </h1>
         <p className="case-study-lede">
-          A connected customer, billing, access-decision, and operator system
+          A connected operator, access-decision, customer, and billing system
           backed by durable PostgreSQL state and a request-driven AWS data
           layer.
         </p>
@@ -91,12 +91,13 @@ export default function RfidSubscriptionAccessSystemPage() {
       <section className="case-study-gallery" aria-labelledby="rfid-system">
         <div className="case-study-section-heading">
           <h2 id="rfid-system">
-            One controlled path from subscription to access decision.
+            Operator decisions first, then the subscription lifecycle.
           </h2>
           <p>
-            Customer, billing, access, edge, and cloud views follow one
-            controlled operating path. Stripe remains sandbox-only, and
-            physical equipment activation remains outside the claimed scope.
+            Operator and edge controls lead. Customer, billing, architecture,
+            and cloud views then show the state behind each decision. Stripe
+            remains sandbox-only, and physical equipment activation remains
+            outside the claimed scope.
           </p>
         </div>
 
@@ -166,6 +167,14 @@ export default function RfidSubscriptionAccessSystemPage() {
         aria-label="What the RFID subscription and access platform includes"
       >
         <article>
+          <h2>Physical actuation remains a separate acceptance step.</h2>
+          <p>
+            The operator interface exposes tag assignment, access results,
+            modes, and output indicators. Reader input, PLC acknowledgement,
+            and equipment movement remain separate field checks.
+          </p>
+        </article>
+        <article>
           <h2>Customer and vehicle records remain explicit.</h2>
           <p>
             Verified accounts keep each vehicle, subscription, billing action,
@@ -179,14 +188,6 @@ export default function RfidSubscriptionAccessSystemPage() {
             Stripe sandbox Checkout and signed lifecycle events pass through an
             ordered AWS broker before current subscription state is reconciled
             into PostgreSQL.
-          </p>
-        </article>
-        <article>
-          <h2>Physical actuation remains a separate acceptance step.</h2>
-          <p>
-            The operator interface exposes tag assignment, access results,
-            modes, and output indicators. Reader input, PLC acknowledgement,
-            and equipment movement remain separate field checks.
           </p>
         </article>
       </section>
