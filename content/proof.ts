@@ -603,9 +603,14 @@ export const proofItems: ProofItem[] = [
     title: 'RFID subscription and access platform',
     lane: 'Client project',
     problemShape:
-      'A client system linking customer subscriptions, Stripe sandbox billing, tag registration, access decisions, operator controls, and a request-driven AWS data layer.',
+      'A client system linking verified customer accounts, per-vehicle subscriptions, Stripe sandbox billing, local-first RFID decisions, operator controls, and a request-driven AWS data layer.',
     caseStudyLink: '/work/rfid-subscription-access-system/',
+    primaryLink:
+      'https://github.com/stefan-mcf/rfid-subscription-access-system',
+    primaryLinkLabel: 'View GitHub repository',
     caseStudy: {
+      outcome:
+        'One connected platform carries customer-owned vehicle and billing state into explicit RFID access decisions while keeping physical actuation behind a separate field acceptance boundary.',
       proofStrip: [
         {
           label: 'SUBSCRIPTION',
@@ -633,39 +638,63 @@ export const proofItems: ProofItem[] = [
           height: 960,
         },
         {
-          src: '/rfid/02-customer-plans-and-vehicle-access.png',
-          alt: 'Customer portal showing vehicle plan selection and a verified account with active, awaiting-tag, and payment-issue states.',
+          src: '/rfid/02-vehicle-plan-selection.png',
+          alt: 'Customer portal presenting Standard, Premium, and Ultimate wash-plan choices for one vehicle.',
           caption:
-            'A verified account keeps per-vehicle plans, tag status, and customer-managed billing actions visible.',
+            'Each vehicle receives its own explicit plan choice before customer and billing details move forward.',
           width: 1280,
           height: 960,
         },
         {
-          src: '/rfid/03-stripe-sandbox-billing-lifecycle.png',
-          alt: 'Stripe sandbox subscription screen beside the commissioned Checkout, webhook, reconciliation, invoice, and queue lifecycle.',
+          src: '/rfid/03-vehicle-details-before-checkout.png',
+          alt: 'Customer portal capturing vehicle registration and optional fleet context before secure checkout.',
           caption:
-            'Stripe sandbox Checkout and signed lifecycle events were commissioned with temporary test pricing; no live payments are claimed.',
+            'Registration anchors the plan to a specific vehicle before the customer enters the secure billing handoff.',
           width: 1280,
           height: 960,
         },
         {
-          src: '/rfid/04-operator-access-decisions.png',
-          alt: 'RFID operator dashboard showing the latest access decision, subscription tier, system status, and recent events.',
+          src: '/rfid/04-customer-account-and-access-state.png',
+          alt: 'Customer account showing a vehicle plan, access status, tag readiness, and per-vehicle billing controls with private identifiers removed.',
           caption:
-            'The operator view brings together allow-or-deny results, customer context, runtime status, and recent events.',
+            'The customer workspace keeps plan, vehicle, tag readiness, payment state, and billing actions visible without exposing private account details.',
           width: 1280,
           height: 960,
         },
         {
-          src: '/rfid/05-tag-setup-and-wash-control.png',
-          alt: 'RFID operator controls for claim-code tag setup and off, manual, or automatic wash modes.',
+          src: '/rfid/05-stripe-sandbox-billing-state.png',
+          alt: 'Stripe sandbox subscription and paid test-invoice state with private customer identifiers excluded.',
           caption:
-            'Tag assignment and wash controls remain visible without treating a dashboard action as confirmation of physical movement.',
+            'Sandbox subscription and invoice state anchor the signed event lifecycle; no live payment or production pricing is claimed.',
           width: 1280,
           height: 960,
         },
         {
-          src: '/rfid/06-aurora-serverless-database-migration.png',
+          src: '/rfid/06-operator-and-edge-access-decisions.png',
+          alt: 'RFID operator dashboard showing an access decision, subscription context, runtime status, and recent allowed or denied events.',
+          caption:
+            'The operator view brings together allow-or-deny results, customer context, durable runtime state, and recent events.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/rfid/07-tag-assignment-and-claim-lookup.png',
+          alt: 'RFID operator tag setup showing reader selection, customer claim-code lookup, and controlled manual assignment.',
+          caption:
+            'Tag assignment supports reader selection and customer claim codes while retaining a controlled operator fallback.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/rfid/08-wash-controls-outputs-disabled.png',
+          alt: 'RFID operator wash controls showing off, manual, and automatic modes with all physical outputs disabled.',
+          caption:
+            'Modes and output indicators remain visible without treating a dashboard action as confirmation of physical movement.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/rfid/09-aurora-serverless-database-migration.png',
           alt: 'Before-and-after database architecture comparing fixed RDS PostgreSQL with Aurora Serverless v2 and verified acceptance checks.',
           caption:
             'The live service moved to Aurora Serverless v2, preserved record counts, returned to zero ACU at idle, and retired the old RDS instance.',

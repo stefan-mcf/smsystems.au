@@ -10,6 +10,29 @@ const rfidSystem = proofItems.find(
   (item) => item.slug === 'rfid-subscription-access-system',
 );
 
+const operatingPath = [
+  {
+    label: '01 / CUSTOMER',
+    title: 'Verify identity and ownership',
+    body: 'A verified account owns its vehicles, plan choices, and customer-managed billing sessions.',
+  },
+  {
+    label: '02 / BILLING',
+    title: 'Reconcile ordered lifecycle events',
+    body: 'Signed Stripe sandbox events advance durable subscription state without replaying the same change twice.',
+  },
+  {
+    label: '03 / ACCESS',
+    title: 'Evaluate entitlement fail closed',
+    body: 'Tag, subscription, repeat, busy, and availability checks produce one explicit allow-or-deny result.',
+  },
+  {
+    label: '04 / FIELD',
+    title: 'Keep intent separate from movement',
+    body: 'The edge path records command and acknowledgement state while physical activation remains an onsite acceptance step.',
+  },
+];
+
 export const metadata: Metadata = createPageMetadata({
   title: 'RFID subscription and access platform | SM Systems',
   description:
@@ -71,9 +94,9 @@ export default function RfidSubscriptionAccessSystemPage() {
             One controlled path from subscription to access decision.
           </h2>
           <p>
-            Six views connect the customer, Stripe, operator, and AWS layers
-            while keeping live billing and physical equipment activation
-            outside the claimed scope.
+            Customer, billing, access, edge, and cloud views follow one
+            controlled operating path. Stripe remains sandbox-only, and
+            physical equipment activation remains outside the claimed scope.
           </p>
         </div>
 
@@ -114,6 +137,28 @@ export default function RfidSubscriptionAccessSystemPage() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section
+        className="case-study-flow-section"
+        aria-labelledby="rfid-operating-path"
+      >
+        <div className="case-study-section-heading">
+          <h2 id="rfid-operating-path">Four layers, one traceable decision.</h2>
+          <p>
+            Commercial state is resolved before an access result reaches the
+            local field boundary, and every transition keeps its own status.
+          </p>
+        </div>
+        <ol className="case-study-flow-grid">
+          {operatingPath.map((step) => (
+            <li key={step.label}>
+              <span>{step.label}</span>
+              <strong>{step.title}</strong>
+              <p>{step.body}</p>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section
