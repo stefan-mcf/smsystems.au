@@ -15,6 +15,13 @@ export const metadata: Metadata = {
   title: siteMeta.title,
   description: siteMeta.description,
   metadataBase: new URL(canonicalSiteUrl),
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '64x64', type: 'image/x-icon' },
+      { url: '/brand/sm-systems-logo-mark.png', sizes: '720x720', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -40,6 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       '@id': `${canonicalSiteUrl}/#business`,
       name: 'SM Systems',
       url: canonicalSiteUrl,
+      logo: `${canonicalSiteUrl}/brand/sm-systems-logo-mark.png`,
       description:
         'SM Systems builds workflow automation, API integrations, dashboards, data syncs, CRM/intake routing, review-gated AI workflows, and operator tools for businesses, operators, and technical teams.',
       areaServed: 'Australia',
