@@ -281,7 +281,7 @@ export const serviceItems: ServiceItem[] = [
       {
         title: 'RFID subscription and access platform',
         description:
-          'A connected customer, Stripe sandbox, tag administration, access-decision, operator-control, and Aurora Serverless system.',
+          'A connected customer portal, Stripe sandbox lifecycle, local-first RFID decision, operator-control, and Aurora Serverless system.',
         href: '/work/rfid-subscription-access-system/',
         image: {
           src: '/rfid/01-subscription-to-access-decision.png',

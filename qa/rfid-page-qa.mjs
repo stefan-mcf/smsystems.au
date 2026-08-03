@@ -4,9 +4,11 @@ import { resolve } from 'node:path';
 
 const target = process.argv[2] ?? 'http://127.0.0.1:3013/work/rfid-subscription-access-system/';
 const outputDirectory = resolve('qa-output/rfid-page');
+const EXPECTED_FRAME_COUNT = 9;
 const profiles = [
   { name: 'desktop', viewport: { width: 1440, height: 900 } },
   { name: 'mobile', viewport: { width: 390, height: 844 } },
+  { name: 'mobile-320', viewport: { width: 320, height: 720 } },
 ];
 
 await mkdir(outputDirectory, { recursive: true });
@@ -19,7 +21,7 @@ for (const profile of profiles) {
   await page.getByRole('button', { name: 'Decline' }).click().catch(() => {});
   const figures = page.locator('.case-study-shot');
   await figures.first().waitFor({ state: 'visible' });
-  for (let index = 0; index < 6; index += 1) {
+  for (let index = 0; index < EXPECTED_FRAME_COUNT; index += 1) {
     const image = figures.nth(index).locator('img');
     await image.scrollIntoViewIfNeeded();
     await image.evaluate((element) => {
@@ -80,16 +82,41 @@ for (const profile of profiles) {
 
   const forbidden = 'pr' + 'oof';
   const containmentTolerance = Math.max(2, profile.viewport.height * 0.01);
+  const homePage = await browser.newPage({ viewport: profile.viewport });
+  const homeResponse = await homePage.goto(new URL('/', target).toString(), {
+    waitUntil: 'networkidle',
+  });
+  await homePage.getByRole('button', { name: 'Decline' }).click().catch(() => {});
+  const homeCard = homePage.locator('details#rfid-subscription-access-system');
+  await homeCard.scrollIntoViewIfNeeded();
+  if (!(await homeCard.evaluate((element) => element.open))) {
+    await homeCard.locator('summary').click();
+  }
+  const carouselDots = homeCard.locator('.screenshot-carousel-dot');
+  await carouselDots.first().waitFor({ state: 'visible' });
+  const homeState = await homePage.evaluate(() => ({
+    innerWidth: window.innerWidth,
+    scrollWidth: document.documentElement.scrollWidth,
+  }));
+  await homeCard.screenshot({
+    path: resolve(outputDirectory, profile.name + '-home-card.png'),
+  });
+
   const checks = {
     httpOk: Boolean(response?.ok()),
     noHorizontalOverflow: pageState.scrollWidth <= pageState.innerWidth + 2,
-    sixFrames: pageState.images.length === 6,
+    expectedFrames: pageState.images.length === EXPECTED_FRAME_COUNT,
     exactDimensions: pageState.images.every(
       (image) => image.naturalWidth === 1280 && image.naturalHeight === 960,
     ),
     repositoryLinked:
       (await page.locator('a[href="https://github.com/stefan-mcf/rfid-subscription-access-system"]').count()) === 1,
     forbiddenWordAbsent: !pageState.visibleText.includes(forbidden),
+    homeHttpOk: Boolean(homeResponse?.ok()),
+    homeNoHorizontalOverflow:
+      homeState.scrollWidth <= homeState.innerWidth + 2,
+    homeCarouselFrames:
+      (await carouselDots.count()) === EXPECTED_FRAME_COUNT,
     lightboxContained: Boolean(
       lightbox &&
         lightbox.objectFit === 'contain' &&
@@ -107,6 +134,7 @@ for (const profile of profiles) {
     checks,
     lightbox,
   });
+  await homePage.close();
   await page.close();
 }
 
