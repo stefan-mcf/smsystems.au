@@ -160,6 +160,18 @@ export const serviceItems: ServiceItem[] = [
     ],
     proof: [
       {
+        title: 'Zendesk AI Support Copilot and Jira handoff',
+        description:
+          'A human-reviewed AI support path with a native Zendesk app, controlled provider writes, Jira callback, replay safety, and verified AWS commissioning.',
+        href: '/work/zendesk-ai-support-copilot/',
+        image: {
+          src: '/zendesk-ai-support-copilot/04-aws-architecture.png',
+          alt: 'Verified Zendesk, Jira, and AWS support workflow architecture',
+          width: 1280,
+          height: 960,
+        },
+      },
+      {
         title: 'n8n service enquiry intake and routing',
         description:
           'A customer quote form, persistent duplicate checks, human review, exception holds, and an operator register implemented in n8n.',
@@ -242,6 +254,18 @@ export const serviceItems: ServiceItem[] = [
       },
     ],
     proof: [
+      {
+        title: 'Zendesk AI Support Copilot and Jira handoff',
+        description:
+          'A controlled support operation connecting cited AI routing, human approval, private Zendesk actions, Jira task creation, and provider readback.',
+        href: '/work/zendesk-ai-support-copilot/',
+        image: {
+          src: '/zendesk-ai-support-copilot/01-human-reviewed-support-console.png',
+          alt: 'Human-reviewed Zendesk support workflow with a verified Jira handoff',
+          width: 1280,
+          height: 960,
+        },
+      },
       {
         title: 'HubSpot lead-to-deal and Zendesk handoff',
         description:
