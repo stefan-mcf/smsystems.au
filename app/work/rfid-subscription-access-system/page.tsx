@@ -10,43 +10,16 @@ const rfidSystem = proofItems.find(
   (item) => item.slug === 'rfid-subscription-access-system',
 );
 
-const screenshotLayout = [
-  {
-    src: '/rfid/subscription-website.png',
-    title: 'Customer plan selection',
-    width: 2048,
-    height: 1060,
-  },
-  {
-    src: '/rfid/operator-dashboard.png',
-    title: 'Access decision overview',
-    width: 2048,
-    height: 1060,
-  },
-  {
-    src: '/rfid/operator-tag-setup.png',
-    title: 'Tag setup and activation',
-    width: 2048,
-    height: 1060,
-  },
-  {
-    src: '/rfid/operator-wash-test.png',
-    title: 'Wash automation controls',
-    width: 2048,
-    height: 1060,
-  },
-];
-
 export const metadata: Metadata = createPageMetadata({
-  title: 'RFID carwash subscription access system | SM Systems',
+  title: 'RFID subscription and access platform | SM Systems',
   description:
-    'An RFID carwash subscription and access system connecting customer wash plans, tag activation, access decisions, operator controls, and event visibility.',
+    'A client system connecting vehicle subscriptions, Stripe sandbox billing, RFID entitlement decisions, operator controls, and an Aurora Serverless data layer.',
   path: '/work/rfid-subscription-access-system/',
   image: {
-    url: '/rfid/subscription-website.png',
-    width: 2048,
-    height: 1060,
-    alt: 'RFID carwash subscription website and access system',
+    url: '/rfid/01-subscription-to-access-decision.png',
+    width: 1280,
+    height: 960,
+    alt: 'RFID subscription and access platform architecture',
   },
 });
 
@@ -55,52 +28,52 @@ export default function RfidSubscriptionAccessSystemPage() {
     throw new Error('RFID subscription access system case study is missing.');
   }
 
-  const proofStrip = rfidSystem.caseStudy.proofStrip ?? [];
-  const screenshotBySource = new Map(
-    (rfidSystem.caseStudy.screenshots ?? []).map((screenshot) => [
-      screenshot.src,
-      screenshot,
-    ]),
-  );
-  const screenshots = screenshotLayout.map((layout) => ({
-    ...screenshotBySource.get(layout.src)!,
-    ...layout,
-  }));
+  const summaryStrip = rfidSystem.caseStudy.proofStrip ?? [];
+  const screenshots = rfidSystem.caseStudy.screenshots ?? [];
 
   return (
     <article className="case-study-page" data-reveal>
       <WorkStructuredData
-        title="RFID carwash subscription access system"
-        description="An RFID carwash subscription and access system connecting customer wash plans, tag activation, access decisions, operator controls, and event visibility."
+        title="RFID subscription and access platform"
+        description="A client system connecting vehicle subscriptions, Stripe sandbox billing, RFID entitlement decisions, operator controls, and an Aurora Serverless data layer."
         path="/work/rfid-subscription-access-system/"
-        image="/rfid/subscription-website.png"
+        image="/rfid/01-subscription-to-access-decision.png"
       />
       <header className="case-study-hero">
-        <p className="eyebrow">Client project</p>
+        <p className="eyebrow">Client system</p>
         <h1 className="case-study-title-wide">
-          RFID carwash subscription access system
+          RFID subscription and access platform
         </h1>
         <p className="case-study-lede">
-          A connected system for customer wash plans, RFID tag activation,
-          access decisions, operator controls, and event visibility.
+          A connected customer, billing, access-decision, and operator system
+          backed by durable PostgreSQL state and a request-driven AWS data
+          layer.
         </p>
         <div className="case-study-actions">
           <ProjectEnquiryTrigger className="button button-primary">
             Discuss your system
           </ProjectEnquiryTrigger>
+          <Link
+            className="button button-secondary"
+            href="https://github.com/stefan-mcf/rfid-subscription-access-system"
+          >
+            View GitHub repository
+          </Link>
         </div>
         <Link className="text-link case-study-back" href="/#work">
           Back to selected work
         </Link>
       </header>
 
-      <section className="case-study-gallery" aria-labelledby="rfid-walkthrough">
+      <section className="case-study-gallery" aria-labelledby="rfid-system">
         <div className="case-study-section-heading">
-          <p className="proof-lane">Operating sequence</p>
-          <h2 id="rfid-walkthrough">From plan selection to wash control.</h2>
+          <h2 id="rfid-system">
+            One controlled path from subscription to access decision.
+          </h2>
           <p>
-            Subscriptions, registered tags, access decisions, and wash controls
-            remain connected across the customer and operator workflow.
+            Six views connect the customer, Stripe, operator, and AWS layers
+            while keeping live billing and physical equipment activation
+            outside the claimed scope.
           </p>
         </div>
 
@@ -118,7 +91,6 @@ export default function RfidSubscriptionAccessSystemPage() {
               </div>
               <figcaption>
                 <span>
-                  <strong>{screenshot.title}</strong>
                   <span>{screenshot.caption}</span>
                 </span>
               </figcaption>
@@ -129,17 +101,16 @@ export default function RfidSubscriptionAccessSystemPage() {
 
       <section className="case-study-overview" aria-labelledby="rfid-overview">
         <div className="case-study-section-heading">
-          <p className="proof-lane">Project overview</p>
           <h2 id="rfid-overview">
-            One system across the customer and operator journey.
+            Commercial state, access logic, and field control stay distinct.
           </h2>
         </div>
         <div className="proof-proof-strip">
-          {proofStrip.map((proof) => (
-            <article key={proof.label}>
-              <span>{proof.label}</span>
-              <strong>{proof.title}</strong>
-              <p>{proof.body}</p>
+          {summaryStrip.map((item) => (
+            <article key={item.label}>
+              <span>{item.label}</span>
+              <strong>{item.title}</strong>
+              <p>{item.body}</p>
             </article>
           ))}
         </div>
@@ -147,41 +118,41 @@ export default function RfidSubscriptionAccessSystemPage() {
 
       <section
         className="case-study-content-grid"
-        aria-label="What the RFID system includes"
+        aria-label="What the RFID subscription and access platform includes"
       >
         <article>
-          <p className="proof-lane">Subscription path</p>
-          <h2>Plan records support access decisions.</h2>
+          <h2>Customer and vehicle records remain explicit.</h2>
           <p>
-            Plan selection and account records provide the entitlement data
-            used when a registered RFID tag is evaluated.
+            Verified accounts keep each vehicle, subscription, billing action,
+            and tag status visible without collapsing them into one opaque
+            customer state.
           </p>
         </article>
         <article>
-          <p className="proof-lane">Operator tools</p>
-          <h2>Controlled tag setup and activation.</h2>
+          <h2>Billing events update durable operational state.</h2>
           <p>
-            Operators can select a scanned tag, use a customer setup code, or
-            perform a controlled manual activation.
+            Stripe sandbox Checkout and signed lifecycle events pass through an
+            ordered AWS broker before current subscription state is reconciled
+            into PostgreSQL.
           </p>
         </article>
         <article>
-          <p className="proof-lane">Operational visibility</p>
-          <h2>Access results and wash state in one view.</h2>
+          <h2>Physical actuation remains a separate acceptance step.</h2>
           <p>
-            Access results, subscription tier, wash mode, runtime signals, and
-            recent events are available from the operator interface.
+            The operator interface exposes tag assignment, access results,
+            modes, and output indicators. Reader input, PLC acknowledgement,
+            and equipment movement remain separate field checks.
           </p>
         </article>
       </section>
 
       <section className="case-study-final">
         <div>
-          <p className="proof-lane">Similar systems</p>
-          <h2>Connect the customer journey to operations.</h2>
+          <h2>Connect customer state to controlled operations.</h2>
           <p>
-            SM Systems builds customer portals, backend integrations, operator
-            tools, and connected automation workflows.
+            SM Systems builds subscription portals, integration brokers,
+            access-decision services, operator tools, and cloud data layers
+            around explicit operating boundaries.
           </p>
         </div>
         <div className="case-study-actions">
