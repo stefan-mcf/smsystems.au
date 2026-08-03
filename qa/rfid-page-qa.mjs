@@ -4,7 +4,19 @@ import { resolve } from 'node:path';
 
 const target = process.argv[2] ?? 'http://127.0.0.1:3013/work/rfid-subscription-access-system/';
 const outputDirectory = resolve('qa-output/rfid-page');
-const EXPECTED_FRAME_COUNT = 9;
+const EXPECTED_FRAME_SOURCES = [
+  '/rfid/06-operator-and-edge-access-decisions.png',
+  '/rfid/07-tag-assignment-and-claim-lookup.png',
+  '/rfid/08-wash-controls-outputs-disabled.png',
+  '/rfid/01-subscription-to-access-decision.png',
+  '/rfid/02-vehicle-plan-selection.png',
+  '/rfid/03-vehicle-details-before-checkout.png',
+  '/rfid/04-customer-account-and-access-state.png',
+  '/rfid/05-stripe-sandbox-billing-state.png',
+  '/rfid/09-aurora-serverless-database-migration.png',
+];
+const EXPECTED_FRAME_COUNT = EXPECTED_FRAME_SOURCES.length;
+const BILLING_FRAME_INDEX = 7;
 const profiles = [
   { name: 'desktop', viewport: { width: 1440, height: 900 } },
   { name: 'mobile', viewport: { width: 390, height: 844 } },
@@ -44,6 +56,24 @@ for (const profile of profiles) {
         naturalWidth: image.naturalWidth,
         naturalHeight: image.naturalHeight,
       })),
+      metadataImages: {
+        openGraph: document
+          .querySelector('meta[property="og:image"]')
+          ?.getAttribute('content'),
+        twitter: document
+          .querySelector('meta[name="twitter:image"]')
+          ?.getAttribute('content'),
+        structured: [...document.querySelectorAll('script[type="application/ld+json"]')]
+          .flatMap((script) => {
+            try {
+              const value = JSON.parse(script.textContent ?? '[]');
+              return Array.isArray(value) ? value : [value];
+            } catch {
+              return [];
+            }
+          })
+          .find((entry) => entry?.['@type'] === 'CreativeWork')?.image,
+      },
     };
   });
 
@@ -52,7 +82,10 @@ for (const profile of profiles) {
     fullPage: true,
   });
 
-  await figures.nth(2).locator('.image-lightbox-trigger').click();
+  await figures
+    .nth(BILLING_FRAME_INDEX)
+    .locator('.image-lightbox-trigger')
+    .click();
   const dialog = page.locator('.image-lightbox-dialog[open]');
   await dialog.waitFor({ state: 'visible' });
   await page.waitForTimeout(250);
@@ -98,6 +131,23 @@ for (const profile of profiles) {
     innerWidth: window.innerWidth,
     scrollWidth: document.documentElement.scrollWidth,
   }));
+  const homeLeadImage = await homeCard
+    .locator('.screenshot-carousel-frame img')
+    .getAttribute('src');
+  const homeCarouselSources = [];
+  for (let index = 0; index < EXPECTED_FRAME_COUNT; index += 1) {
+    await carouselDots.nth(index).click();
+    homeCarouselSources.push(
+      await homeCard
+        .locator('.screenshot-carousel-frame img')
+        .getAttribute('src'),
+    );
+  }
+  await carouselDots.nth(BILLING_FRAME_INDEX).click();
+  await homeCard.screenshot({
+    path: resolve(outputDirectory, profile.name + '-home-billing.png'),
+  });
+  await carouselDots.first().click();
   await homeCard.screenshot({
     path: resolve(outputDirectory, profile.name + '-home-card.png'),
   });
@@ -106,17 +156,44 @@ for (const profile of profiles) {
     httpOk: Boolean(response?.ok()),
     noHorizontalOverflow: pageState.scrollWidth <= pageState.innerWidth + 2,
     expectedFrames: pageState.images.length === EXPECTED_FRAME_COUNT,
+    expectedFrameOrder:
+      JSON.stringify(pageState.images.map((image) => image.src)) ===
+      JSON.stringify(EXPECTED_FRAME_SOURCES),
     exactDimensions: pageState.images.every(
       (image) => image.naturalWidth === 1280 && image.naturalHeight === 960,
     ),
+    operatorDashboardLeads:
+      pageState.images[0]?.src ===
+      '/rfid/06-operator-and-edge-access-decisions.png',
     repositoryLinked:
       (await page.locator('a[href="https://github.com/stefan-mcf/rfid-subscription-access-system"]').count()) === 1,
     forbiddenWordAbsent: !pageState.visibleText.includes(forbidden),
+    temporaryTestPriceVisible: pageState.visibleText.includes(
+      'temporary test price',
+    ),
+    literalTestAmountAbsent:
+      !pageState.visibleText.includes('a$1.00') &&
+      !pageState.visibleText.includes('$1.00'),
+    operatorMetadataLeads: Object.values(pageState.metadataImages).every(
+      (value) =>
+        typeof value === 'string' && value.endsWith(EXPECTED_FRAME_SOURCES[0]),
+    ),
     homeHttpOk: Boolean(homeResponse?.ok()),
     homeNoHorizontalOverflow:
       homeState.scrollWidth <= homeState.innerWidth + 2,
+    homeRepositoryLinked:
+      (await homeCard
+        .locator(
+          'a[href="https://github.com/stefan-mcf/rfid-subscription-access-system"]',
+        )
+        .count()) === 1,
     homeCarouselFrames:
       (await carouselDots.count()) === EXPECTED_FRAME_COUNT,
+    homeCarouselOrder:
+      JSON.stringify(homeCarouselSources) ===
+      JSON.stringify(EXPECTED_FRAME_SOURCES),
+    homeOperatorDashboardLeads:
+      homeLeadImage === '/rfid/06-operator-and-edge-access-decisions.png',
     lightboxContained: Boolean(
       lightbox &&
         lightbox.objectFit === 'contain' &&
