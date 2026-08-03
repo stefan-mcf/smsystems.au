@@ -39,6 +39,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${canonicalSiteUrl}/work/zendesk-ai-support-copilot/`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.8,
+    },
+    {
       url: `${canonicalSiteUrl}/work/precision-residential-construction/`,
       lastModified,
       changeFrequency: 'yearly',

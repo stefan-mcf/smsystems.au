@@ -2475,6 +2475,15 @@ strong {
   font-size: clamp(1.06rem, 1.55vw, 1.3rem);
 }
 
+.case-study-status-note {
+  max-width: 49rem;
+  margin-top: 1.2rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent-strong);
+  color: #596466;
+  font-size: 0.9rem;
+}
+
 .case-study-actions {
   display: flex;
   flex-wrap: wrap;
@@ -2528,6 +2537,58 @@ strong {
 
 .case-study-content-grid h2 {
   font-size: clamp(1.35rem, 2.1vw, 2.05rem);
+}
+
+.case-study-flow-section,
+.case-study-detail-section {
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 1.8rem);
+}
+
+.case-study-flow-section > .case-study-section-heading,
+.case-study-detail-section > .case-study-section-heading {
+  padding-inline: 0;
+}
+
+.case-study-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  background: var(--line);
+  list-style: none;
+  gap: 1px;
+}
+
+.case-study-flow-grid li {
+  display: grid;
+  min-height: 13rem;
+  align-content: end;
+  gap: 0.7rem;
+  padding: clamp(1.2rem, 2.4vw, 2rem);
+  background: rgba(241, 243, 243, 0.96);
+}
+
+.case-study-flow-grid span {
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 820;
+  letter-spacing: 0.12em;
+}
+
+.case-study-flow-grid strong {
+  color: var(--ink);
+  font-size: clamp(1.25rem, 1.8vw, 1.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.case-study-flow-grid p {
+  color: #596466;
+  font-size: 0.88rem;
 }
 
 .case-study-gallery {
@@ -2884,8 +2945,13 @@ strong {
   }
 
   .case-study-content-grid,
-  .case-study-final {
+  .case-study-final,
+  .case-study-flow-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .case-study-flow-grid li {
+    min-height: 0;
   }
 
   .service-page-signal-list,

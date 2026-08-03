@@ -33,6 +33,7 @@ SM Systems builds workflow automation and integration tools that connect website
 
 ## Public Work
 
+- Zendesk AI Support Copilot and Jira on AWS: https://smsystems.au/work/zendesk-ai-support-copilot/
 - Precision Residential Construction website: https://smsystems.au/work/precision-residential-construction/
 - RFID carwash subscription access system: https://smsystems.au/work/rfid-subscription-access-system/
 - Airtable and Make opportunity pipeline: https://smsystems.au/work/airtable-make-opportunity-pipeline/

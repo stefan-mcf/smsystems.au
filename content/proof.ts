@@ -33,6 +33,80 @@ export type ProofItem = {
 
 export const proofItems: ProofItem[] = [
   {
+    slug: 'zendesk-ai-support-copilot',
+    title: 'Zendesk AI Support Copilot + Jira on AWS',
+    lane: 'Flagship build',
+    problemShape:
+      'A human-reviewed support system combining cited AI assistance, safety routing, a native Zendesk app, an approval-gated Jira handoff, and verified AWS commissioning.',
+    caseStudyLink: '/work/zendesk-ai-support-copilot/',
+    primaryLink:
+      'https://github.com/stefan-mcf/zendesk-ai-support-copilot',
+    primaryLinkLabel: 'View GitHub repository',
+    caseStudy: {
+      proofStrip: [
+        {
+          label: 'CONTROLLED ROUTING',
+          title: 'Draft, escalate, or block',
+          body: 'Citations, confidence, sensitive-data checks, injection controls, and policy decide what reaches human review.',
+        },
+        {
+          label: 'HUMAN AUTHORITY',
+          title: 'No public-reply path',
+          body: 'The native Zendesk app keeps every suggestion private and requires an explicit approval before provider writes.',
+        },
+        {
+          label: 'ENGINEERING HANDOFF',
+          title: 'One task, verified callback',
+          body: 'Jira receives one approved task and returns its issue key without replay creating a second work item.',
+        },
+      ],
+      screenshots: [
+        {
+          src: '/zendesk-ai-support-copilot/01-human-reviewed-support-console.png',
+          alt: 'Native Zendesk sidebar showing a human-approved AI escalation and verified Jira task key.',
+          caption:
+            'Low-confidence incident routing suppresses the customer-facing draft, then one human approval completes the private engineering handoff.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/zendesk-ai-support-copilot/02-jira-engineering-handoff.png',
+          alt: 'Jira task created from approved Zendesk context with a verified callback.',
+          caption:
+            'Approved Zendesk context becomes one Jira task, with the issue key returned through the protected callback.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/zendesk-ai-support-copilot/03-evaluation-release-gate.png',
+          alt: 'Forty-case controlled evaluation showing route, citation, risk, draft, and sensitive-data results.',
+          caption:
+            'Forty fixed synthetic cases exercise draft, escalation, and block routes before provider handoff.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/zendesk-ai-support-copilot/04-aws-architecture.png',
+          alt: 'Verified AWS deployment architecture from Zendesk review through Jira callback.',
+          caption:
+            'The commissioned path joins the Zendesk app, authenticated AWS runtime, encrypted retrieval storage, Bedrock, Jira, secrets, and monitoring.',
+          width: 1280,
+          height: 960,
+        },
+        {
+          src: '/zendesk-ai-support-copilot/05-provider-delivery-state.png',
+          alt: 'Jira Automation audit showing webhook, task creation, callback, and replay controls.',
+          caption:
+            'The provider state records one controlled task, a successful callback, and zero public Zendesk replies.',
+          width: 1280,
+          height: 960,
+        },
+      ],
+    },
+    featured: true,
+    featuredBuild: true,
+  },
+  {
     slug: 'automation-debugger',
     title: 'Automation debugger',
     lane: 'Workflow diagnostics',
