@@ -13,33 +13,28 @@ const airtableMakePipeline = proofItems.find(
 const screenshotLayout = [
   {
     src: '/airtable-make/pipeline-overview.png',
-    title: 'Implemented outreach and opportunity pipeline',
-    width: 1504,
-    height: 705,
+    width: 1280,
+    height: 960,
   },
   {
     src: '/airtable-make/outreach-analytics.png',
-    title: 'Outreach ledger and follow-up controls',
-    width: 1504,
-    height: 705,
+    width: 1280,
+    height: 960,
   },
   {
     src: '/airtable-make/airtable-opportunities.png',
-    title: 'Airtable opportunity routing',
-    width: 1504,
-    height: 705,
+    width: 1280,
+    height: 960,
   },
   {
     src: '/airtable-make/delivery-handoff.png',
-    title: 'Delivered project handoff',
-    width: 1504,
-    height: 771,
+    width: 1280,
+    height: 960,
   },
   {
     src: '/airtable-make/make-router.png',
-    title: 'Make opportunity intake router',
-    width: 1504,
-    height: 705,
+    width: 1280,
+    height: 960,
   },
 ];
 
@@ -50,8 +45,8 @@ export const metadata: Metadata = createPageMetadata({
   path: '/work/airtable-make-opportunity-pipeline/',
   image: {
     url: '/airtable-make/pipeline-overview.png',
-    width: 1504,
-    height: 705,
+    width: 1280,
+    height: 960,
     alt: 'Airtable and Make opportunity pipeline overview',
   },
 });
@@ -94,19 +89,29 @@ export default function AirtableMakeOpportunityPipelinePage() {
           <ProjectEnquiryTrigger className="button button-primary">
             Discuss your workflow
           </ProjectEnquiryTrigger>
+          <Link
+            className="button button-secondary"
+            href={
+              airtableMakePipeline.primaryLink ??
+              'https://github.com/stefan-mcf/airtable-make-opportunity-pipeline'
+            }
+          >
+            View GitHub repository
+          </Link>
         </div>
         <Link className="text-link case-study-back" href="/#work">
           Back to selected work
         </Link>
       </header>
 
-      <section className="case-study-gallery" aria-labelledby="pipeline-walkthrough">
+      <section className="case-study-gallery" aria-labelledby="pipeline-sequence">
         <div className="case-study-section-heading">
-          <p className="proof-lane">Operating sequence</p>
-          <h2 id="pipeline-walkthrough">From opportunity to project handoff.</h2>
+          <h2 id="pipeline-sequence">
+            A controlled path from opportunity to delivery.
+          </h2>
           <p>
-            The Airtable and Make views show how approved records are routed,
-            reviewed, and carried into delivery.
+            Approved records enter Airtable, move through bounded Make routing,
+            and retain their review and delivery states in one operating system.
           </p>
         </div>
 
@@ -124,7 +129,6 @@ export default function AirtableMakeOpportunityPipelinePage() {
               </div>
               <figcaption>
                 <span>
-                  <strong>{screenshot.title}</strong>
                   <span>{screenshot.caption}</span>
                 </span>
               </figcaption>
@@ -135,7 +139,6 @@ export default function AirtableMakeOpportunityPipelinePage() {
 
       <section className="case-study-overview" aria-labelledby="pipeline-overview">
         <div className="case-study-section-heading">
-          <p className="proof-lane">Project overview</p>
           <h2 id="pipeline-overview">
             One controlled path from intake to delivery.
           </h2>
@@ -156,7 +159,6 @@ export default function AirtableMakeOpportunityPipelinePage() {
         aria-label="What the opportunity pipeline includes"
       >
         <article>
-          <p className="proof-lane">Opportunity intake</p>
           <h2>Approved records enter one operating view.</h2>
           <p>
             New opportunities are validated and given stable keys before they
@@ -164,7 +166,6 @@ export default function AirtableMakeOpportunityPipelinePage() {
           </p>
         </article>
         <article>
-          <p className="proof-lane">Routing controls</p>
           <h2>Duplicates and exceptions stop cleanly.</h2>
           <p>
             The connected Make router separates valid, duplicate, invalid, and
@@ -172,7 +173,6 @@ export default function AirtableMakeOpportunityPipelinePage() {
           </p>
         </article>
         <article>
-          <p className="proof-lane">Human approval</p>
           <h2>External actions remain deliberate.</h2>
           <p>
             Applications, messages, and spending stay manual. A project handoff
@@ -183,7 +183,6 @@ export default function AirtableMakeOpportunityPipelinePage() {
 
       <section className="case-study-final">
         <div>
-          <p className="proof-lane">Similar systems</p>
           <h2>Bring your operating workflow into one clear path.</h2>
           <p>
             SM Systems builds Airtable operating views, Make routing workflows,
