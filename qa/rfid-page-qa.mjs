@@ -151,6 +151,41 @@ for (const profile of profiles) {
   await homeCard.screenshot({
     path: resolve(outputDirectory, profile.name + '-home-card.png'),
   });
+  await homeCard.locator('.screenshot-carousel-frame .image-lightbox-trigger').click();
+  const homeDialog = homePage.locator('.image-lightbox-dialog[open]');
+  await homeDialog.waitFor({ state: 'visible' });
+  await homePage.waitForTimeout(250);
+  const homePagination = await homePage.evaluate(() => {
+    const pagination = document.querySelector(
+      '.image-lightbox-dialog[open] .image-lightbox-pagination',
+    );
+    if (!(pagination instanceof HTMLElement)) return null;
+    const activeDot = pagination.querySelector('.image-lightbox-dot.is-active');
+    const inactiveDot = pagination.querySelector(
+      '.image-lightbox-dot:not(.is-active)',
+    );
+    return {
+      count: pagination.querySelectorAll('.image-lightbox-dot').length,
+      backgroundColor: getComputedStyle(pagination).backgroundColor,
+      borderTopWidth: getComputedStyle(pagination).borderTopWidth,
+      boxShadow: getComputedStyle(pagination).boxShadow,
+      activeBackgroundColor: activeDot
+        ? getComputedStyle(activeDot, '::before').backgroundColor
+        : null,
+      activeBorderColor: activeDot
+        ? getComputedStyle(activeDot, '::before').borderColor
+        : null,
+      inactiveBackgroundColor: inactiveDot
+        ? getComputedStyle(inactiveDot, '::before').backgroundColor
+        : null,
+      inactiveBorderColor: inactiveDot
+        ? getComputedStyle(inactiveDot, '::before').borderColor
+        : null,
+    };
+  });
+  await homePage.screenshot({
+    path: resolve(outputDirectory, profile.name + '-home-lightbox.png'),
+  });
 
   const checks = {
     httpOk: Boolean(response?.ok()),
@@ -204,6 +239,18 @@ for (const profile of profiles) {
         lightbox.top >= -containmentTolerance &&
         lightbox.bottom <= profile.viewport.height + containmentTolerance,
     ),
+    lightboxIndicatorsInverted: Boolean(
+      homePagination &&
+        homePagination.count === EXPECTED_FRAME_COUNT &&
+        homePagination.backgroundColor === 'rgba(0, 0, 0, 0)' &&
+        homePagination.borderTopWidth === '0px' &&
+        homePagination.boxShadow === 'none' &&
+        homePagination.activeBackgroundColor === 'rgb(255, 255, 255)' &&
+        homePagination.activeBorderColor === 'rgb(255, 255, 255)' &&
+        homePagination.inactiveBackgroundColor === 'rgba(0, 0, 0, 0)' &&
+        typeof homePagination.inactiveBorderColor === 'string' &&
+        homePagination.inactiveBorderColor.includes('255, 255, 255'),
+    ),
   };
 
   results.push({
@@ -212,6 +259,7 @@ for (const profile of profiles) {
     status: Object.values(checks).every(Boolean) ? 'pass' : 'fail',
     checks,
     lightbox,
+    homePagination,
   });
   await homePage.close();
   await page.close();
