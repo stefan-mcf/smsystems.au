@@ -178,11 +178,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
       <section
         className="case-study-gallery service-page-proof"
-        aria-labelledby="related-proof"
+        aria-labelledby="related-work"
       >
         <div className="case-study-section-heading">
           <p className="proof-lane">Related work</p>
-          <h2 id="related-proof">See the service through completed builds.</h2>
+          <h2 id="related-work">See the service through completed builds.</h2>
           <p>
             These completed builds show the implementation scope, operating
             decisions, and delivery standards for related work.
