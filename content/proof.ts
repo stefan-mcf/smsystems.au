@@ -303,6 +303,9 @@ export const proofItems: ProofItem[] = [
     problemShape:
       'A private opportunity and delivery pipeline connecting owner-approved intake, Airtable records, Make routing, duplicate checks, review decisions, and project handoffs.',
     caseStudyLink: '/work/airtable-make-opportunity-pipeline/',
+    primaryLink:
+      'https://github.com/stefan-mcf/airtable-make-opportunity-pipeline',
+    primaryLinkLabel: 'View GitHub repository',
     caseStudy: {
       proofStrip: [
         {
@@ -327,40 +330,40 @@ export const proofItems: ProofItem[] = [
           alt: 'Pipeline overview showing sent outreach, source lists, opportunities, delivered work, outreach mix, and source coverage.',
           caption:
             'Operating view bringing outreach, source coverage, opportunities, and delivered work into one pipeline.',
-          width: 1504,
-          height: 705,
+          width: 1280,
+          height: 960,
         },
         {
           src: '/airtable-make/outreach-analytics.png',
           alt: 'Outreach analytics showing source coverage and manual follow-up controls.',
           caption:
-            'Ledger-backed outreach coverage with clear source visibility and manual follow-up controls.',
-          width: 1504,
-          height: 705,
+            'Ledger-backed outreach coverage with clear source visibility and human-controlled follow-up status.',
+          width: 1280,
+          height: 960,
         },
         {
           src: '/airtable-make/airtable-opportunities.png',
           alt: 'Airtable opportunities view showing owner-approved records routed into decision-required and review-hold states.',
           caption:
-            'Airtable opportunities view showing owner-approved records routed into decision and review states.',
-          width: 1504,
-          height: 705,
+            'Authenticated Airtable view showing Make-routed opportunities in decision-required and owner-review states.',
+          width: 1280,
+          height: 960,
         },
         {
           src: '/airtable-make/delivery-handoff.png',
           alt: 'Delivered Precision Residential Construction website beside its Airtable project record and accepted delivery path.',
           caption:
-            'Delivered website shown beside its Airtable project record, with accepted scope and criteria retained.',
-          width: 1504,
-          height: 771,
+            'The delivered Precision website shown alongside its Airtable project record, accepted scope, and labelled acceptance path.',
+          width: 1280,
+          height: 960,
         },
         {
           src: '/airtable-make/make-router.png',
           alt: 'Opportunity intake router in Make showing the connected Airtable workflow, successful route tests, and inactive final state.',
           caption:
-            'Make scenario showing the connected router, successful route tests, and inactive final state.',
-          width: 1504,
-          height: 705,
+            'Authenticated Make view of the connected 14-module router, four bounded route tests, and final inactive state.',
+          width: 1280,
+          height: 960,
         },
       ],
     },
