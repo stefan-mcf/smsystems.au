@@ -2093,6 +2093,7 @@ strong {
 .proof-case-section {
   display: grid;
   gap: 0.45rem;
+  min-width: 0;
   padding: clamp(0.78rem, 1.35vw, 1rem) clamp(0.9rem, 1.65vw, 1.2rem);
   background: rgba(241, 243, 243, 0.68);
 }
@@ -2256,12 +2257,16 @@ strong {
 .screenshot-carousel {
   display: grid;
   gap: 0.72rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .screenshot-carousel-viewport {
   position: relative;
   display: grid;
   align-items: center;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .screenshot-carousel-slide {
@@ -2369,6 +2374,8 @@ strong {
   align-items: center;
   justify-content: space-between;
   gap: 0.82rem;
+  min-width: 0;
+  max-width: 100%;
   padding: 0.34rem 0.24rem;
 }
 
@@ -2392,6 +2399,8 @@ strong {
   display: inline-flex;
   align-items: center;
   gap: 0.34rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .screenshot-carousel-dot {
@@ -2917,6 +2926,22 @@ strong {
 }
 
 @media (max-width: 640px) {
+  .screenshot-carousel-toolbar {
+    gap: 0.45rem;
+  }
+
+  .screenshot-carousel-dots {
+    flex: 1 1 0;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .screenshot-carousel-dot {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 1.5rem;
+  }
+
   .screenshot-carousel-btn {
     width: 2.75rem;
     height: 2.75rem;
