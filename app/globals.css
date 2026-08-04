@@ -3225,6 +3225,7 @@ strong {
   padding: 0 clamp(1.1rem, 2.2vw, 1.7rem) clamp(1.1rem, 2.2vw, 1.55rem);
 }
 
+.service-signals-block,
 .service-fit-block,
 .service-milestone,
 .service-proof-block,
