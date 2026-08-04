@@ -16,7 +16,9 @@ export function ProofCard({ item }: ProofCardProps) {
     <details className={className} id={item.slug} open={!hasCaseStudy}>
       <summary className="proof-card-summary">
         <span className="proof-copy-stack">
-          <span className="proof-lane">{item.lane}</span>
+          {item.technicalTool ? null : (
+            <span className="proof-lane">{item.lane}</span>
+          )}
           <span className="proof-card-title">{item.title}</span>
           <span>{item.problemShape}</span>
         </span>

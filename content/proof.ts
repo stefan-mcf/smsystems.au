@@ -29,6 +29,7 @@ export type ProofItem = {
   featured?: boolean;
   anchorClient?: boolean;
   featuredBuild?: boolean;
+  technicalTool?: boolean;
 };
 
 export const proofItems: ProofItem[] = [
@@ -108,61 +109,63 @@ export const proofItems: ProofItem[] = [
   },
   {
     slug: 'automation-debugger',
-    title: 'Automation debugger',
-    lane: 'Workflow diagnostics',
+    title: 'Automation Debugger',
+    lane: 'Workflow reliability',
     problemShape:
-      'A local debugger that normalizes event data, assigns trace IDs, classifies failure types, and produces reviewable diagnosis and replay reports.',
+      'Classifies failed Zapier, Make, n8n, webhook, and API events, applies deterministic local corrections, blocks unsafe replays, and produces operator-ready reports.',
     primaryLink: 'https://github.com/stefan-mcf/automation-debugger',
-    primaryLinkLabel: 'View GitHub README',
+    primaryLinkLabel: 'View GitHub repository',
     caseStudy: {
       proofStrip: [
         {
-          label: 'Built',
-          title: 'Fixture-based debugger',
-          body: 'Nine fixture classes cover malformed dates, duplicates, invalid signatures, retry loops, and platform-export quirks.',
+          label: 'Capability',
+          title: 'Diagnose across platforms',
+          body: 'Normalizes provider-shaped events into one traceable failure contract for CLI, API, and report generation.',
         },
         {
-          label: 'Tested',
-          title: '44 passing tests',
-          body: 'The recorded local run has 44 passing pytest tests, plus passing Ruff and mypy checks over the fixture-safe implementation.',
+          label: 'Control',
+          title: 'Refuse unsafe replay',
+          body: 'Duplicate, invalid-signature, and already-applied events stop with zero destination operations.',
         },
         {
-          label: 'Output',
-          title: 'Reviewable artifacts',
-          body: 'Diagnosis JSON, replay success/refusal records, dead-letter traces, implementation notes, and reviewable run records.',
+          label: 'Boundary',
+          title: 'Local incident simulation',
+          body: 'CLI and FastAPI runs use synthetic fixtures and local adapters; production provider repair remains separately authorized work.',
         },
       ],
     },
     featured: true,
+    technicalTool: true,
   },
   {
     slug: 'api-webhook-bridge',
-    title: 'API and webhook bridge',
-    lane: 'Integrations',
+    title: 'API Webhook Bridge',
+    lane: 'Integration reliability',
     problemShape:
-      'A FastAPI bridge that receives synthetic webhook events, validates fields, maps them through explicit JSON configs, and records audit trails with dead-letter handling.',
+      'Validates contact, order, and payment webhooks, maps approved fields, controls duplicate delivery, and records audit and dead-letter outcomes.',
     primaryLink: 'https://github.com/stefan-mcf/api-webhook-bridge',
-    primaryLinkLabel: 'View GitHub README',
+    primaryLinkLabel: 'View GitHub repository',
     caseStudy: {
       proofStrip: [
         {
-          label: 'Built',
-          title: 'Field-mapped bridge',
-          body: 'Explicit JSON configs map source events to destination-shaped operations with correlation IDs and duplicate detection.',
+          label: 'Capability',
+          title: 'Map approved events',
+          body: 'Explicit JSON contracts transform approved payloads into deterministic destination-shaped operations.',
         },
         {
-          label: 'Tested',
-          title: 'Synthetic contracts',
-          body: 'Representative local runs cover HubSpot-like contact, Shopify-like order, and Stripe-like payment intake with dead-letter records.',
+          label: 'Control',
+          title: 'Protect delivery integrity',
+          body: 'Request limits, schema validation, idempotency, and dead-letter handling prevent invalid or repeated work from appearing successful.',
         },
         {
-          label: 'Output',
-          title: 'Audit + dead-letter',
-          body: 'Every payload gets an audit trail; unsafe or unmapped payloads write to dead-letter instead of pretending success.',
+          label: 'Boundary',
+          title: 'Local integration surface',
+          body: 'OpenAPI flows use synthetic fixtures and destination-shaped outputs; live provider calls, credentials, and cloud deployment remain separate implementation work.',
         },
       ],
     },
     featured: true,
+    technicalTool: true,
   },
   {
     slug: 'sheets-airtable-sync',
@@ -195,32 +198,33 @@ export const proofItems: ProofItem[] = [
   },
   {
     slug: 'review-router',
-    title: 'Review-gated AI router',
-    lane: 'AI review checkpoints',
+    title: 'Human Review Router',
+    lane: 'Human review controls',
     problemShape:
-      'A deterministic router that validates workflow contracts, attaches confidence metadata, auto-completes only when policy allows, and writes review packets when it should pause.',
+      'A deterministic control layer that applies typed policy to supplied classifications and confidence metadata, then completes low-risk work or pauses for human review.',
     primaryLink: 'https://github.com/stefan-mcf/review-router',
-    primaryLinkLabel: 'View GitHub README',
+    primaryLinkLabel: 'View GitHub repository',
     caseStudy: {
       proofStrip: [
         {
-          label: 'Built',
-          title: 'Confidence-gated routing',
-          body: 'Typed workflow contracts with fixture-based routing, confidence scoring, and deterministic auto-complete boundaries.',
+          label: 'Capability',
+          title: 'Apply routing policy',
+          body: 'Consumes supplied classification and confidence metadata across six automation families without generating model output.',
         },
         {
-          label: 'Tested',
-          title: 'Six workflow families',
-          body: 'Lead enrichment, inbox triage, support urgency, RSS summarization, creative-pack review, and debug replay.',
+          label: 'Control',
+          title: 'Hold for human review',
+          body: 'Ambiguous or high-risk work becomes a claimable review packet with an auditable resolution record.',
         },
         {
-          label: 'Output',
-          title: 'CLI + FastAPI surfaces',
-          body: 'Same control pattern exposed through CLI and FastAPI with OpenAPI surface, review queue, and quality gates.',
+          label: 'Boundary',
+          title: 'Local policy execution',
+          body: 'CLI and FastAPI runs use synthetic fixtures; live model and provider connections remain separate implementation work.',
         },
       ],
     },
     featured: true,
+    technicalTool: true,
   },
   {
     slug: 'conversion-measurement-inbound-lead-system',

@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "qa:event": "node qa/event-qa.mjs",
+    "qa:technical-tools": "node qa/technical-tools-qa.mjs",
     "qa:responsive": "node qa/responsive-smoke.mjs"
   },
   "dependencies": {
