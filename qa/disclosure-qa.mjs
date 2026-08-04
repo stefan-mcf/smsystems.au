@@ -74,11 +74,19 @@ for (const profile of profiles) {
         const signalGroup = card.querySelector(
           '.service-cell-detail .service-cell-signals',
         );
+        const relatedLinks = [
+          ...card.querySelectorAll('.service-related-links a'),
+        ];
         return {
           open: card.open,
           signalGroupVisible:
             card.open && Boolean(signalGroup?.getClientRects().length),
           signalCount: signalGroup?.querySelectorAll('.service-signal').length ?? 0,
+          relatedLinkCount: relatedLinks.length,
+          relatedLinks: relatedLinks.map((link) => ({
+            href: link.getAttribute('href'),
+            label: link.textContent?.trim(),
+          })),
         };
       }),
       innerWidth: window.innerWidth,
@@ -89,6 +97,24 @@ for (const profile of profiles) {
   await section.screenshot({
     path: resolve(outputDirectory, `${profile.name}-expanded.png`),
   });
+
+  const relatedHrefs = [
+    ...new Set(
+      after.serviceCards.flatMap((card) =>
+        card.relatedLinks.map((link) => link.href).filter(Boolean),
+      ),
+    ),
+  ];
+  const relatedDestinations = await Promise.all(
+    relatedHrefs.map(async (href) => {
+      const destination = await page.request.get(new URL(href, target).href);
+      return {
+        href,
+        status: destination.status(),
+        ok: destination.ok(),
+      };
+    }),
+  );
 
   const checks = {
     httpOk: Boolean(response?.ok()),
@@ -106,6 +132,19 @@ for (const profile of profiles) {
     signalsVisibleWhenExpanded: after.serviceCards.every(
       (card) => card.open && card.signalGroupVisible && card.signalCount > 0,
     ),
+    relatedWorkLinked: after.serviceCards.every(
+      (card, index) =>
+        card.relatedLinkCount === [1, 3, 3][index] &&
+        card.relatedLinks.every(
+          (link) =>
+            link.href?.startsWith('/work/') &&
+            link.href.endsWith('/') &&
+            Boolean(link.label),
+        ),
+    ),
+    relatedDestinationsOk:
+      relatedDestinations.length > 0 &&
+      relatedDestinations.every((destination) => destination.ok),
     noHorizontalOverflow: after.scrollWidth <= after.innerWidth + 2,
   };
 
@@ -116,6 +155,7 @@ for (const profile of profiles) {
     checks,
     before,
     after,
+    relatedDestinations,
   });
   await page.close();
 }
