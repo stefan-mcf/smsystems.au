@@ -13,19 +13,23 @@ export function ServiceCard({ item }: ServiceCardProps) {
           <span className="service-mini-label">{item.shortLabel}</span>
           <span className="service-cell-title">{item.name}</span>
           <span className="service-symptom">{item.summary}</span>
-          <span className="service-cell-signals" aria-label="Common signs">
+        </span>
+        <span className="service-cell-toggle" aria-hidden="true" />
+      </summary>
+
+      <div className="service-cell-detail">
+        <div className="service-card-block service-signals-block">
+          <strong>Common signs</strong>
+          <div className="service-cell-signals">
             {item.signals.map((signal) => (
               <span className="service-signal" key={signal}>
                 <span className="service-signal-path" aria-hidden="true" />
                 <span className="service-signal-text">{signal}</span>
               </span>
             ))}
-          </span>
-        </span>
-        <span className="service-cell-toggle" aria-hidden="true" />
-      </summary>
+          </div>
+        </div>
 
-      <div className="service-cell-detail">
         <div className="service-card-block service-fit-block">
           <strong>Good fit</strong>
           <p>{item.fit}</p>
