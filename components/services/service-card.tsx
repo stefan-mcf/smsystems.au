@@ -46,7 +46,15 @@ export function ServiceCard({ item }: ServiceCardProps) {
 
         <div className="service-proof-block">
           <strong>Related work</strong>
-          <p>{item.proof.map((proof) => proof.title).join(', ')}</p>
+          <ul className="service-related-links">
+            {item.proof.map((project) => (
+              <li key={project.href}>
+                <Link className="text-link" href={project.href}>
+                  {project.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="service-card-cta">

@@ -3268,6 +3268,25 @@ strong {
   font-size: 0.92rem;
 }
 
+.service-cell .service-related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.service-related-links li {
+  margin: 0;
+}
+
+.service-related-links .text-link {
+  width: auto;
+  min-height: 2.25rem;
+  font-size: 0.92rem;
+}
+
 .service-cell ul {
   padding-left: 1rem;
 }
