@@ -19,9 +19,7 @@ export const metadata = createPageMetadata({
 });
 
 export default function HomePage() {
-  const featuredProof = proofItems.filter(
-    (item) => item.featured && !item.anchorClient && !item.featuredBuild,
-  );
+  const technicalTools = proofItems.filter((item) => item.technicalTool);
   const clientProof = proofItems.filter((item) => item.anchorClient);
   const featuredBuild = proofItems.filter((item) => item.featuredBuild);
 
@@ -92,9 +90,15 @@ export default function HomePage() {
             <ProofGrid items={featuredBuild} />
           </div>
         ) : null}
-        <div className="home-tool-work" data-reveal>
-          <p className="work-group-heading">Technical Tools</p>
-          <ProofGrid items={featuredProof} />
+        <div
+          aria-labelledby="technical-tools-heading"
+          className="home-tool-work"
+          data-reveal
+        >
+          <h3 className="work-group-heading" id="technical-tools-heading">
+            Technical tools
+          </h3>
+          <ProofGrid items={technicalTools} />
         </div>
         <div className="workflow-line workflow-line-section" aria-hidden="true">
           <span />
