@@ -87,10 +87,6 @@ export default function ZendeskAiSupportCopilotPage() {
             View GitHub repository
           </Link>
         </div>
-        <p className="case-study-status-note">
-          Controlled AWS commissioning completed. The runtime was decommissioned
-          after closeout, with an encrypted recovery snapshot retained.
-        </p>
         <Link className="text-link case-study-back" href="/#work">
           Back to selected work
         </Link>
@@ -105,9 +101,7 @@ export default function ZendeskAiSupportCopilotPage() {
             Human control remains visible from review to callback.
           </h2>
           <p>
-            The five frames follow the same controlled path across the native
-            Zendesk app, Jira, the fixed evaluation, and the commissioned AWS
-            runtime.
+            A closer look at the support workflow across Zendesk, Jira, and AWS.
           </p>
         </div>
 
