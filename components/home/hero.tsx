@@ -9,6 +9,7 @@ export function Hero() {
     <section className="hero" id="top">
       <div className="hero-grid">
         <div className="hero-copy-block">
+          <p className="hero-kicker">{hero.kicker}</p>
           <h1>
             <span className="hero-line">BUILD THE SYSTEM.</span>
             <span className="hero-line hero-line-accent">KEEP IT RUNNING.</span>

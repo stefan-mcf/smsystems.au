@@ -34,10 +34,10 @@ export const siteMeta = {
   ],
   hero: {
     eyebrow: 'Independent systems builder',
-    kicker: 'Practical systems work for teams that need steadier operations and less brittle automation.',
+    kicker: 'Workflow automation / systems integration / operational software',
     headline: 'BUILD THE SYSTEM. KEEP IT RUNNING.',
     subhead:
-      'I build reliable automation systems that connect websites, payments, dashboards, CRMs, and real-world operations into clear, repeatable workflows.',
+      'I build quote-ready websites, CRM integrations, workflow automations and AI-assisted tools that reduce manual handoffs and clarify the next step.',
     primaryCta: { label: 'Start project', href: '/#project-enquiry' },
     secondaryCta: { label: 'View work', href: '/#work' },
     operatingNotes: [

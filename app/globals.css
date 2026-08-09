@@ -1011,9 +1011,13 @@ strong {
 }
 
 .hero-kicker {
+  position: relative;
+  z-index: 1;
   max-width: 38rem;
-  color: var(--muted);
+  color: #34474f;
   font-size: 0.77rem;
+  font-weight: 760;
+  line-height: 1.5;
 }
 
 .hero h1,
