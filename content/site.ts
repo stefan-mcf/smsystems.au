@@ -24,7 +24,7 @@ export const workflowDiagnosisMailto = `mailto:${contactLinks.email}?subject=${e
 export const siteMeta = {
   title: 'SM Systems | Workflow Automation Builds & Integrations',
   description:
-    'SM Systems builds workflow automation, API integrations, dashboards, data syncs, CRM/intake routing, review-gated AI workflows, and operator tools.',
+    'SM Systems finds where enquiries and work get lost, then builds websites, integrations and reviewed workflows that make the process reliable and visible.',
   nav: [
     { href: '/#top', label: 'Home' },
     { href: '/#services', label: 'Services' },
@@ -37,7 +37,7 @@ export const siteMeta = {
     kicker: 'Workflow automation / systems integration / operational software',
     headline: 'BUILD THE SYSTEM. KEEP IT RUNNING.',
     subhead:
-      'I build quote-ready websites, CRM integrations, workflow automations and AI-assisted tools that reduce manual handoffs and clarify the next step.',
+      'I find where enquiries and work get lost, then build websites, integrations and review workflows to make the process reliable.',
     primaryCta: { label: 'Start project', href: '/#project-enquiry' },
     secondaryCta: { label: 'View work', href: '/#work' },
     operatingNotes: [
@@ -51,7 +51,7 @@ export const siteMeta = {
     eyebrow: 'About',
     title: 'I build connected systems for real operations.',
     body: [
-      'I build websites, automation tools, and connected systems for businesses, teams, and operators where reliability, visibility, and clear operating records matter.',
+      'Through SM Systems, I find where enquiries, customer information, or operational work get lost, then build the websites, integrations, and human-review workflows needed to make those processes reliable and visible.',
       'Most of my work sits between websites, payments, APIs, CRMs, spreadsheets, dashboards, and internal tools. I focus on the parts that usually break: weak enquiry paths, missing records, unreliable handoffs, unclear ownership, and poor visibility.',
       'I also bring experience with PLC-style and edge-to-cloud environments, where software connects back to physical operations.',
     ],
@@ -73,7 +73,7 @@ export const siteMeta = {
   },
   contact: {
     intro:
-      'If you need a website, CRM, automation, integration, or internal tool built or improved, send what exists now and the outcome you need.',
+      'Send the process that is losing enquiries, customer information, or operational work, along with what exists now and the outcome you need.',
     includes: [
       'project or service needed',
       'what exists now',
