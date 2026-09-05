@@ -68,6 +68,8 @@ export const siteMeta = {
   },
   finalCta: {
     title: 'Bring the rough idea.\nI’ll turn it into a working build.',
+    body:
+      'Through SM Systems, I take on scoped systems development, agency subcontracting, and ongoing software improvements. Share what exists, what needs to work better, and your timeframe. We’ll agree the scope, testing, and handover before work begins.',
     primary: { label: 'Start project', href: '/#project-enquiry' },
     secondary: { label: 'Email Stefan', href: workflowDiagnosisMailto },
   },

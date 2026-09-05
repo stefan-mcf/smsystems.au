@@ -244,19 +244,19 @@ async function main() {
   if (options.fixture) {
     await page.getByRole('button', { name: options.fixture === 'duplicate' ? 'Run duplicated conversion path' : 'Run valid conversion path' }).click();
   } else {
-    await page.waitForFunction(
-      () => (window.dataLayer || []).some((entry) => entry?.event === 'gtm.load'),
-      { timeout: 10000 },
-    );
     const allow = page.getByRole('button', { name: 'Allow analytics' });
     await allow.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
     if (await allow.isVisible().catch(() => false)) {
       await allow.click();
     }
+    await page.waitForFunction(
+      () => (window.dataLayer || []).some((entry) => entry?.event === 'gtm.load'),
+      { timeout: 10000 },
+    );
     if (options.profile === 'form-start') {
       await page.getByRole('button', { name: 'Start project' }).first().click();
       const formFrame = page.frameLocator('dialog[open] iframe[title="Form"]');
-      await formFrame.getByRole('textbox', { name: 'First Name' }).fill('Synthetic QA');
+      await formFrame.getByRole('textbox', { name: 'Name', exact: true }).fill('Synthetic QA');
       await page.waitForTimeout(1250);
     } else {
       await page.evaluate(() => {

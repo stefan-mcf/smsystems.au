@@ -10,6 +10,7 @@ export function SiteFooter() {
           </p>
         </div>
         <nav className="footer-contact-links" aria-label="Contact links">
+          <a href="/privacy/">Privacy</a>
           {siteMeta.contact.routes.map((route) => (
             <a
               href={route.href}

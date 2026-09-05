@@ -115,6 +115,7 @@ export default function HomePage() {
         <CtaSection
           eyebrow="Contact"
           title={siteMeta.finalCta.title}
+          body={siteMeta.finalCta.body}
           primary={siteMeta.finalCta.primary}
           secondary={siteMeta.finalCta.secondary}
         />

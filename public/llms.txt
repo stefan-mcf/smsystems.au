@@ -1,6 +1,6 @@
 # SM Systems
 
-SM Systems is an Australia-based workflow automation and integrations practice led by Stefan McFeeters.
+SM Systems is an Australia-based systems design and software implementation practice led by Stefan McFeeters.
 
 ## Summary
 
@@ -8,6 +8,8 @@ SM Systems builds workflow automation and integration tools that connect website
 
 ## Core Work
 
+- Systems design and custom operational software
+- Business websites and quote systems
 - Workflow automation builds
 - API and webhook integrations
 - CRM and intake routing
@@ -39,7 +41,6 @@ SM Systems builds workflow automation and integration tools that connect website
 - Airtable and Make opportunity pipeline: https://smsystems.au/work/airtable-make-opportunity-pipeline/
 - n8n service enquiry intake and routing: https://smsystems.au/work/n8n-service-lead-routing/
 - HubSpot CRM pipeline and record controls: https://smsystems.au/work/hubspot-lead-to-deal-crm/
-- HubSpot to Zendesk customer handoff: https://smsystems.au/work/hubspot-zendesk-customer-handoff/
 - Conversion measurement and inbound lead system: https://smsystems.au/work/conversion-measurement-inbound-lead-system/
 
 ## Featured Work
@@ -56,5 +57,8 @@ SM Systems builds workflow automation, API integrations, dashboards, data syncs,
 
 ## Contact
 
+SM Systems takes on scoped development, agency subcontracting and ongoing software improvements. Scope, testing, handover and support are agreed for each engagement.
+
 Website: https://smsystems.au/#contact
 Email: stefan@smsystems.au
+Privacy: https://smsystems.au/privacy/

@@ -10,7 +10,9 @@
     "qa:disclosures": "node qa/disclosure-qa.mjs",
     "qa:event": "node qa/event-qa.mjs",
     "qa:technical-tools": "node qa/technical-tools-qa.mjs",
-    "qa:responsive": "node qa/responsive-smoke.mjs"
+    "qa:responsive": "node qa/responsive-smoke.mjs",
+    "qa:enquiry": "node qa/enquiry-experience-qa.mjs",
+    "qa:measurement-preference": "node qa/measurement-preference-qa.mjs"
   },
   "dependencies": {
     "next": "^16.2.12",

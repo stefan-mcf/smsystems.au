@@ -378,6 +378,10 @@ strong {
   backdrop-filter: blur(8px);
 }
 
+body:has(.project-enquiry-dialog[open]) {
+  overflow: hidden;
+}
+
 .project-enquiry-dialog-header {
   position: sticky;
   top: 0;
@@ -431,7 +435,7 @@ strong {
 .project-enquiry-dialog-close::before {
   content: "";
   position: absolute;
-  inset: -0.75rem;
+  inset: -0.375rem;
 }
 
 .project-enquiry-dialog-close span {
@@ -749,7 +753,7 @@ strong {
 }
 
 .project-enquiry .project-enquiry-form {
-  min-height: 44rem;
+  min-height: 0;
   padding: clamp(0.75rem, 1vw, 1rem);
   border-color: rgba(18, 22, 23, 0.18);
   background: rgba(227, 231, 232, 0.92);
@@ -763,14 +767,22 @@ strong {
 }
 
 .hs-form-frame {
-  min-height: 41rem;
+  min-height: 8rem;
 }
 
 .hs-form-frame iframe {
   display: block;
   width: 100% !important;
-  min-height: 41rem !important;
+  min-height: 0;
   border: 0;
+}
+
+.project-enquiry-form[data-status="loading"] .hs-form-frame {
+  min-height: 22rem;
+}
+
+.project-enquiry-form[data-status="load-failed"] .hs-form-frame {
+  display: none;
 }
 
 .form-status {
@@ -857,17 +869,6 @@ strong {
   .project-enquiry .project-enquiry-form {
     overflow: hidden;
     padding: 0;
-  }
-
-  .project-enquiry .hs-form-frame {
-    width: calc(100% + 3rem);
-    margin: -1.5rem -1.5rem 0;
-  }
-
-  .project-enquiry-form,
-  .hs-form-frame,
-  .hs-form-frame iframe {
-    min-height: 50rem !important;
   }
 
   .consent-banner {
@@ -1456,7 +1457,7 @@ strong {
 }
 
 .service-section > .section-intro h2 {
-  max-width: 12.5ch;
+  max-width: none;
 }
 
 .fit-section {

@@ -38,7 +38,7 @@ export const proofItems: ProofItem[] = [
     title: 'Zendesk AI Support Copilot + Jira on AWS',
     lane: 'Flagship build',
     problemShape:
-      'A human-reviewed support system combining cited AI assistance, safety routing, a native Zendesk app, an approval-gated Jira handoff, and verified AWS commissioning.',
+      'An internal SM Systems support system combining cited AI assistance, human review, a native Zendesk app, an approved Jira handoff, and controlled AWS testing.',
     caseStudyLink: '/work/zendesk-ai-support-copilot/',
     primaryLink:
       'https://github.com/stefan-mcf/zendesk-ai-support-copilot',
@@ -305,7 +305,7 @@ export const proofItems: ProofItem[] = [
     title: 'Airtable & Make opportunity pipeline',
     lane: 'Built',
     problemShape:
-      'A private opportunity and delivery pipeline connecting owner-approved intake, Airtable records, Make routing, duplicate checks, review decisions, and project handoffs.',
+      'A private SM Systems opportunity and delivery pipeline connecting approved intake, Airtable records, Make routing, duplicate checks, review decisions, and project handoffs.',
     caseStudyLink: '/work/airtable-make-opportunity-pipeline/',
     primaryLink:
       'https://github.com/stefan-mcf/airtable-make-opportunity-pipeline',
@@ -379,7 +379,7 @@ export const proofItems: ProofItem[] = [
     title: 'n8n service enquiry intake and routing',
     lane: 'Built',
     problemShape:
-      'A customer quote form, local duplicate checks, human review, exception holds, an operator register, and five synthetic routing scenarios implemented in n8n 2.31.6.',
+      'An internal n8n implementation connecting a quote form, duplicate checks, human review, and an operator register, tested with synthetic enquiries.',
     caseStudyLink: '/work/n8n-service-lead-routing/',
     primaryLink: 'https://github.com/stefan-mcf/n8n-service-lead-routing',
     primaryLinkLabel: 'View GitHub repository',
@@ -444,7 +444,7 @@ export const proofItems: ProofItem[] = [
     title: 'HubSpot lead-to-deal and Zendesk handoff',
     lane: 'Built',
     problemShape:
-      'A controlled customer path from a seven-stage HubSpot pipeline and linked CRM records into approved Zendesk customer context with provider readback and duplicate-safe replay.',
+      'An internal SM Systems workflow linking HubSpot CRM records to Zendesk customer context, with human approval, verified record creation, and duplicate handling.',
     caseStudyLink: '/work/hubspot-lead-to-deal-crm/',
     primaryLink:
       'https://github.com/stefan-mcf/hubspot-zendesk-customer-handoff',

@@ -10,17 +10,25 @@ import {
   type ReactNode,
 } from 'react';
 import { ProjectEnquiryForm } from '@/components/contact/project-enquiry-form';
+import { pushMeasurementEvent } from '@/components/analytics/measurement';
 
 const ProjectEnquiryContext = createContext<(() => void) | null>(null);
 
 export function ProjectEnquiryProvider({ children }: { children: ReactNode }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
   const [hasOpened, setHasOpened] = useState(false);
 
   const openDialog = useCallback(() => {
     setHasOpened(true);
     if (!dialogRef.current?.open) {
       dialogRef.current?.showModal();
+      pushMeasurementEvent('open_project_enquiry', { form_name: 'sm_project_enquiry_v1' });
+      closeButtonRef.current?.focus({ preventScroll: true });
+      if (dialogRef.current) {
+        dialogRef.current.scrollTop = 0;
+        dialogRef.current.scrollLeft = 0;
+      }
     }
   }, []);
 
@@ -51,9 +59,24 @@ export function ProjectEnquiryProvider({ children }: { children: ReactNode }) {
         id="project-enquiry"
         ref={dialogRef}
         aria-labelledby="project-enquiry-dialog-title"
+        onCancel={(event) => {
+          event.preventDefault();
+          closeDialog();
+        }}
+        onClose={() => {
+          if (window.location.hash === '#project-enquiry') {
+            window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+          }
+        }}
         onClick={(event) => {
           if (event.target === event.currentTarget) {
-            closeDialog();
+            const bounds = event.currentTarget.getBoundingClientRect();
+            if (
+              event.clientX < bounds.left || event.clientX > bounds.right ||
+              event.clientY < bounds.top || event.clientY > bounds.bottom
+            ) {
+              closeDialog();
+            }
           }
         }}
       >
@@ -62,6 +85,7 @@ export function ProjectEnquiryProvider({ children }: { children: ReactNode }) {
           <button
             className="project-enquiry-dialog-close"
             type="button"
+            ref={closeButtonRef}
             aria-label="Close project enquiry"
             onClick={closeDialog}
           >

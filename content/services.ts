@@ -18,6 +18,7 @@ export type ServiceItem = {
   description: string;
   fitTitle: string;
   fit: string;
+  startingPoint: string;
   signals: string[];
   capabilities: {
     label: string;
@@ -45,6 +46,8 @@ export const serviceItems: ServiceItem[] = [
     fitTitle: 'A clearer path from search to a useful enquiry.',
     fit:
       'This service fits businesses whose website undersells the work, makes customers hunt for answers, or passes incomplete enquiry details into an inconsistent follow-up process.',
+    startingPoint:
+      'Start with a defined website improvement, quote-form repair, or a scoped website build. Share the current site, service details, available content, and the enquiry path you need. Agency work can fit an existing design and client brief.',
     signals: [
       'Services and locations are difficult to understand from the current website.',
       'Quote requests arrive without enough information for a useful first response.',
@@ -116,6 +119,8 @@ export const serviceItems: ServiceItem[] = [
     fitTitle: 'Connect the systems without hiding the failure points.',
     fit:
       'This service fits teams relying on copy-paste, brittle no-code flows, disconnected software, or automations that technically run but are difficult to trust and maintain.',
+    startingPoint:
+      'Start with one API connection, workflow repair, or clearly defined integration task. Share the tools involved, an example of the problem with private data removed, and the expected result. I can work within an agency’s existing project and delivery process.',
     signals: [
       'The same record is copied manually between two or more systems.',
       'Failures, duplicates, or incomplete records are discovered too late.',
@@ -211,6 +216,8 @@ export const serviceItems: ServiceItem[] = [
     fitTitle: 'Give every record an owner, a state, and a next step.',
     fit:
       'This service fits businesses where leads, jobs, customer records, or operational decisions are spread across inboxes, spreadsheets, CRM notes, and tools with conflicting versions of the truth.',
+    startingPoint:
+      'Start with one operational process, internal tool, portal feature, or CRM improvement. We’ll map the users, records, decisions, and system connections before agreeing a build. Broader systems can be delivered in useful stages.',
     signals: [
       'Leads or requests arrive without a clear owner or qualification state.',
       'Duplicate, incomplete, or disconnected records weaken follow-up.',

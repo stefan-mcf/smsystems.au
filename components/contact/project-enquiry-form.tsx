@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { pushMeasurementEvent } from '@/components/analytics/measurement';
 import { workflowDiagnosisMailto } from '@/content/site';
 import { measurementConfig } from '@/lib/measurement-config';
+import { getEnquiryAttribution } from '@/lib/enquiry-attribution';
 
 type HubSpotFormEvent = CustomEvent<{
   formId: string;
@@ -31,15 +32,10 @@ declare global {
 
 const visibleFields = new Set([
   'firstname',
-  'lastname',
   'email',
-  'phone',
-  'message',
   'company',
-  'sm_systems_involved',
   'sm_timeframe',
   'sm_current_problem',
-  'sm_desired_result',
 ]);
 
 function newSubmissionId() {
@@ -51,17 +47,15 @@ function newSubmissionId() {
 }
 
 function setHiddenFields(form: HubSpotFormInstance, submissionId: string) {
-  const params = new URLSearchParams(window.location.search);
-  const landingPage = `${window.location.origin}${window.location.pathname}`;
-  const marker = params.get('sm_test') === '1' ? 'synthetic-commissioning' : 'production';
+  const attribution = getEnquiryAttribution();
 
   const hiddenValues: Record<string, string> = {
     '0-1/sm_inbound_lead_key': submissionId,
-    '0-1/sm_landing_page': landingPage,
-    '0-1/sm_utm_source': params.get('utm_source') || '',
-    '0-1/sm_utm_medium': params.get('utm_medium') || '',
-    '0-1/sm_utm_campaign': params.get('utm_campaign') || '',
-    '0-1/sm_commissioning_marker': marker,
+    '0-1/sm_landing_page': attribution.landingPage,
+    '0-1/sm_utm_source': attribution.source,
+    '0-1/sm_utm_medium': attribution.medium,
+    '0-1/sm_utm_campaign': attribution.campaign,
+    '0-1/sm_commissioning_marker': attribution.marker,
   };
 
   Object.entries(hiddenValues).forEach(([name, value]) => {
@@ -72,9 +66,14 @@ function setHiddenFields(form: HubSpotFormInstance, submissionId: string) {
 export function ProjectEnquiryForm() {
   const submissionIdRef = useRef(newSubmissionId());
   const interactionTimerRef = useRef<number | null>(null);
-  const [status, setStatus] = useState<'loading' | 'ready' | 'success' | 'failed'>('loading');
+  const formStartedRef = useRef(false);
+  const [status, setStatus] = useState<'loading' | 'ready' | 'success' | 'failed' | 'load-failed'>('loading');
 
   useEffect(() => {
+    const onLoadFailure = () => {
+      setStatus((current) => current === 'loading' ? 'load-failed' : current);
+    };
+    const loadingTimeout = window.setTimeout(onLoadFailure, 15000);
     const matchesThisForm = (event: HubSpotFormEvent) =>
       event.detail?.formId === measurementConfig.hubSpot.formId;
 
@@ -85,12 +84,15 @@ export function ProjectEnquiryForm() {
       }
 
       const form = window.HubSpotFormsV4.getFormFromEvent(event);
+      window.clearTimeout(loadingTimeout);
       setHiddenFields(form, submissionIdRef.current);
       setStatus('ready');
 
-      let formStarted = false;
+      if (interactionTimerRef.current !== null) {
+        window.clearInterval(interactionTimerRef.current);
+      }
       interactionTimerRef.current = window.setInterval(async () => {
-        if (formStarted) {
+        if (formStartedRef.current) {
           return;
         }
 
@@ -108,7 +110,10 @@ export function ProjectEnquiryForm() {
             },
           );
           if (hasInteraction) {
-            formStarted = true;
+            formStartedRef.current = true;
+            if (interactionTimerRef.current !== null) {
+              window.clearInterval(interactionTimerRef.current);
+            }
             pushMeasurementEvent('form_start', {
               form_name: 'sm_project_enquiry_v1',
               submission_id: submissionIdRef.current,
@@ -154,15 +159,21 @@ export function ProjectEnquiryForm() {
     window.addEventListener('hs-form-event:on-submission:failed', onFailure);
 
     const scriptId = 'sm-hubspot-form-script';
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement('script');
+    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+    if (!script) {
+      script = document.createElement('script');
       script.id = scriptId;
       script.async = true;
       script.src = `https://js-${measurementConfig.hubSpot.region}.hsforms.net/forms/embed/${measurementConfig.hubSpot.portalId}.js`;
+    }
+    script.addEventListener('error', onLoadFailure);
+    if (!script.isConnected) {
       document.head.appendChild(script);
     }
 
     return () => {
+      window.clearTimeout(loadingTimeout);
+      script.removeEventListener('error', onLoadFailure);
       window.removeEventListener('hs-form-event:on-ready', onReady);
       window.removeEventListener('hs-form-event:on-submission:success', onSuccess);
       window.removeEventListener('hs-form-event:on-submission:failed', onFailure);
@@ -178,8 +189,8 @@ export function ProjectEnquiryForm() {
         <p className="eyebrow">Project enquiry</p>
         <h2 id="project-enquiry-title">What would you like to build?</h2>
         <p>
-          Share the project, what already exists, the result you need, and your timeframe. I’ll
-          review it before creating an opportunity.
+          Tell me what you’d like built or improved, what already exists, and any timing
+          constraints. I’ll review your enquiry and reply about the next step.
         </p>
         <div className="project-enquiry-email-route">
           <p>Prefer email?</p>
@@ -188,19 +199,29 @@ export function ProjectEnquiryForm() {
           </a>
         </div>
       </div>
-      <div className="panel project-enquiry-form">
+      <div className="panel project-enquiry-form" data-status={status}>
+        {status === 'load-failed' ? (
+          <p className="form-status form-status-error" role="alert">
+            The enquiry form couldn’t load. Please <a href={workflowDiagnosisMailto}>email Stefan</a>
+            {' '}with your project details.
+          </p>
+        ) : null}
         <div
           className="hs-form-frame"
           data-region={measurementConfig.hubSpot.region}
           data-form-id={measurementConfig.hubSpot.formId}
           data-portal-id={measurementConfig.hubSpot.portalId}
         />
-        {status === 'loading' ? <p className="form-status">Loading secure enquiry form…</p> : null}
+        {status === 'loading' ? <p className="form-status">Loading enquiry form…</p> : null}
         {status === 'failed' ? (
-          <p className="form-status form-status-error">
+          <p className="form-status form-status-error" role="alert">
             The form could not be submitted. Please check the highlighted fields or email Stefan.
           </p>
         ) : null}
+        <p className="form-status">
+          Your details are used to respond to your enquiry and manage any agreed work.
+          {' '}<a href="/privacy/">Read how your information is handled.</a>
+        </p>
         <span className="sr-only" aria-live="polite">
           {status === 'success' ? 'Enquiry submitted successfully.' : ''}
         </span>

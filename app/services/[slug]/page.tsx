@@ -122,7 +122,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <ProjectEnquiryTrigger className="button button-primary">
             Discuss your project
           </ProjectEnquiryTrigger>
-          <Link className="button button-secondary" href="/#work">
+          <Link className="button button-secondary" href="#related-work">
             View related work
           </Link>
         </div>
@@ -161,9 +161,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
         <div className="case-study-section-heading">
           <p className="proof-lane">Working approach</p>
           <h2 id="service-process">Start with one path that matters.</h2>
+          <p>{service.startingPoint}</p>
           <p>
-            Scope stays tied to a concrete outcome, a visible test, and a handoff
-            that can be operated after the build.
+            Before work begins, we agree the scope, fee, access, acceptance checks,
+            and handover. Delivery includes testing and operating notes; source
+            delivery and support are agreed for the project. Further features and
+            ongoing improvements can follow under a separate scope.
           </p>
         </div>
         <ol>
