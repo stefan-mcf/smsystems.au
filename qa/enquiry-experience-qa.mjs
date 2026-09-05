@@ -32,6 +32,11 @@ try {
 
     const iframeElement = await page.locator('.hs-form-frame iframe').elementHandle();
     const frame = await iframeElement.contentFrame();
+    await frame.waitForFunction(
+      () => document.documentElement.scrollHeight <= innerHeight + 2,
+      null,
+      { timeout: 5000 },
+    );
     const formLayout = await frame.evaluate(() => ({
       width: innerWidth,
       contentWidth: document.documentElement.scrollWidth,
@@ -52,6 +57,8 @@ try {
     await dialog.evaluate(element => { element.scrollTop = element.scrollHeight; });
     await page.keyboard.press('Escape');
     await dialog.waitFor({ state: 'hidden' });
+    await trigger.waitFor({ state: 'visible' });
+    await page.waitForFunction(() => document.activeElement?.getAttribute('aria-controls') === 'project-enquiry');
     assert.equal(await trigger.evaluate(element => element === document.activeElement), true, 'Closing restores trigger focus');
     await trigger.click();
     assert.equal(await dialog.evaluate(element => element.scrollTop), 0, 'Reopening resets dialog scroll');

@@ -17,12 +17,18 @@ const ProjectEnquiryContext = createContext<(() => void) | null>(null);
 export function ProjectEnquiryProvider({ children }: { children: ReactNode }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const triggerRef = useRef<HTMLElement | null>(null);
   const [hasOpened, setHasOpened] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const openDialog = useCallback(() => {
     setHasOpened(true);
     if (!dialogRef.current?.open) {
-      dialogRef.current?.showModal();
+      triggerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      // HubSpot renders its CAPTCHA beside the dialog. Native modal top-layer
+      // isolation hides that challenge; keep our page inert without hiding it.
+      dialogRef.current?.show();
+      setIsOpen(true);
       pushMeasurementEvent('open_project_enquiry', { form_name: 'sm_project_enquiry_v1' });
       closeButtonRef.current?.focus({ preventScroll: true });
       if (dialogRef.current) {
@@ -40,6 +46,13 @@ export function ProjectEnquiryProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
+    if (!isOpen && triggerRef.current) {
+      triggerRef.current.focus({ preventScroll: true });
+      triggerRef.current = null;
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
     const openFromHash = () => {
       if (window.location.hash === '#project-enquiry') {
         openDialog();
@@ -53,17 +66,41 @@ export function ProjectEnquiryProvider({ children }: { children: ReactNode }) {
 
   return (
     <ProjectEnquiryContext.Provider value={openDialog}>
-      {children}
+      <div className="project-enquiry-background" inert={isOpen}>
+        {children}
+      </div>
+      {isOpen ? <div className="project-enquiry-backdrop" aria-hidden="true" onClick={closeDialog} /> : null}
       <dialog
         className="project-enquiry-dialog"
         id="project-enquiry"
         ref={dialogRef}
         aria-labelledby="project-enquiry-dialog-title"
+        closedby="closerequest"
+        onKeyDown={(event) => {
+          if (event.key === 'Escape') {
+            event.preventDefault();
+            closeDialog();
+          }
+          if (event.key !== 'Tab') return;
+          const controls = Array.from(event.currentTarget.querySelectorAll<HTMLElement>(
+            'button:not(:disabled), a[href], input:not(:disabled), textarea:not(:disabled), select:not(:disabled), iframe, [tabindex="0"]',
+          )).filter((element) => element.getClientRects().length > 0);
+          const first = controls[0];
+          const last = controls[controls.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last?.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first?.focus();
+          }
+        }}
         onCancel={(event) => {
           event.preventDefault();
           closeDialog();
         }}
         onClose={() => {
+          setIsOpen(false);
           if (window.location.hash === '#project-enquiry') {
             window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
           }

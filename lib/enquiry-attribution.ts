@@ -8,6 +8,20 @@ type EnquiryAttribution = {
   marker: string;
 };
 
+export function getMeasurementCampaign(): Record<string, string> {
+  const attribution = getEnquiryAttribution();
+  return Object.fromEntries(
+    Object.entries({
+      campaign_source: attribution.source,
+      campaign_medium: attribution.medium,
+      campaign_name: attribution.campaign,
+    }).filter(([, value]) =>
+      /^[a-z0-9][a-z0-9._ -]{0,99}$/i.test(value) &&
+      !/(?:\d[ .-]*){8,}/.test(value),
+    ),
+  );
+}
+
 export function getEnquiryAttribution(): EnquiryAttribution {
   const params = new URLSearchParams(window.location.search);
   const current: EnquiryAttribution = {

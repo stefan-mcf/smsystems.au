@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { measurementConfig } from '@/lib/measurement-config';
-import { getEnquiryAttribution } from '@/lib/enquiry-attribution';
+import { getEnquiryAttribution, getMeasurementCampaign } from '@/lib/enquiry-attribution';
 
 declare global {
   interface Window {
@@ -29,6 +29,12 @@ function gtag(
   command: 'consent',
   action: 'default' | 'update',
   parameters: Record<string, string | number>,
+): void;
+function gtag(command: 'set', parameters: Record<string, string>): void;
+function gtag(
+  command: 'consent' | 'set',
+  actionOrParameters: 'default' | 'update' | Record<string, string>,
+  parameters?: Record<string, string | number>,
 ) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push(arguments);
@@ -40,6 +46,8 @@ function loadGtm() {
   }
 
   window.dataLayer = window.dataLayer || [];
+  // URLs are stripped of query strings; pass safe campaign labels separately.
+  gtag('set', getMeasurementCampaign());
   window.dataLayer.push(pageContext());
   window.dataLayer.push({
     'gtm.start': Date.now(),

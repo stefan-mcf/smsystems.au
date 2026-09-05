@@ -26,6 +26,10 @@ try {
   assert.equal(initialEvents[0].page_path, '/');
   assert.equal(initialEvents[0].traffic_type, 'internal');
   assert(!initialEvents[0].page_location.includes('?'));
+  const campaign = await page.evaluate(() => window.dataLayer.find((entry) => entry?.[0] === 'set')?.[1]);
+  assert.deepEqual(campaign, {
+    campaign_source: 'internal-qa', campaign_medium: 'test', campaign_name: 'platform-review',
+  });
   results.push({ scenario: 'decline-then-allow', status: 'pass', pageViews: 1, gtmRequests: 1 });
 
   await page.locator('#services details').first().locator('summary').click();
@@ -62,6 +66,18 @@ try {
   assert.equal(requestedGtm.length, 1, 'Reload after decline must not request GTM');
   assert.equal(await page.evaluate(() => window.__smAnalyticsConsent), 'denied');
   results.push({ scenario: 'withdrawal-and-reload', status: 'pass' });
+
+  const sensitivePage = await browser.newPage();
+  await sensitivePage.route('https://www.googletagmanager.com/**', (route) => route.abort());
+  await sensitivePage.goto(`${base}?utm_source=private%40example.invalid&utm_medium=0412345678&utm_campaign=https%3A%2F%2Fexample.invalid%2Fprivate&sm_test=1`);
+  await sensitivePage.getByRole('button', { name: 'Allow analytics', exact: true }).click();
+  const sensitiveLayer = await sensitivePage.evaluate(() => window.dataLayer.map((entry) => entry?.[0] ? Array.from(entry) : entry));
+  assert.deepEqual(sensitiveLayer.find((entry) => entry?.[0] === 'set')?.[1], {});
+  assert(!JSON.stringify(sensitiveLayer).includes('private@example.invalid'));
+  assert(!JSON.stringify(sensitiveLayer).includes('0412345678'));
+  assert(!JSON.stringify(sensitiveLayer).includes('example.invalid/private'));
+  await sensitivePage.close();
+  results.push({ scenario: 'campaign-labels-exclude-email-phone-and-url-values', status: 'pass' });
 
   const report = { schema_version: 1, status: 'pass', target: base, generated_at: new Date().toISOString(), results, limitation: 'GTM network intentionally blocked; provider delivery is a separate verification. No enquiry submitted.' };
   await mkdir(dirname(output), { recursive: true });

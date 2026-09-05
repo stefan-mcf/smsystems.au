@@ -13,7 +13,14 @@ export function AboutSection() {
 
       <aside className="about-card panel" aria-label="About Stefan McFeeters">
         <div className="about-portrait-frame">
-          <ZoomableImage src={about.imageSrc} alt={about.imageAlt} />
+          <ZoomableImage
+            src={about.imageSrc}
+            alt={about.imageAlt}
+            width={997}
+            height={1254}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div className="about-card-copy">
           <p className="about-name">Stefan McFeeters</p>
