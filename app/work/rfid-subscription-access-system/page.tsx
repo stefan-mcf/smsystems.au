@@ -29,7 +29,7 @@ const operatingPath = [
   {
     label: '04 / FIELD',
     title: 'Keep intent separate from movement',
-    body: 'The edge path records command and acknowledgement state while physical activation remains an onsite acceptance step.',
+    body: 'The edge path records command and acknowledgement state. The owner confirms the system works as intended; linked field receipts retain their original dates and scope.',
   },
 ];
 
