@@ -26,7 +26,7 @@ const flowSteps = [
   {
     label: '02 / ROUTE',
     title: 'Cited AI decision',
-    body: 'Retrieval, confidence, safety signals, and policy produce a private draft, escalation, or block.',
+    body: 'Lexical retrieval, a heuristic retrieval score, risk checks, and policy produce a private draft, escalation, or block.',
   },
   {
     label: '03 / REVIEW',

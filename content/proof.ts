@@ -48,7 +48,7 @@ export const proofItems: ProofItem[] = [
         {
           label: 'CONTROLLED ROUTING',
           title: 'Draft, escalate, or block',
-          body: 'Citations, confidence, sensitive-data checks, injection controls, and policy decide what reaches human review.',
+          body: 'Citations, a heuristic retrieval score, sensitive-data checks, injection controls, and policy decide what reaches human review.',
         },
         {
           label: 'HUMAN AUTHORITY',
@@ -90,7 +90,7 @@ export const proofItems: ProofItem[] = [
           src: '/zendesk-ai-support-copilot/04-aws-architecture.png',
           alt: 'Verified AWS deployment architecture from Zendesk review through Jira callback.',
           caption:
-            'The commissioned path joins the Zendesk app, authenticated AWS runtime, encrypted retrieval storage, Bedrock, Jira, secrets, and monitoring.',
+            'The historical commissioned path joins the Zendesk app, authenticated AWS runtime, encrypted storage of token features, Bedrock, Jira, secrets, and monitoring. The cloud runtime was decommissioned on 2 August 2026.',
           width: 1280,
           height: 960,
         },
